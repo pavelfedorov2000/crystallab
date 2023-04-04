@@ -1,0 +1,79 @@
+.btn {
+    $this: &;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $ff;
+    @extend %text-16;
+    text-align: center;
+    transition: 0.3s all;
+
+    @media (any-hover: hover) {
+        &:hover {
+            //background-color: var(--accent-hover);
+            //color: #fff;
+        }
+    }
+
+    /* &:focus,
+    &:active {
+        background-color: var(--accent);
+    } */
+
+    &.disabled,
+    &[disabled] {
+        //background-color: var(--disabled);
+        border: none;
+        cursor: not-allowed;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    &__icon {
+        flex-shrink: 0;
+    }
+
+    &__text {}
+
+    &__text + &__icon {}
+
+    &--style {
+        &_bg {
+            &-gray {}
+
+            &-white {}
+
+            &-blue {}
+        }
+
+        &_tab {}
+
+        &_drop {}
+
+        &_more {}
+
+        &_link {}
+    }
+
+    &--with {
+        &_icon {}
+    }
+
+    &--disabled {
+        background-color: transparent;
+        //border: 0.1rem solid var(--disabled);
+        //color: var(--gray-9b);
+
+        @media (any-hover: hover) {
+            &:hover {
+                //color: var(--gray-9b);
+                background-color: transparent;
+            }
+        }
+    }
+}

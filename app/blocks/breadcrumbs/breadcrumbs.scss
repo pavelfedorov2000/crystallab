@@ -1,0 +1,46 @@
+.breadcrumbs {
+	display: none;
+	padding: 4rem 0 var(--offset-ms);
+
+	@media(min-width: 768px) {
+		display: block;
+	}
+
+	@media(max-width: 500px) {
+		padding-top: var(--offset-ms);
+	}
+
+	&__item {
+		position: relative;
+		display: inline-block;
+		@extend %text-13;
+		padding-right: 1.8rem;
+		margin-right: var(--offset-sm);
+		transition: $transition color;
+
+		@media(max-width: 500px) {
+			font-size: 1.2rem;
+			line-height: 1.8rem;
+			padding-right: var(--offset-s);
+			margin-right: var(--offset-xxs);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--green);
+			}
+		}
+
+		span {
+			color: var(--gray);
+		}
+
+		&:not(:last-child) {
+			&:after {
+				content: '|';
+				@extend %pos-center-y;
+				right: 0;
+			}
+		}
+	}
+}

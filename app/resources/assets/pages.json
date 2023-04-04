@@ -1,0 +1,61 @@
+[{
+    "href": "home.html",
+    "title": "Главная"
+}, {
+    "href": "catalog.html",
+    "title": "Каталог"
+}, {
+    "href": "catalog-empty.html",
+    "title": "Каталог пустой"
+}, {
+    "href": "favorite.html",
+    "title": "Избранное"
+}, {
+    "href": "favorite-empty.html",
+    "title": "Избранное пустая"
+}, {
+    "href": "search-results.html",
+    "title": "Результаты поиска"
+}, {
+    "href": "product-card.html",
+    "title": "Карточка товара"
+}, {
+    "href": "basket.html",
+    "title": "Корзина"
+}, {
+    "href": "basket-empty.html",
+    "title": "Корзина пустая"
+}, {
+    "href": "checkout.html",
+    "title": "Оформление заказа"
+}, {
+    "href": "personal.html",
+    "title": "Персональные данные"
+}, {
+    "href": "shops.html",
+    "title": "Магазины"
+}, {
+    "href": "pickup.html",
+    "title": "Выбрать пункт самовывоза"
+}, {
+    "href": "about.html",
+    "title": "О нас"
+}, {
+    "href": "guarantee.html",
+    "title": "Гарантия"
+}, {
+    "href": "delivery.html",
+    "title": "Доставка и оплата"
+}, {
+    "href": "404.html",
+    "title": "Страница не найдена"
+}, {
+    "href": "callback.html",
+    "title": "Заказать звонок"
+}, {
+    "href": "auth.html",
+    "title": "Авторизация"
+}, {
+    "href": "new-password.html",
+    "title": "Попап новый пароль"
+}]

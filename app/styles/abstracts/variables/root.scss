@@ -1,0 +1,31 @@
+:root {
+    --yellow: #ffcc48;
+    --black: #020818;
+    --dark: #131414;
+    --gray: #95a0af;
+    --light-gray: #d7dded;
+    --green: #43a141;
+    --red: #e73656;
+    --line-color: #ddd;
+    --light-blue: #ecf1ff;
+
+    //--mob-padding: 1.2rem;
+    //--gap: 20rem;
+    --container-width: 1140px;
+    --container-padding: 15px;
+    //--header-height: 9.6rem;
+    //--input-height: 5.6rem;
+    //--section-padding: 8rem;
+    //--section-padding-xl: 8.8rem;
+
+    // offsets (gaps)
+    --offset-xxxl: 6.4rem;
+    --offset-xxl: 5.6rem;
+    --offset-xls: 4rem;
+    --offset-xl: 4.8rem;
+    --offset-l: 3.2rem;
+    --offset-m: 2.4rem;
+    --offset-s: 1.6rem;
+    --offset-xs: var(--mob-padding);
+    --offset-xxs: 0.8rem;
+}
