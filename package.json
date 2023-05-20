@@ -35,7 +35,7 @@
     "author": "Pavel Fedorov <pashok05_01@mail.ru>",
     "contributors": [],
     "bugs": {
-        "url": "",
+        "url": "https://github.com/pavelfedorov2000/gulp-file-include-starter",
         "email": "pashok05_01@mail.ru"
     },
     "homepage": "",

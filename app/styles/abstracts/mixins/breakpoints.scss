@@ -1,22 +1,24 @@
-$breakpoints: (
-    xxl: 1920,
-    xl: 1600,
-    l: 1440,
-    m: 1280,
-    s: 1024,
-    xs: 768,
-    xxs: 520,
-    xxxs: 375
+$breakpoints: ("500": 500px,
+	"501": 501px,
+	"767": 767px,
+	"768": 768px,
+	"991": 991px,
+	"901": 901px,
+	"1200": 1200px,
+	"1201": 1201px,
+	"1366": 1366px,
 );
 
-@mixin _media($size, $min: max-width) {
-    $i: 1;
+@mixin media($breakpoint, $type) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		$breakpoint-value: map-get($breakpoints, $breakpoint);
 
-    @if $min == min-width {
-        $i: -1;
-    }
+		@media (#{$type}-width: $breakpoint-value) {
+			@content;
+		}
+	}
 
-    @media screen and ($min: map-get($breakpoints, #{$size}) - $i + 'px') {
-        @content;
-    }
+	@else {
+		@warn 'Invalid breakpoint: #{$breakpoint}.';
+	}
 }

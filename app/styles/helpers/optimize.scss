@@ -222,38 +222,26 @@ iframe {
 	border: none;
 }
 
+ul,
+ol {
+	padding: 0;
+	list-style: none;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p {
-	margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-size: inherit;
-}
-
+p,
 ul,
 ol,
-li {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
+li,
 dl,
 dd,
 dt {
 	margin: 0;
-	padding: 0;
 }
 
 a {
@@ -261,17 +249,28 @@ a {
 	color: inherit;
 }
 
-select,
+input,
 button,
-input {
-	background-color: transparent;
-	border: none;
-	outline: none;
-	padding: 0;
-	cursor: pointer;
+textarea,
+select {
+	font: inherit;
 }
 
-input,
-textarea {
-	cursor: default;
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: top;
+	border: none;
+
+	table & {
+		max-width: none;
+	}
+}
+
+address {
+	font-style: normal;
+}
+
+small {
+	font-size: inherit;
 }

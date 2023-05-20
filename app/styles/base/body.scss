@@ -6,6 +6,8 @@ body {
 	line-height: 1.5;
 	font-weight: 400;
 	color: var(--color-default);
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
 
 	@media(max-width: $lg) {
 		overflow-x: hidden;
@@ -16,19 +18,7 @@ body {
 	}
 }
 
-button,
-input,
-textarea {
-	font-family: var(--main-font);
-}
-
-img {
-	max-width: 100%;
-	height: auto;
-	vertical-align: top;
-	border: none;
-
-	table & {
-		max-width: none;
-	}
+a {
+	text-decoration: none;
+	color: currentColor;
 }

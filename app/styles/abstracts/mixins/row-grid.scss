@@ -1,4 +1,4 @@
 @mixin row-grid($row-gap) {
-    display: grid;
-    row-gap: $row-gap;
+	display: grid;
+	row-gap: $row-gap;
 }

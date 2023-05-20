@@ -1,57 +1,30 @@
-.swiper-button-prev,
-.swiper-button-next {
-	top: 0;
-	right: 0;
-	width: 5.6rem;
-	height: 5.6rem;
-	background-color: #BDBDBD;
-	margin: 0;
-	transition: .3s all;
+.swiper-button {
 
-	&:after {
-		content: '';
-		@extend %pos-center-xy;
-		width: 0.7rem;
-		height: 0.8rem;
-		background-color: #FFF;
-	}
+	&-prev,
+	&-next {
 
-	@media (any-hover: hover) {
-		&:hover {
-			background-color: $accent;
-			border-color: $accent;
+		&:after {
+			content: '';
+			@include position-center(xy);
+		}
 
-			svg path {
-				stroke: #fff;
+		@media (any-hover: hover) {
+			&:hover {
+
+				svg {}
 			}
 		}
 	}
 }
 
-.swiper-button-next {
-	margin-bottom: 0;
-	margin-left: 0.8rem;
-}
-
 .swiper-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
-	display: flex;
-	justify-content: center;
-	@extend %pos-center-x;
+	@include flex-center-x;
 	bottom: 0;
 }
 
 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-	width: 1rem;
-	height: 1rem;
-	border-radius: 50%;
-	background-color: $dark;
-
-	&:not(:last-child) {
-		margin-right: 1.65rem;
-	}
-}
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {}
 
 /* .swiper-pagination-current,
 .swiper-pagination-total {
