@@ -4,24 +4,9 @@
     @@include("blocks/header/header.html")
     <main class="page">
         <div class="container">
-            <nav class="breadcrumbs"
-                 aria-label="breadcrumbs">
-                <ol class="breadcrumbs__list">
-                    <li class="breadcrumbs__item">
-                        <a href="#">Главная</a>
-                    </li>
-                    <li class="breadcrumbs__item">
-                        <a href="#">Корзина</a>
-                    </li>
-                    <li class="breadcrumbs__item">
-                        <span>Оформить заказ</span>
-                    </li>
-                </ol>
-            </nav>
-
-            <div class="page__top">
-                <h1>Оформить заказ</h1>
-            </div>
+            @@include("blocks/breadcrumbs/breadcrumbs.html", {
+                "currentPage": "Оформление заказ"
+            })
         </div>
     </main>
     @@include("blocks/footer/footer.html")

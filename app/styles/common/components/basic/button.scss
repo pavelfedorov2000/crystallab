@@ -1,13 +1,8 @@
 .btn {
     $this: &;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: $ff;
-    @extend %text-16;
-    text-align: center;
-    transition: 0.3s all;
+    font-family: var(--main-font);
+    transition: var(--transition) all;
 
     @media (any-hover: hover) {
         &:hover {
@@ -15,11 +10,6 @@
             //color: #fff;
         }
     }
-
-    /* &:focus,
-    &:active {
-        background-color: var(--accent);
-    } */
 
     &.disabled,
     &[disabled] {
@@ -40,28 +30,21 @@
 
     &__text {}
 
-    &__text + &__icon {}
+    &--primary {
+        background-color: var(--accent);
+        color: var(--white);
+    }
 
     &--style {
         &_bg {
-            &-gray {}
-
             &-white {}
-
-            &-blue {}
         }
 
         &_tab {}
 
-        &_drop {}
-
         &_more {}
 
         &_link {}
-    }
-
-    &--with {
-        &_icon {}
     }
 
     &--disabled {

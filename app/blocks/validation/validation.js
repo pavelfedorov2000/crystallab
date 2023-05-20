@@ -37,36 +37,6 @@ app.validation = {
             return false;
         }, "Некорректный номер", 2, false); */
 
-        // phone mask
-        //$("input[type=tel]").mask("+375 (99) 999-99-99");
-
-
-        /* $('form').on('sumbit', function (e) {
-            e.preventDefault();
-
-            $.ajax({
-                type: "POST",
-                url: "send.php",
-                data: $(this).serialize(),
-            });
-            $('.form__input').removeClass('valid');
-            $(this).find("input").val("");
-            $('form').trigger('reset');
-            return false;
-        }); */
-
-        /* $.fn.setCursorPosition = function (pos) {
-            if ($(this).get(0).setSelectionRange) {
-                $(this).get(0).setSelectionRange(pos, pos);
-            } else if ($(this).get(0).createTextRange) {
-                var range = $(this).get(0).createTextRange();
-                range.collapse(true);
-                range.moveEnd('character', pos);
-                range.moveStart('character', pos);
-                range.select();
-            }
-        }; */
-
         // input mask
         /* const phoneInput = document.querySelector('#phone');
         const maskOptions = {
@@ -86,9 +56,18 @@ app.validation = {
             }
         }); */
 
-        // phone mask
-        $("input[name=phone]").on('click', function () {
-            $(this).setCursorPosition(4);
-        }).mask("+7 (999) 999-99-99");
+        /* $('form').on('sumbit', function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                type: "POST",
+                url: "send.php",
+                data: $(this).serialize(),
+            });
+            $('.form__input').removeClass('valid');
+            $(this).find("input").val("");
+            $('form').trigger('reset');
+            return false;
+        }); */
     },
 };

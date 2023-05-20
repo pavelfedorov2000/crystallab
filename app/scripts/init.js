@@ -1,5 +1,4 @@
 $(function () {
-    new LazyLoad();
     //new WOW().init();
     //app.burger.init();
     //app.slider.init();

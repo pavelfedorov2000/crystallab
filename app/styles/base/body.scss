@@ -1,11 +1,11 @@
 body {
 	min-width: 320px;
 	font-style: normal;
-	font-family: $ff;
-	font-size: calc(#{$fz} / 10 * 1rem);
+	font-family: var(--main-font);
+	font-size: calc(var(--base-font-size) / 10 * 1rem);
 	line-height: 1.5;
 	font-weight: 400;
-	color: $color-default;
+	color: var(--color-default);
 
 	@media(max-width: $lg) {
 		overflow-x: hidden;
@@ -19,7 +19,7 @@ body {
 button,
 input,
 textarea {
-	font-family: $ff;
+	font-family: var(--main-font);
 }
 
 img {

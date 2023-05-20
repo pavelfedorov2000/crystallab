@@ -2,7 +2,6 @@ app.burger = {
     name: 'burger',
     description: 'burger-btn and burger-menu logic',
     init() {
-
         // jquery
         $('.burger-btn').on('click', function () {
             $('body').toggleClass('_lock');

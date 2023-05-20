@@ -1,0 +1,8 @@
+<picture @@if(context.class){class="@@class"}>
+    <source type="image/webp" srcset="@@src.webp">
+    <img class="@@if(context.cover){ img-cover}@@if(context.contain){ img-contain}" src="@@src.jpg" alt="@@if(context.alt){ @@alt}" width="@@width" height="@@height" loading="lazy">
+</picture>
+
+@@if(context.picture == 'false'){
+    <img class="@@if(context.class){@@class}@@if(context.cover){ img-cover}@@if(context.contain){ img-contain}" src="@@src" alt="@@if(context.alt){ @@alt}" width="@@width" height="@@height" loading="lazy">
+}

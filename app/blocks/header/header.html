@@ -1,25 +1,10 @@
 <header class="header">
-    <!-- <div class="header__top">
-        <div class="container header__top-inner">
-
-        </div>
-    </div>
-    <div class="header__bottom">
-        <div class="container header__bottom-inner">
-
-        </div>
-    </div> -->
-
     <div class="container">
         <div class="header__inner">
-            <div class="logo header__logo">
-                <a class="logo__link"
-                   href="#">
-                    <img class="logo__img"
-                         src="assets/images/logo/header-logo.png"
-                         alt="Логотип">
-                </a>
-            </div>
+            @@include("blocks/logo/logo.html", {
+                "class": "header__logo",
+                "src": "assets/images/logo/logo.svg"
+            })
         </div>
     </div>
 </header>

@@ -6,21 +6,9 @@
     @@include("blocks/header/header.html")
     <main class="page">
         <div class="container">
-            <nav class="breadcrumbs"
-                 aria-label="breadcrumbs">
-                <ol class="breadcrumbs__list">
-                    <li class="breadcrumbs__item">
-                        <a href="#">Главная</a>
-                    </li>
-                    <li class="breadcrumbs__item">
-                        <span>О нас</span>
-                    </li>
-                </ol>
-            </nav>
-
-            <div class="page__top">
-                <h1>О нас</h1>
-            </div>
+            @@include("blocks/breadcrumbs/breadcrumbs.html", {
+                "currentPage": "О нас"
+            })
         </div>
     </main>
 </div>

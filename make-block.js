@@ -9,7 +9,7 @@ const BLOCKS_DIR = path.join(__dirname, 'app/blocks');
 
 // default content for files in new block
 const fileSources = {
-  html: '<div class="{blockName}">\n  <!--your code-->\n</div>\n',
+  html: '<div class="{blockName}@@if(context.class){ @@class}@@if(context.style){ {blockName}--style_@@style}">\n  <!--your code-->\n</div>\n',
   scss: '.{blockName} {\n  // your code\n}\n',
   js: 'app.yourScriptName = {\n  name: \'yourScriptName\',\n  description: \'your script description\',\n  init() {\n    // your code\n  },\n};\n',
 };

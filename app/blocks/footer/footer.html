@@ -6,108 +6,11 @@
 		<div class="container footer__bottom-inner"></div>
 	</div>
 	<div class="container">
-		<div class="logo footer__logo">
-			<a class="logo__link" href="#">
-				<img class="logo__img" src="assets/images/logo/footer-logo.svg" alt="Логотип">
-			</a>
-		</div>
-		<nav class="menu footer__menu">
-			<ul class="menu__list footer__menu-list">
-				<li class="menu__item footer__menu-item">
-					<a class="menu__link footer__menu-link" href="#">
-
-					</a>
-				</li>
-				<li class="menu__item footer__menu-item">
-					<a class="menu__link footer__menu-link" href="#">
-
-					</a>
-				</li>
-				<li class="menu__item footer__menu-item">
-					<a class="menu__link footer__menu-link" href="#">
-
-					</a>
-				</li>
-				<li class="menu__item footer__menu-item">
-					<a class="menu__link footer__menu-link" href="#">
-
-					</a>
-				</li>
-				<li class="menu__item footer__menu-item">
-					<a class="menu__link footer__menu-link" href="#">
-
-					</a>
-				</li>
-			</ul>
-		</nav>
-		<ul class="social footer__social">
-			<li class="social__item footer__social-item">
-				<a class="social__link footer__social-link" href="#">
-
-				</a>
-			</li>
-			<li class="social__item footer__social-item">
-				<a class="social__link footer__social-link" href="#">
-
-				</a>
-			</li>
-			<li class="social__item footer__social-item">
-				<a class="social__link footer__social-link" href="#">
-
-				</a>
-			</li>
-			<li class="social__item footer__social-item">
-				<a class="social__link footer__social-link" href="#">
-
-				</a>
-			</li>
-			<li class="footer__social-item">
-				<a class="social__link footer__social-link" href="#">
-
-				</a>
-			</li>
-		</ul>
-
-
-		<!-- SVG-sprite -->
-		<ul class="social footer__social">
-			<li class="social__item footer__social-item">
-				<a class="social__link footer__social-link" href="#">
-					<svg class="social__img footer__social-img">
-						<use xlink:href="img/sprite.svg#fb"></use>
-					</svg>
-				</a>
-			</li>
-			<li class="social__item footer__social-item">
-				<a class="social__link footer__social-link" href="#">
-					<svg class="social__img footer__social-img">
-						<use xlink:href="img/sprite.svg#tw"></use>
-					</svg>
-				</a>
-			</li>
-			<li class="social__item footer__social-item">
-				<a class="social__link footer__social-link" href="#">
-					<svg class="social__img footer__social-img">
-						<use xlink:href="img/sprite.svg#vk"></use>
-					</svg>
-				</a>
-			</li>
-			<li class="social__item footer__social-item">
-				<a class="social__link footer__social-link" href="#">
-					<svg class="social__img footer__social-img">
-						<use xlink:href="img/sprite.svg#inst"></use>
-					</svg>
-				</a>
-			</li>
-			<li class="footer__social-item">
-				<a class="social__link footer__social-link" href="#">
-					<svg class="social__img footer__social-img">
-						<use xlink:href="img/sprite.svg#youtube"></use>
-					</svg>
-				</a>
-			</li>
-		</ul>
+		<div class="footer__inner">
+            @@include("blocks/logo/logo.html", {
+                "class": "footer__logo",
+                "src": "assets/images/logo/logo.svg"
+            })
+        </div>
 	</div>
-
-	<div class="footer__copyright"></div>
 </footer>

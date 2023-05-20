@@ -3,25 +3,9 @@
 <div class="wrapper">
     @@include("blocks/header/header.html")
     <main class="page basket-page">
-        <nav class="breadcrumbs"
-             aria-label="breadcrumbs">
-            <div class="container">
-                <ol class="breadcrumbs__list">
-                    <li class="breadcrumbs__item">
-                        <a href="#">
-                            Главная
-                        </a>
-                    </li>
-                    <li class="breadcrumbs__item">
-                        <span>Корзина</span>
-                    </li>
-                </ol>
-            </div>
-        </nav>
-
-        <div class="page__top">
-            <h1>Корзина</h1>
-        </div>
+        @@include("blocks/breadcrumbs/breadcrumbs.html", {
+            "currentPage": "Корзина"
+        })
     </main>
     @@include("blocks/footer/footer.html")
 </div>

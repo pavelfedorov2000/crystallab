@@ -4,26 +4,9 @@
     @@include("blocks/header/header.html")
     <main class="page">
         <div class="container">
-            <nav class="breadcrumbs"
-                 aria-label="breadcrumbs">
-                <ol class="breadcrumbs__list">
-                    <li class="breadcrumbs__item">
-                        <a href="#">
-                            Главная
-                        </a>
-                    </li>
-                    <li class="breadcrumbs__item">
-                        <span>
-                            Избранное
-                        </span>
-                    </li>
-                </ol>
-            </nav>
-            <div class="catalog__page">
-                <div class="page__top">
-                    <h1>Избранное</h1>
-                </div>
-            </div>
+            @@include("blocks/breadcrumbs/breadcrumbs.html", {
+                "currentPage": "Избранное"
+            })
         </div>
     </main>
     @@include("blocks/footer/footer.html")

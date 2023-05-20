@@ -4,19 +4,9 @@
     @@include("blocks/header/header.html")
     <main class="page not-found-page">
         <div class="container">
-            <nav class="breadcrumbs"
-                 aria-label="breadcrumbs">
-                <ol class="breadcrumbs__list">
-                    <li class="breadcrumbs__item">
-                        <a href="#">
-                            Главная
-                        </a>
-                    </li>
-                    <li class="breadcrumbs__item">
-                        <span>Страница не найдена</span>
-                    </li>
-                </ol>
-            </nav>
+            @@include("blocks/breadcrumbs/breadcrumbs.html", {
+                "currentPage": "Страница не найдена"
+            })
         </div>
     </main>
     @@include("blocks/footer/footer.html")
