@@ -4,21 +4,21 @@ $(function () {
     //app.slider.init();
     //app.popup.init();
 
-    document.querySelectorAll('[data-section]').forEach((link) => {
+    /* document.querySelectorAll('[data-section]').forEach((link) => {
         link.addEventListener('click', () => {
             window.scrollTo({
                 top: document.querySelector(`#${link.getAttribute('data-section')}`).offsetTop,
                 behavior: "smooth"
             });
         });
-    });
+    }); */
 
-    $('input[type="file"]').on('change', function () {
+    /* $('input[type="file"]').on('change', function () {
         const $input = $(this);
         const fileName = this.files[0].name;
         const $placeholder = $input.closest('label').find('.placeholder');
         $placeholder.text(fileName);
-    });
+    }); */
 
     /* const animatedItems = document.querySelectorAll('.animated');
 
@@ -77,8 +77,6 @@ $(function () {
             selectItem.setAttribute('data-state', '');
         });
     } */
-
-
 
     //js
     /* const overlay = document.querySelector('.overlay');

@@ -1,6 +1,5 @@
 $(function () {
-    $(document).on('click', '.minus-btn', function (e) {
-        e.preventDefault();
+    $(document).on('click', '.minus-btn', function () {
         const $btn = $(this);
         const $input = $btn.next();
         let value = parseInt($input.val());
@@ -11,8 +10,7 @@ $(function () {
         $input.val(value);
     });
 
-    $(document).on('click', '.plus-btn', function (e) {
-        e.preventDefault();
+    $(document).on('click', '.plus-btn', function () {
         const $btn = $(this);
         const $input = $btn.prev();
         let value = parseInt($input.val());

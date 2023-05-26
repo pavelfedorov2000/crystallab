@@ -1,9 +1,18 @@
 <div class="not-found-block">
-    <img src="assets/images/not-found.svg"
-         alt="404"
-         loading="lazy">
-    <div class="not-found-block__title"></div>
+    @@include('blocks/img/img.html', {
+    "class": "not-found-block__img",
+    "src": "assets/images/404",
+    "format": "svg"
+    })
+    @@include('blocks/title/title.html', {
+    "tag": "div",
+    "class": "not-found-block__title",
+    "text": ""
+    })
     <div class="not-found-block__text"></div>
-    <a href="#"
-       class="btn not-found-block__btn"></a>
+    @@include('blocks/button/button.html', {
+    "href": "#",
+    "class": "not-found-block__btn",
+    "text": ""
+    })
 </div>

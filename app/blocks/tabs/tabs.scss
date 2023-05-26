@@ -1,0 +1,33 @@
+.tabs-block {}
+
+.tabs-content {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.tabs {
+    display: flex;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        -webkit-appearance: none;
+        scrollbar-width: none;
+    }
+}
+
+.tab {
+    $this: &;
+
+    transition: var(--transition) all;
+
+    &.active,
+    &[aria-selected="true"] {}
+
+    @media (any-hover: hover) {
+        &:hover {}
+    }
+}

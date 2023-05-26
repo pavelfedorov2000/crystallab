@@ -1,24 +1,24 @@
 body {
-	min-width: 320px;
-	font-style: normal;
-	font-family: var(--main-font);
-	font-size: calc(var(--base-font-size) / 10 * 1rem);
-	line-height: 1.5;
-	font-weight: 400;
-	color: var(--color-default);
-	-webkit-text-size-adjust: none;
-	text-size-adjust: none;
+    min-width: 320px;
+    font-style: normal;
+    font-family: var(--main-font);
+    //font-size: rem(var(--base-font-size));
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--color-default);
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
 
-	@media(max-width: $lg) {
-		overflow-x: hidden;
-	}
+    @include media('1024', max) {
+        overflow-x: hidden;
+    }
 
-	&._lock {
-		overflow-y: hidden;
-	}
+    &._lock {
+        overflow-y: hidden;
+    }
 }
 
 a {
-	text-decoration: none;
-	color: currentColor;
+    text-decoration: none;
+    color: currentColor;
 }

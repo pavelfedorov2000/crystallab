@@ -1,12 +1,12 @@
 @@include("blocks/head/head.html", {"title": "Страница не найдена"})
-@@include("blocks/head/no-js.html")
 <div class="wrapper">
     @@include("blocks/header/header.html")
-    <main class="page not-found-page">
+    <main class="page">
         <div class="container">
             @@include("blocks/breadcrumbs/breadcrumbs.html", {
-                "currentPage": "Страница не найдена"
+            "currentPage": "Страница не найдена"
             })
+            @@include('blocks/not-found-block/not-found-block.html')
         </div>
     </main>
     @@include("blocks/footer/footer.html")

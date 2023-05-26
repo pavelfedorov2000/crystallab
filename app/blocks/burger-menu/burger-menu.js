@@ -48,13 +48,13 @@ app.burger = {
             burgerBtn.classList.remove('active');
             burgerMenu.classList.remove('active');
         });
-        menuLinks.forEach((link) => {
+        /* menuLinks.forEach((link) => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 body.classList.remove('_lock');
                 burgerBtn.classList.remove('active');
                 burgerMenu.classList.remove('active');
             });
-        });
+        }); */
     },
 };

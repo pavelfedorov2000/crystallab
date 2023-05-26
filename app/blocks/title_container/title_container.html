@@ -1,0 +1,20 @@
+<div class="title-container@@if(context.orientation){ title-container--orientation_@@orientation}@@if(context.class){ @@class}">
+    @@include('blocks/title/title.html', {
+    "level": "@@title.level",
+    "text": "@@title.text"
+    })
+
+    @@if(context.badge){
+    @@include('blocks/badge/badge.html', {
+    "style": "@@badge.style",
+    "text": "@@badge.text"
+    })
+    }
+
+    @@if(context.count){
+    @@include('blocks/count/count.html', {
+    "style": "@@count.style",
+    "text": "@@count.value"
+    })
+    }
+</div>

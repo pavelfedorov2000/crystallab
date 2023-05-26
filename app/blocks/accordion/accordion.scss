@@ -1,0 +1,29 @@
+.accordion-item {
+    $this: &;
+    // .accordion-item__toggle
+
+    &__toggle {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            //width: var(--icon-size);
+            //height: var(--icon-size);
+            //background-image: url(../images/icons/drop-arrow.svg);
+            transition: var(--transition) transform;
+        }
+
+        &[aria-expanded="true"] {
+            &::before {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    // .accordion-item__content
+
+    &__content {}
+}

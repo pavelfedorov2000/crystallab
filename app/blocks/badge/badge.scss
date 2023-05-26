@@ -1,0 +1,9 @@
+.badge {
+    $this: &;
+
+    &__text {}
+
+    &--style {
+        &_bg {}
+    }
+}
