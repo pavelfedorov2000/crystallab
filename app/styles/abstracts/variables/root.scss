@@ -3,11 +3,13 @@
 	--white: var(--color-white-rgb);
 	--black: #000;
 
-	//--mob-padding: rem(12;
 	//--gap: rem();
+
 	--container-width: #{rem(1440)};
 	--container-padding: #{rem(15)};
+
 	//--header-height: 9.6rem;
+
 	//--section-padding: 8rem;
 	//--section-padding-xl: 8.8rem;
 
@@ -32,11 +34,11 @@
 	--duration500ms: 0.5s;
 	--duration1s: 1s;
 	--delay: $duration;
-	--transition: $duration300ms $transition-timing;
-	--transition-long: $duration1s $transition-timing;
+	--transition: var(--duration300ms) var(--transition-timing);
+	--transition-long: var(--duration1s) var(--transition-timing);
 
-	--border: 1px solid var(--line-color);
+	//--border: 1px solid var(--line-color);
 	//--bsh: ;
-	--brs: 8px;
+	//--brs: 8px;
 	//--brs-card: 12px;
 }

@@ -16,20 +16,22 @@ app.accordion = {
             }
         });
         
-        /* const accordionItemToggles = document.querySelectorAll(".accordion-item__toggle");
+        const accordionItemToggles = document.querySelectorAll(".accordion-item__toggle");
+
+        if (!accordionItemToggles.length) return;
 
         accordionItemToggles.forEach((toggleBtn) => {
             toggleBtn.addEventListener('click', () => {
-                toggleBtn.classList.toggle("active");
+                const accordionItemContent = toggleBtn.closest('.accordion-item').querySelector('.accordion-item__content');
 
-                const accordionItemContent = toggleBtn.nextElementSibling;
-
-                if (accordionItemContent.style.maxHeight) {
-                    accordionItemContent.style.maxHeight = null;
-                } else {
+                if (toggleBtn.getAttribute('aria-expanded') === 'false') {
+                    toggleBtn.setAttribute('aria-expanded', true);
                     accordionItemContent.style.maxHeight = accordionItemContent.scrollHeight + "px";
+                } else {
+                    toggleBtn.setAttribute('aria-expanded', false);
+                    accordionItemContent.style.maxHeight = null;
                 }
             });
-        }); */
+        });
     },
 };

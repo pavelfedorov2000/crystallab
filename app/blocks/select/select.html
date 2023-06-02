@@ -1,0 +1,28 @@
+<div class="select@@if(context.class){ @@class}@@if(context.style){ select--style_@@style}">
+	<button class="select__toggle" aria-controls="" aria-expanded="false" type="button">
+        <span class="select__toggle-text"></span>
+        <!-- @@include('blocks/icons/drop.html', {
+            "class": "select__toggle-arrow"
+        }) -->
+    </button>
+	<div id="" class="select__dropdown">
+		<div class="select__content">
+            <input id="systemType0" class="select__input" type="radio" name="system_type" checked>
+            <label for="systemType0" tabindex="0" class="select__label" data-value="Sed ut perspiciatis">
+                Sed ut perspiciatis
+            </label>
+            <input id="systemType1" class="select__input" type="radio" name="system_type">
+            <label for="systemType1" tabindex="0" class="select__label" data-value="Nemo enim ipsam">
+                Nemo enim ipsam
+            </label>
+            <input id="systemType2" class="select__input" type="radio" name="system_type">
+            <label for="systemType2" tabindex="0" class="select__label" data-value="Et harum quidem">
+                Et harum quidem
+            </label>
+            <input id="systemType3" class="select__input" type="radio" name="system_type">
+            <label for="systemType3" tabindex="0" class="select__label" data-value="Temporibus autem">
+                Temporibus autem
+            </label>
+        </div>
+	</div>
+</div>

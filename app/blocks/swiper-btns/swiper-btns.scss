@@ -1,0 +1,11 @@
+.slider-wrap {
+    position: relative;
+}
+
+.swiper-btns {
+    @include flex-center-between;
+    @include position-center-y;
+    left: 0;
+    right: 0;
+    z-index: 50;
+}

@@ -31,18 +31,24 @@ app.burger = {
         const burgerBtn = document.querySelector('.burger-btn');
         const burgerMenu = document.querySelector('.burger-menu');
         const burgerMenuClose = document.querySelector('.burger-menu__close');
-        const menuLinks = document.querySelectorAll('.menu__link');
+        //const menuLinks = document.querySelectorAll('.menu__link');
+
+        if (!burgerBtn || !burgerMenu) return;
 
         burgerBtn.addEventListener('click', () => {
             body.classList.toggle('_lock');
             burgerBtn.classList.toggle('active');
             burgerMenu.classList.toggle('active');
         });
+
         burgerBtn.addEventListener('click', () => {
             body.classList.add('_lock');
             burgerBtn.classList.add('active');
             burgerMenu.classList.add('active');
         });
+
+        if (!burgerMenuClose) return;
+
         burgerMenuClose.addEventListener('click', () => {
             body.classList.remove('_lock');
             burgerBtn.classList.remove('active');

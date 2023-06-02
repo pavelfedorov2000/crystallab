@@ -1,5 +1,3 @@
-.tabs-block {}
-
 .tabs-content {
     display: none;
 
@@ -12,11 +10,11 @@
     display: flex;
     overflow-x: auto;
 
-    &::-webkit-scrollbar {
+    /* &::-webkit-scrollbar {
         width: 0;
         -webkit-appearance: none;
         scrollbar-width: none;
-    }
+    } */
 }
 
 .tab {

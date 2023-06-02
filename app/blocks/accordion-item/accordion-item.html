@@ -2,17 +2,15 @@
     <h3 class="accordion-item__heading">
         <button class="accordion-item__toggle"
                 type="button"
-                id="@@headingId"
-                aria-controls="@@ariaControls"
+                id="@@id"
+                aria-controls="@@controls"
                 aria-expanded="@@if(context.isExpanded){true}@@if(!context.isExpanded){false}">
             @@title
         </button>
     </h3>
     <div class="accordion-item__content"
-         id="@@ariaControls"
-         aria-labelledby="@@headingId"
-         @@if(!context.isVisible){style="display: none;"
-         }>
+         id="@@controls"
+         aria-labelledby="@@id">
         <p>@@text</p>
     </div>
 </section>

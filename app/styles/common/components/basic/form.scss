@@ -19,13 +19,19 @@ input[type='number']:focus {
 }
 
 input[type="search"] {
-
 	&::-webkit-search-decoration,
 	&::-webkit-search-cancel-button,
 	&::-webkit-search-results-button,
 	&::-webkit-search-results-decoration {
 		-webkit-appearance: none;
 	}
+}
+
+input[type=file] {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    opacity: 0;
 }
 
 // SWITCHER

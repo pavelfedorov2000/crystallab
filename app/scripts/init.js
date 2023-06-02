@@ -1,17 +1,25 @@
+/* document.addEventListener('DOMContentLoaded', () => {
+
+}); */
+
 $(function () {
     //new WOW().init();
     //app.burger.init();
     //app.slider.init();
     //app.popup.init();
 
-    /* document.querySelectorAll('[data-section]').forEach((link) => {
+    const scrollBtns = document.querySelectorAll('[data-section]');
+
+    if (!scrollBtns) return;
+
+    scrollBtns.forEach((link) => {
         link.addEventListener('click', () => {
             window.scrollTo({
                 top: document.querySelector(`#${link.getAttribute('data-section')}`).offsetTop,
                 behavior: "smooth"
             });
         });
-    }); */
+    });
 
     /* $('input[type="file"]').on('change', function () {
         const $input = $(this);
@@ -20,7 +28,21 @@ $(function () {
         $placeholder.text(fileName);
     }); */
 
+    /* const fileInputs = document.querySelectorAll('input[type="file"]');
+
+    if (!fileInputs.length) return;
+
+    fileInputs.forEach((input) => {
+        input.addEventListener('change', function () {
+            const label = input.closest('label').querySelector('.btn__text');
+            const fileName = this.files[0].name;
+            label.textContent = fileName;
+        });
+    }); */
+
     /* const animatedItems = document.querySelectorAll('.animated');
+
+    if (!animatedItems.length) return;
 
     const callback = (entries, observer) => {
         entries.forEach((entry) => {
@@ -43,81 +65,44 @@ $(function () {
 
     animatedItems.forEach((item) => observer.observe(item)); */
 
-
-    //smoooth scroll to section
-    /* document.querySelectorAll('.menu__link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: document.getElementById(link.getAttribute('data-section')).offsetTop,
-                behavior: "smooth"
-            });
-            body.classList.remove('_lock');
-            burgerBtn.classList.remove('.active');
-            burgerMenu.classList.remove('.active');
-        });
+    /* Fancybox.bind('[data-fancybox]', {
+        autoFocus: false,
+        dragToClose: false,
+        closeButton: false,
+        showClass: 'fancybox-fadeIn',
+        Toolbar: {
+            display: {
+                left: [
+                ],
+                middle: [],
+                right: [
+                'iterateZoom',
+                'close',
+                ],
+            },
+        },
+        Thumbs: {
+            showOnStart: false,
+        },
     }); */
 
-    // Custom js select
-    /* let selectItem = document.querySelector('.select');
-    let selectTitle = selectItem.querySelector('.select__title');
-    let selectLabels = selectItem.querySelectorAll('.select__label');
-    // Toggle menu
-    selectTitle.addEventListener('click', () => {
-        if ('active' === selectItem.getAttribute('data-state')) {
-            selectItem.setAttribute('data-state', '');
-        } else {
-            selectItem.setAttribute('data-state', 'active');
+   /*  const rangeSlider = document.getElementById('range-slider');
+
+    if (!rangeSlider) return;
+
+    noUiSlider.create(rangeSlider, {
+        start: [75],
+        range: {
+            'min': [0],
+            'max': [100]
         }
     });
-    // Close when click to option
-    for (let i = 0; i < selectLabels.length; i++) {
-        selectLabels[i].addEventListener('click', (e) => {
-            selectTitle.textContent = e.target.textContent;
-            selectItem.setAttribute('data-state', '');
-        });
-    } */
 
-    //js
-    /* const overlay = document.querySelector('.overlay');
-    const openPopup = document.querySelectorAll('.open-popup');
-    const popup = document.querySelector('#popup');
-    const thanksPopup = document.querySelector('#thanks');
-    const popupClose = document.querySelectorAll('.popup__close');
-    openPopup.addEventListener('click', function () {
-        body.classList.add('_lock');
-        overlay.style.display = 'block';
-        document.getElementById(this.getAttribute('data-popup')).style.display = 'block';
-    });
-    popupClose.forEach(close => {
-        close.addEventListener('click', () => {
-            overlay.style.display = 'none';
-            close.parentElement.style.display = 'none';
-            body.classList.remove('_lock');
-        });
-    });
-    document.querySelectorAll('.popup').forEach(popup => {
-        let popupForm = popup.querySelector('form');
-        popupForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            popupForm.querySelectorAll('input').forEach(input => {
-                input.value = '';
-            });
-            popupForm.parentElement.style.display = 'none';
-            thanksPopup.style.display = 'block';
-        });
-    }); */
+    rangeSlider.noUiSlider.on('update', function (values, handle) {
+        const rangeValue = rangeSlider.closest('.range').querySelector('.range__value');
 
-    /* const searchForm = document.querySelector('.search-form');
-    const searchInput = searchForm.querySelector('.search-form__input');
-    const searchBtn = document.querySelector('.header__search-btn');
-    searchBtn.addEventListener('click', function () {
-        searchForm.classList.add('search-form--active');
-    });
-    
-    document.addEventListener('mouseup', (e) => {
-        if (searchForm != e.target && searchInput != e.target) {
-            searchForm.classList.remove('search-form--active');
-        }
+        if (!rangeValue) return;
+
+        rangeValue.innerHTML = `${Math.floor(values[handle])}%`;
     }); */
 });
