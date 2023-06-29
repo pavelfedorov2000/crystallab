@@ -1,29 +1,32 @@
 :root {
 	--color-white-rgb: 255, 255, 255;
-	--white: var(--color-white-rgb);
+	--white: rgb(var(--color-white-rgb));
 	--black: #000;
+
+    --icon-size: #{rem(24)};
 
 	//--gap: rem();
 
-	--container-width: #{rem(1440)};
+	// offsets (gaps)
+	/* --offset-xxxl: #{rem(64)};
+	--offset-xxl: #{rem(56)};
+    --offset-xls: #{rem(48)};
+	--offset-xl: #{rem(40)};
+	--offset-l: #{rem(32)};
+	--offset-m: #{rem(24)};
+	--offset-s: #{rem(16)};
+	--offset-xs: #{rem(12)};
+	--offset-xxs: #{rem(8)};
+	--offset-xxxs: #{rem(4)}; */
+
+    --container-width: #{rem(1440)};
 	--container-padding: #{rem(15)};
 
-	//--header-height: 9.6rem;
+    //--header-height: 9.6rem;
 
-	//--section-padding: 8rem;
-	//--section-padding-xl: 8.8rem;
-
-	// offsets (gaps)
-	/* --offset-xxxl: 6.4rem;
-	--offset-xxl: 5.6rem;
-	--offset-xls: 4rem;
-	--offset-xl: 4.8rem;
-	--offset-l: 3.2rem;
-	--offset-m: 2.4rem;
-	--offset-s: 1.6rem;
-	--offset-xs: 1.2rem;
-	--offset-xxs: 0.8rem;
-	--offset-xxxs: 0.4rem; */
+	//--section-padding: #{rem(80};
+	//--section-padding_xl: #{rem(100};
+    //--section-padding_xxl: #{rem(120};
 
 	--base-font-size: 16;
 	--main-font: 'Gotham Pro', sans-serif;
@@ -33,12 +36,14 @@
 	--duration300ms: 0.3s;
 	--duration500ms: 0.5s;
 	--duration1s: 1s;
-	--delay: $duration;
+	--delay: var(--duration300ms);
 	--transition: var(--duration300ms) var(--transition-timing);
 	--transition-long: var(--duration1s) var(--transition-timing);
 
-	//--border: 1px solid var(--line-color);
-	//--bsh: ;
-	//--brs: 8px;
-	//--brs-card: 12px;
+    //--border-width: 1px;
+    //--border-style: solid;
+	//--border: var(--border-width) var--border-style) var(--line-color);
+	//--shadow: ;
+	//--radius: 8px;
+	//--radius-card: 12px;
 }

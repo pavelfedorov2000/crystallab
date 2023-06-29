@@ -1,8 +1,6 @@
 [{
     "src": "assets/images/content/news/01",
-    "width": "",
-    "height": "",
-    "datetime": "2021-09-10",
+    "formattedDate": "2021-09-10",
     "date": "10.09.2021",
     "title": "",
     "text": ""

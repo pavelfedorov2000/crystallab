@@ -2,31 +2,6 @@ app.burger = {
     name: 'burger',
     description: 'burger-btn and burger-menu logic',
     init() {
-        // jquery
-        /* $('.burger-btn').on('click', function () {
-            $('body').toggleClass('_lock');
-            $('.burger-btn').toggleClass('burger-btn--active');
-            $('.burger-menu').toggleClass('burger-menu--active');
-        });
-
-        $('.burger-btn').on('click', function () {
-            $('body').addClass('_lock');
-            $('.burger-btn').addClass('burger-btn--active');
-            $('.burger-menu').addClass('burger-menu--active');
-        });
-
-        $('.burger-menu__close-btn').on('click', function () {
-            $('body').removeClass('_lock');
-            $('.burger-btn').removeClass('burger-btn--active');
-            $('.burger-menu').removeClass('burger-menu--active');
-        });
-
-        $('.header__menu-link').on('click', function () {
-            $('body').removeClass('_lock');
-            $('.burger-menu').removeClass('burger-menu--active');
-        }); */
-
-        // native js
         const body = document.querySelector('body');
         const burgerBtn = document.querySelector('.burger-btn');
         const burgerMenu = document.querySelector('.burger-menu');

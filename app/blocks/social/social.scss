@@ -2,72 +2,8 @@
 	$this: &;
 
 	display: flex;
-	// .social__item
+	
+    &__link {}
 
-	&__item {
-		margin: 0 14px;
-		border-radius: 50%;
-		transition: var(--transition) background-color;
-
-		.icon {
-			fill: var(--text-color);
-			stroke: none;
-		}
-
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: var(--pink-light);
-
-				#{$this}__link {
-					border-color: var(--pink-light);
-				}
-
-				.icon {
-					fill: var(--black);
-				}
-			}
-		}
-
-		&--inst {
-			background-color: var(--pink);
-
-			#{$this}__link {
-				border-color: var(--pink);
-			}
-
-			.icon {
-				fill: #fff;
-			}
-
-			@media (any-hover: hover) {
-				&:hover {
-					background-color: var(--pink-hover);
-
-					#{$this}__link {
-						border-color: var(--pink-hover);
-					}
-
-					.icon {
-						fill: #fff;
-					}
-				}
-			}
-
-			&[disabled] {
-				background-color: var(--pink-disabled);
-			}
-		}
-	}
-
-	// .social__link
-
-	&__link {
-		font-size: 20px;
-		@include grid-center;
-		width: var(--offset-xxl);
-		height: var(--offset-xxl);
-		border-radius: 50%;
-		border: 1px solid var(--text-color);
-		transition: var(--transition) border-color;
-	}
+    &__icon {}
 }

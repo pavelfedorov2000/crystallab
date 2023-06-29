@@ -1,14 +1,9 @@
-/* document.addEventListener('DOMContentLoaded', () => {
-
-}); */
-
-$(function () {
-    //new WOW().init();
+document.addEventListener('DOMContentLoaded', () => {
     //app.burger.init();
     //app.slider.init();
     //app.popup.init();
 
-    const scrollBtns = document.querySelectorAll('[data-section]');
+    /* const scrollBtns = document.querySelectorAll('[data-section]');
 
     if (!scrollBtns) return;
 
@@ -19,13 +14,6 @@ $(function () {
                 behavior: "smooth"
             });
         });
-    });
-
-    /* $('input[type="file"]').on('change', function () {
-        const $input = $(this);
-        const fileName = this.files[0].name;
-        const $placeholder = $input.closest('label').find('.placeholder');
-        $placeholder.text(fileName);
     }); */
 
     /* const fileInputs = document.querySelectorAll('input[type="file"]');
@@ -64,27 +52,6 @@ $(function () {
     const observer = new IntersectionObserver(callback, options);
 
     animatedItems.forEach((item) => observer.observe(item)); */
-
-    /* Fancybox.bind('[data-fancybox]', {
-        autoFocus: false,
-        dragToClose: false,
-        closeButton: false,
-        showClass: 'fancybox-fadeIn',
-        Toolbar: {
-            display: {
-                left: [
-                ],
-                middle: [],
-                right: [
-                'iterateZoom',
-                'close',
-                ],
-            },
-        },
-        Thumbs: {
-            showOnStart: false,
-        },
-    }); */
 
    /*  const rangeSlider = document.getElementById('range-slider');
 
