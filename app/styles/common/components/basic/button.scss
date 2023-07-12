@@ -4,13 +4,13 @@
 	padding: 0;
 	cursor: pointer;
 	font-family: var(--main-font);
-	transition: color var(--transition300ms), background-color var(--transition300ms);
+	transition: color var(--transition), background-color var(--transition);
 	color: currentColor;
 
 	@media (any-hover: hover) {
 		&:hover {
 			//background-color: var(--accent-hover);
-			//color: #fff;
+			//color: var(--white);
 		}
 	}
 
@@ -22,7 +22,7 @@
 
 		@media (any-hover: hover) {
 			&:hover {
-				color: #fff;
+				color: var(--white);
 			}
 		}
 	}

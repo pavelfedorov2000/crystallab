@@ -1,4 +1,4 @@
-$(function () {
+document.addEventListener('DOMContentLoaded', () => {
     new Swiper('.sale-slider', {
         loop: true,
         slidesPerView: 1,
@@ -16,9 +16,9 @@ $(function () {
             768: {
                 slidesPerView: 2,
             },
-            1025: {
+            1101: {
                 slidesPerView: 4,
             },
         },
     });
-});
+}); 

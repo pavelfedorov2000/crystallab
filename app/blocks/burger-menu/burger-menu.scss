@@ -1,7 +1,7 @@
 .burger-menu {
     display: none;
 
-    @include media('1024', max) {
+    @include media('1100', max) {
         display: block;
         position: absolute;
         top: 0;
@@ -15,7 +15,7 @@
     }
 
     &.active {
-        @include media('1024', max) {
+        @include media('1100', max) {
             left: 0;
         }
     }

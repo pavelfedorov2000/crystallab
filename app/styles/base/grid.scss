@@ -10,7 +10,7 @@
     @include flex-column;
     min-height: 100vh;
 
-    @include media('1024', max) {
+    @include media('1100', max) {
         overflow-x: hidden;
     }
 }
@@ -26,9 +26,11 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: var(--gap);
-}
+} */
 
-.span {
+.grid-col {
+    $this: &;
+
     &-2 {
         grid-column: span 2;
     }
@@ -39,14 +41,50 @@
 
     &-4 {
         grid-column: span 4;
+
+        @include media('1100', max) {
+            grid-column: 1 / -1;
+        }
     }
 
     &-5 {
         grid-column: span 5;
+
+        @include media('1100', max) {
+            grid-column: 1 / -1;
+        }
+
+        /* & + #{$this}-5 {
+            grid-column: 7 / -2;
+
+            @include media('1100', max) {
+                grid-column: 1 / -1;
+            }
+        }
+
+        & + #{$this}-6 {
+            grid-column: 7 / -1;
+
+            @include media('1100', max) {
+                grid-column: 1 / -1;
+            }
+        } */
     }
 
     &-6 {
         grid-column: span 6;
+
+        @include media('1100', max) {
+            grid-column: 1 / -1;
+        }
+
+        /* & + #{$this}-5 {
+            grid-column: 8 / -1;
+
+            @include media('1100', max) {
+                grid-column: 1 / -1;
+            }
+        } */
     }
 
     &-7 {
@@ -55,9 +93,51 @@
 
     &-8 {
         grid-column: span 8;
+
+        @include media('1100', max) {
+            grid-column: 1 / -1;
+        }
     }
 
     &-9 {
         grid-column: span 9;
+
+        @include media('1100', max) {
+            grid-column: 1 / -1;
+        }
     }
-} */
+
+    &-10 {
+        grid-column: span 10;
+    }
+
+    &-12 {
+        grid-column: 1 / -1;
+    }
+
+    /* &-lg {
+        &-4 {
+            @include media('1100', max) {
+                grid-column: span 4;
+            }
+        }
+
+        &-7 {
+            @include media('1100', max) {
+                grid-column: span 7;
+            }
+
+            @include media('767', max) {
+                grid-column: span 4;
+            }
+        }
+    }
+
+    &-sm {
+        &-2 {
+            @include media('767', max) {
+                grid-column: span 2;
+            }
+        }
+    } */
+}

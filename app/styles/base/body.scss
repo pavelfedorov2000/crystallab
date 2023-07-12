@@ -2,14 +2,13 @@ body {
     min-width: 320px;
     font-style: normal;
     font-family: var(--main-font);
-    //font-size: rem(var(--base-font-size));
     line-height: 1.5;
     font-weight: 400;
     color: var(--color-default);
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
 
-    @include media('1024', max) {
+    @include media('1100', max) {
         overflow-x: hidden;
     }
 

@@ -1,32 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
     //app.burger.init();
-    //app.slider.init();
+    //app.accordion.init();
+    //app.select.init();
+    //app.tabs.init();
+    //app.catalogFilters.init();
     //app.popup.init();
+    //app.validation.init();
 
-    /* const scrollBtns = document.querySelectorAll('[data-section]');
+    /* const scrollToSection = () => {
+        const scrollBtns = document.querySelectorAll('[data-section]');
 
-    if (!scrollBtns) return;
+        if (!scrollBtns) return;
 
-    scrollBtns.forEach((link) => {
-        link.addEventListener('click', () => {
-            window.scrollTo({
-                top: document.querySelector(`#${link.getAttribute('data-section')}`).offsetTop,
-                behavior: "smooth"
+        scrollBtns.forEach((link) => {
+            link.addEventListener('click', () => {
+                window.scrollTo({
+                    top: document.querySelector(`#${link.getAttribute('data-section')}`).offsetTop,
+                    behavior: "smooth"
+                });
             });
         });
-    }); */
+    }
 
-    /* const fileInputs = document.querySelectorAll('input[type="file"]');
+    scrollToSection(); */
 
-    if (!fileInputs.length) return;
+    /* const fileUpload = () => {
+        const fileInputs = document.querySelectorAll('input[type="file"]');
 
-    fileInputs.forEach((input) => {
-        input.addEventListener('change', function () {
-            const label = input.closest('label').querySelector('.btn__text');
-            const fileName = this.files[0].name;
-            label.textContent = fileName;
+        if (!fileInputs.length) return;
+
+        fileInputs.forEach((input) => {
+            input.addEventListener('change', function () {
+                const label = input.closest('label').querySelector('.btn__text');
+                const fileName = this.files[0].name;
+                label.textContent = fileName;
+            });
         });
-    }); */
+    }
+
+    fileUpload(); */
 
     /* const animatedItems = document.querySelectorAll('.animated');
 
@@ -53,23 +65,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animatedItems.forEach((item) => observer.observe(item)); */
 
-   /*  const rangeSlider = document.getElementById('range-slider');
-
-    if (!rangeSlider) return;
-
-    noUiSlider.create(rangeSlider, {
-        start: [75],
-        range: {
-            'min': [0],
-            'max': [100]
-        }
-    });
-
-    rangeSlider.noUiSlider.on('update', function (values, handle) {
-        const rangeValue = rangeSlider.closest('.range').querySelector('.range__value');
-
-        if (!rangeValue) return;
-
-        rangeValue.innerHTML = `${Math.floor(values[handle])}%`;
-    }); */
+    /*  const rangeSlider = document.getElementById('range-slider');
+ 
+     if (!rangeSlider) return;
+ 
+     noUiSlider.create(rangeSlider, {
+         start: [75],
+         range: {
+             'min': [0],
+             'max': [100]
+         }
+     });
+ 
+     rangeSlider.noUiSlider.on('update', function (values, handle) {
+         const rangeValue = rangeSlider.closest('.range').querySelector('.range__value');
+ 
+         if (!rangeValue) return;
+ 
+         rangeValue.innerHTML = `${Math.floor(values[handle])}%`;
+     }); */
 });
