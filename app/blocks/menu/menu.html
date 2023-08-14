@@ -1,3 +1,47 @@
-<nav id="menu" class="menu@@if(context.class){ @@class}">
-
+<nav class="menu@@if(context.class){ @@class}">
+    <ul class="menu__list">
+        @@loop("blocks/button/button.html", [{
+            "href": "#",
+            "listItem": true,
+            "listItemClass": "menu__item",
+            "class": "menu__link@@if(context.activePage == 'home'){ active}",
+            "text": "Главная"
+        }, {
+            "href": "#",
+            "listItem": true,
+            "listItemClass": "menu__item",
+            "class": "menu__link@@if(context.activePage == 'masters'){ active}",
+            "text": "Мастера"
+        }, {
+            "href": "#",
+            "listItem": true,
+            "listItemClass": "menu__item",
+            "class": "menu__link@@if(context.activePage == 'services'){ active}",
+            "text": "Услуги"
+        }, {
+            "href": "#",
+            "listItem": true,
+            "listItemClass": "menu__item",
+            "class": "menu__link@@if(context.activePage == 'portfolio'){ active}",
+            "text": "Портфолио"
+        }, {
+            "href": "#",
+            "listItem": true,
+            "listItemClass": "menu__item",
+            "class": "menu__link@@if(context.activePage == 'reviews'){ active}",
+            "text": "Отзывы"
+        }, {
+            "href": "#",
+            "listItem": true,
+            "listItemClass": "menu__item",
+            "class": "menu__link@@if(context.activePage == 'blog'){ active}",
+            "text": "Блог"
+        }, {
+            "href": "#",
+            "listItem": true,
+            "listItemClass": "menu__item",
+            "class": "menu__link@@if(context.activePage == 'contacts'){ active}",
+            "text": "Контакты"
+        }])
+    </ul>
 </nav>

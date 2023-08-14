@@ -2,6 +2,33 @@
     "href": "home.html",
     "title": "Главная"
 }, {
+    "href": "text.html",
+    "title": "Текстовая"
+}, {
+    "href": "masters.html",
+    "title": "Мастера"
+}, {
+    "href": "master.html",
+    "title": "Мастер"
+}, {
+    "href": "services.html",
+    "title": "Услуги"
+}, {
+    "href": "service.html",
+    "title": "Услуга"
+}, {
+    "href": "portfolio.html",
+    "title": "Работы"
+}, {
+    "href": "reviews.html",
+    "title": "Отзывы"
+}, {
+    "href": "blog.html",
+    "title": "Блог"
+}, {
+    "href": "contacts.html",
+    "title": "Контакты"
+}, {
     "href": "404.html",
     "title": "Страница не найдена"
 }]
