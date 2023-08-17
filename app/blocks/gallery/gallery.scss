@@ -1,0 +1,35 @@
+.gallery {
+    $this: &;
+
+    --cols: 2;
+    --rows: 3;
+
+    display: grid;
+    grid-template-columns: repeat(var(--cols), 1fr);
+    grid-template-rows: repeat(var(--rows), px2rem(265));
+    gap: var(--gap);
+
+    // .about-section__gallery-item 
+    &__item {
+        &--1 {
+            grid-column: span 2;
+        }
+
+        &--1 {
+            grid-row: span 2;
+        }
+    }
+
+    &--items {
+        &_4 {
+            --cols: 4;
+            --rows: 2;
+
+            #{$this}__item {
+                &--2 {
+                    grid-row: span 2;
+                }
+            }
+        }
+    }
+}

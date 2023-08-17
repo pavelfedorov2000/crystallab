@@ -1,0 +1,134 @@
+<section class="section@@if(context.padding){ @@if(context.paddingTop){padding-top_@@padding.top}}@@if(context.bgColor){ section--bg_@@bgColor}@@if(context.bgImage){ section--dark}" @@if(context.bgImage){style="background-image: url(@@bgImage)"}>
+    <div class="container">
+        @@if(!context.inner){
+            @@include("blocks/title_container/title_container.html", {
+                "class": "section__top",
+                "title": {
+                    "class": "_h2",
+                    "level": "2",
+                    "text": "@@title.text",
+                }
+            })
+
+            @@if(context.grid){
+                @@include('blocks/grid-row/grid-row.html', {
+                    "items": "@@grid.items",
+                    "loopItem": "@@grid.loopItem",
+                    "loopArray": "@@grid.loopArray"
+                })
+            }
+        }
+        @@if(context.inner){
+            <div class="section__inner@@if(context.withoutGrid){ section__inner--col}">
+                @@if(context.withoutGrid){
+                    @@include("blocks/title/title.html", {
+                        "class": "_h1 section__title",
+                        "level": "2",
+                        "text": "@@title.text",
+                    })
+
+                    @@if(context.features){
+                        @@include('blocks/features-list/features-list.html', {
+                            "loopArray": "faq-features"
+                        })
+                    }
+
+                    @@if(context.accordion){
+                        @@include('blocks/accordion/accordion.html', {
+                            "loopArray": "@@accordion.items"
+                        })
+                    }
+                }
+                @@if(!context.withoutGrid){
+                    <div class="section__col">
+                        @@include("blocks/title/title.html", {
+                            "class": "_h1 section__title",
+                            "level": "2",
+                            "text": "@@title.text",
+                        })
+                        @@if(context.decorIcon){
+                            @@include("blocks/img/img.html", {
+                                "picture": "false",
+                                "class": "section__decor-icon",
+                                "src": "assets/images/icons/@@decorIcon",
+                                "width": "46",
+                                "height": "40",
+                            })
+                        }
+                        @@if(context.benefits){
+                            @@include('blocks/grid-row/grid-row.html', {
+                                "full": true,
+                                "loopItem": "@@benefits.loopItem",
+                                "loopArray": "@@benefits.loopArray"
+                            })
+                        }
+                        @@if(context.contacts){
+                            @@include('blocks/contacts-block/contacts-block.html')
+                        }
+                        @@if(context.btns){
+                            <div class="btns">
+                                @@loop("blocks/button/button.html", [{
+                                    "primary": true,
+                                    "size": "l",
+                                    "text": "@@btns.first.text",
+                                }, {
+                                    "primary": true,
+                                    "size": "l",
+                                    "text": "@@btns.second.text",
+                                }])
+                            </div>
+                        }
+                    </div>
+                    <div class="section__col">
+                        @@if(context.text){
+                            <div class="text-content section__text">
+                                <p>@@text.first</p>
+                                @@if(context.text.second){
+                                    <p>@@text.second</p>
+                                }
+                            </div>
+                        }
+                        @@if(context.gallery){
+                            @@if(context.gallery.items == '2'){
+                                @@include('blocks/gallery/gallery.html', {
+                                    "items": "@@gallery.items"
+                                })
+                            }
+                        }
+                    </div>
+                }
+                @@if(context.grid){
+                    <div class="section__col section__col--full">
+                        @@include('blocks/grid-row/grid-row.html', {
+                            "items": "@@grid.items",
+                            "loopItem": "@@grid.loopItem",
+                            "loopArray": "@@grid.loopArray"
+                        })
+                    </div>
+                }
+                @@if(context.gallery){
+                    @@if(context.gallery.items == '4'){
+                        <div class="section__col section__col--full">
+                            @@include('blocks/gallery/gallery.html', {
+                                "items": "@@gallery.items"
+                            })
+                        </div>
+                    }
+                }
+                @@if(context.slider){
+                    <div class="section__col section__col--full">
+                        <div class="section__slider-wrap slider-wrapper">
+                            @@include('blocks/swiper-btns/swiper-btns.html')
+                            <div class="swiper section__slider" data-slides="@@if(context.slider.slides){@@slider.slides}@@if(!context.slider.slides){4}">
+                                <div class="swiper-wrapper">
+                                    @@loop('blocks/swiper-slide/swiper-slide.html', "../resources/assets/@@slider.array-slider.json")
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</section>

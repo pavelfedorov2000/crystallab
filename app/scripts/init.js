@@ -1,11 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
     //app.burger.init();
-    //app.accordion.init();
+    app.accordion.init();
     //app.select.init();
     //app.tabs.init();
     //app.catalogFilters.init();
     //app.popup.init();
     //app.validation.init();
+
+    const sliderSections = document.querySelectorAll('.section');
+
+    sliderSections.forEach((section) => {
+        const slider = section.querySelector('.section__slider-wrap');
+
+        if (!slider) return;
+
+        let sliderId = 'slider--' + Math.floor(Math.random() * 10000000000000 + Date.now());
+        slider.setAttribute('id', sliderId);
+
+        const sliderSlides = slider.querySelector('.swiper').getAttribute('data-slides');
+
+        new Swiper(`#${sliderId} .section__slider`, {
+            loop: true,
+            slidesPerView: 2,
+            spaceBetween: 30,
+            //autoplay: true,
+            navigation: {
+                nextEl: `#${sliderId} .swiper-button-next`,
+                prevEl: `#${sliderId} .swiper-button-prev`,
+            },
+            pagination: {
+                el: `#${sliderId} .swiper-pagination`,
+                type: "bullets",
+                clickable: true,
+            },
+            breakpoints: {
+                576: {
+                    spaceBetween: 30,
+                },
+                768: {
+                    slidesPerView: sliderSlides,
+                }
+            },
+        });
+    });
 
     /* const scrollToSection = () => {
         const scrollBtns = document.querySelectorAll('[data-section]');

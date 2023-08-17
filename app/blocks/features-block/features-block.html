@@ -1,3 +1,7 @@
-<div class="features-block@@if(context.class){ @@class}@@if(context.style){ features-block--style_@@style}">
-  <!--your code-->
+<div class="features-block">
+    <div class="container">
+        @@include('blocks/features-list/features-list.html', {
+            "loopArray": "features"
+        })
+    </div>
 </div>

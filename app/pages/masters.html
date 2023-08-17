@@ -2,12 +2,42 @@
 <div class="wrapper">
     @@include("blocks/layout/layout.html")
     <main class="page">
-        <div class="container">
-            @@include("blocks/page-top/page-top.html", {
-                "currentPage": "Мастера"
-            })
-        </div>
+        @@include("blocks/page-top/page-top.html", {
+            "page": "masters",
+            "currentPage": "Мастера",
+            "title": "Наши мастера"
+        })
+        @@loop('blocks/section/section.html', [{
+            "title": {
+                "text": "Салон на Петра Мстиславца 3"
+            },
+            "grid": {
+                "items": "6",
+                "loopItem": "master-card",
+                "loopArray": "masters-1"
+            }
+        }, {
+            "bgColor": "beige",
+            "title": {
+                "text": "Салон на Брилевской 3"
+            },
+            "grid": {
+                "items": "6",
+                "loopItem": "master-card",
+                "loopArray": "masters-2"
+            }
+        }, {
+            "title": {
+                "text": "Салон на проспекте Независимости 58В"
+            },
+            "grid": {
+                "items": "6",
+                "loopItem": "master-card",
+                "loopArray": "masters-3"
+            }
+        }])
     </main>
+    @@include("blocks/footer/footer.html")
 </div>
 @@include("blocks/link/link.html")
 </body>

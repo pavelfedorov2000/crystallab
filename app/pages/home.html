@@ -3,6 +3,141 @@
     @@include("blocks/layout/layout.html")
     <main class="page">
         @@include("blocks/promo/promo.html")
+
+        <!-- features (benefits) START -->
+        @@include('blocks/features-block/features-block.html', {
+            "loopArray": "features"
+        })
+        <!-- features (benefits) END -->
+
+        <!-- about section START -->
+        @@include('blocks/section/section.html', {
+            "inner": true,
+            "title": {
+                "text": "Студия перманентного макияжа Crystallab"
+            },
+            "decorIcon": "diamond",
+            "text": {
+                "first": "<b>Все мы меняемся с течением жизни и вместе с нами меняются наши вкусы, приоритеты и мироощущение. Однажды, с утра, мы вдруг понимаем, что хотим чего-то нового и яркого!</b>",
+                "second": "С чего же начать новую главу, как не с преображения себя любимой? Для девушек смена имиджа или привнесение изменений во внешность — это как глоток свежего воздуха, который дает нам силы и вдохновляет на новые свершения."
+            },
+            "gallery": {
+                "items": "4"
+            }
+        })
+        <!-- about section END -->
+
+        <!-- top-products section START -->
+        @@include('blocks/section/section.html', {
+            "inner": true,
+            "title": {
+                "text": "Наши топ-продукты со&nbsp;скидкой"
+            },
+            "decorIcon": "discount",
+            "text": {
+                "first": "<b>Мы не ставим себе цель оказания потоковых услуг, для нас важен каждый гость, каждые брови, губы и веки. От вашего первого звонка или сообщения до вашей улыбки после процедуры - мы с радостью проведем вас по этому пути. </b>",
+                "second": "Студия приглашает вас в захватывающее путешествие в красоту, а этот пьянящий воздух перемен, вот-вот ворвется в вашу жизнь!"
+            },
+            "grid": {
+                "items": "2",
+                "loopItem": "sale-card",
+                "loopArray": "sale-items"
+            }
+        })
+        <!-- top-products section END -->
+
+        <!-- why choose us START -->
+        @@include('blocks/section/section.html', {
+            "bgColor": "gray",
+            "inner": true,
+            "title": {
+                "text": "Почему наши клиенты выбирают Crystallab"
+            },
+            "decorIcon": "client",
+            "benefits": {
+                "loopItem": "benefit-item",
+                "loopArray": "benefits"
+            },
+            "btns": {
+                "first": {
+                    "text": "Получить консультацию"
+                },
+                "second": {
+                    "text": "Оставить заявку!"
+                }
+            },
+            "gallery": {
+                "items": "2"
+            }
+        })
+        <!-- why choose us END -->
+
+        <!-- portfolio section START -->
+        @@include('blocks/section/section.html', {
+            "inner": true,
+            "title": {
+                "text": "Наши работы говорят за&nbsp;нас"
+            },
+            "decorIcon": "project",
+            "text": {
+                "first": "Перманентный макияж можно сделать во многих салонах красоты или даже парикмахерских, <b>но зачастую там работают непрофильные мастера и вряд ли у них есть лицензия на этот вид деятельности.</b> Мечтаете о качественном и естественном перманентном макияже с гарантией?",
+            },
+            "slider": {
+                "array": "works"
+            }
+        })
+        <!-- portfolio section END -->
+
+        <!-- faq section START -->
+        @@include('blocks/section/section.html', {
+            "bgImage": "assets/images/content/faq-bg.jpg",
+            "withoutGrid": true,
+            "inner": true,
+            "title": {
+                "text": "Часто задаваемые вопросы"
+            },
+            "features": {
+                "loopArray": "faq-features"
+            },
+            "accordion": {
+                "items": "faq"
+            }
+        })
+        <!-- faq section END -->
+
+        <!-- instgram section START -->
+        @@include('blocks/section/section.html', {
+            "withoutGrid": true,
+            "inner": true,
+            "title": {
+                "text": "Приходите к нам в <span>Instagram</span>"
+            },
+            "slider": {
+                "array": "instagram",
+                "slides": "6"
+            }
+        })
+        <!-- instgram section END -->
+
+        <!-- contacts section START -->
+        @@include('blocks/section/section.html', {
+            "bgColor": "gray",
+            "inner": true,
+            "title": {
+                "text": "Будем рады видеть Вас!"
+            },
+            "decorIcon": "heart",
+            "contacts": true,
+            "btns": {
+                "first": {
+                    "text": "Записаться"
+                },
+                "second": {
+                    "text": "Перезвоните мне!"
+                }
+            }
+        })
+        <!-- contacts section END -->
     </main>
     @@include("blocks/footer/footer.html")
 </div>

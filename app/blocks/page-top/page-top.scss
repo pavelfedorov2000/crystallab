@@ -1,3 +1,25 @@
 .page-top {
-    
+    position: relative;
+    @include padding-y(var(--section-padding_xs));
+    background-color: var(--black);
+    color: var(--white);
+    background-size: cover;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(var(--color-black-rgb), 0.3); 
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 1;
+        @include row-grid(var(--offset-x));
+    }
 }

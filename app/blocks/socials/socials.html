@@ -1,0 +1,121 @@
+<ul class="socials@@if(context.class){ @@class}">
+    @@if(!context.share){
+        <li class="social">
+            <a class="social__link" href="#">
+                @@include("blocks/img/img.html", {
+                    "picture": "false",
+                    "class": "social__icon",
+                    "src": "assets/images/icons/socials/telegram",
+                    "width": "40",
+                    "height": "40",
+                })
+            </a>
+        </li>
+        <li class="social">
+            <a class="social__link" href="#">
+                @@include("blocks/img/img.html", {
+                    "picture": "false",
+                    "class": "social__icon",
+                    "src": "assets/images/icons/socials/viber",
+                    "width": "40",
+                    "height": "40",
+                })
+            </a>
+        </li>
+        @@if(context.instagram){
+            <li class="social">
+                <a class="social__link" href="#">
+                    @@include("blocks/img/img.html", {
+                        "picture": "false",
+                        "class": "social__icon",
+                        "src": "assets/images/icons/socials/instagram",
+                        "width": "40",
+                        "height": "40",
+                    })
+                </a>
+            </li>
+        }
+        @@if(context.vk){
+            <li class="social">
+                <a class="social__link" href="#">
+                    @@include("blocks/img/img.html", {
+                        "picture": "false",
+                        "class": "social__icon",
+                        "src": "assets/images/icons/socials/vk",
+                        "width": "40",
+                        "height": "40",
+                    })
+                </a>
+            </li>
+        }
+    }
+
+    @@if(context.share){
+        <li class="social">
+            <a class="social__link" href="#">
+                @@include("blocks/img/img.html", {
+                    "picture": "false",
+                    "class": "social__icon",
+                    "src": "assets/images/icons/socials/twitter",
+                    "width": "32",
+                    "height": "32",
+                })
+            </a>
+        </li>
+        <li class="social">
+            <a class="social__link" href="#">
+                @@include("blocks/img/img.html", {
+                    "picture": "false",
+                    "class": "social__icon",
+                    "src": "assets/images/icons/socials/pinterest",
+                    "width": "32",
+                    "height": "32",
+                })
+            </a>
+        </li>
+        <li class="social">
+            <a class="social__link" href="#">
+                @@include("blocks/img/img.html", {
+                    "picture": "false",
+                    "class": "social__icon",
+                    "src": "assets/images/icons/socials/facebook",
+                    "width": "32",
+                    "height": "32",
+                })
+            </a>
+        </li>
+        <li class="social">
+            <a class="social__link" href="#">
+                @@include("blocks/img/img.html", {
+                    "picture": "false",
+                    "class": "social__icon",
+                    "src": "assets/images/icons/socials/instagram",
+                    "width": "32",
+                    "height": "32",
+                })
+            </a>
+        </li>
+        <li class="social">
+            <a class="social__link" href="#">
+                @@include("blocks/img/img.html", {
+                    "picture": "false",
+                    "class": "social__icon",
+                    "src": "assets/images/icons/socials/vk",
+                    "width": "32",
+                    "height": "32",
+                })
+            </a>
+        </li>
+        <li class="social">
+            <a class="social__link" href="#">
+                @@include("blocks/img/img.html", {
+                    "picture": "false",
+                    "class": "social__icon",
+                    "src": "assets/images/icons/socials/odnoklassniki",
+                    "width": "32",
+                    "height": "32",
+                })
+            </a>
+        </li>
+    }
+</ul>

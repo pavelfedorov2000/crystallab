@@ -1,3 +1,47 @@
 .menu {
-    $this: &; // .menu
+    $this: &;
+
+    @include flex-center;
+    height: var(--nav-height);
+    background-color: var(--black);
+
+    &__list {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            position: relative;
+            padding-right: px2rem(14);
+
+            &::after {
+                content: '';
+                @include position-center-y;
+                right: 0;
+                width: px2rem(14);
+                height: px2rem(11);
+                background-image: url(../images/icons/crystal.svg);
+                @include bg(contain);
+            }
+        }
+    }
+
+    &__link {
+        @include font-size(16, 21);
+        font-weight: 600;
+        padding: var(--offset-s) var(--offset-l);
+        color: var(--white);
+        transition: var(--transition) color;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: var(--accent);
+            }
+        }
+
+        &.active {
+            color: var(--gray-64);
+        }
+    }
 }

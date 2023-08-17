@@ -1,0 +1,27 @@
+.contacts-block {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--offset-m) var(--offset-xl);
+}
+
+.phone-block {
+    @include row-grid(var(--offset-xxs));
+    color: var(--gray-28);
+
+    &__title {
+        font-size: px2rem(14);
+    }
+
+    &__phone {
+        font-size: px2rem(24);
+        font-weight: 500;
+        transition: var(--transition) color;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: var(--accent);
+            }
+        }
+    }
+}

@@ -1,29 +1,69 @@
 .accordion-item {
     $this: &;
+
+    --before-line-width: #{px2rem(20)};
+    --before-line-right-offset: #{px2rem(35)}; 
+    --content-padding-left: calc(var(--offset-xl) + var(--before-line-width) + var(--before-line-right-offset));
+
+    background-color: rgba(40, 40, 40, 0.80);
     // .accordion-item__toggle
 
     &__toggle {
+        @include flex-center-y;
         position: relative;
+        padding: px2rem(28) var(--offset-l) px2rem(28) var(--offset-xl);
+        width: 100%;
+        border: 1px solid #3C3C3C;
+        text-align: left;
+        color: var(--white);
+        font-size: px2rem(20);
+        font-weight: 500;
+        background-color: inherit;
+        transition: var(--transition) background-color;
 
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            //width: var(--icon-size);
-            //height: var(--icon-size);
-            //background-image: url(../images/icons/drop-arrow.svg);
+        &-text {
+            position: relative;
+            padding-left: var(--before-line-right-offset);
+            padding-right: var(--offset-m);
+            flex-grow: 1;
+
+            &::before {
+                content: '';
+                @include position-center-y;
+                left: 0;
+                width: var(--before-line-width);
+                height: 1px;
+                background-color: var(--pink);
+            }
+        }
+
+        &-icon {
+            width: px2rem(26);
+            height: px2rem(26);
             transition: var(--transition) transform;
         }
 
         &[aria-expanded="true"] {
-            &::before {
-                transform: rotate(180deg);
+            #{$this} {
+                &__toggle-icon {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: rgba(40, 40, 40, 1);
             }
         }
     }
 
     // .accordion-item__content
 
-    &__content {}
+    &__content {
+        padding: 0 var(--offset-l) 0 px2rem(75);
+        max-height: 0;
+        overflow: hidden;
+        transition: var(--transition) max-height;
+    }
 }

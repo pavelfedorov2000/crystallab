@@ -1,0 +1,10 @@
+<li class="benefit-item">
+    @@include('blocks/sprite/sprite.html', {
+        "class": "benefit-item__icon",
+        "icon": "@@icon"
+    })
+    <div class="_h4 benefit-item__title">@@title</div>
+    @@if(context.text){
+        <p class="benefit-item__text">@@text</p>
+    }
+</li>

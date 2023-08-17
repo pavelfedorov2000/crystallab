@@ -20,13 +20,29 @@
     flex: 1 0 auto;
 }
 
-// 12-колоночная сетка на гридах (и не нужен никакой бутсрап)
+.grid-row {
+    --baseWidth: #{px2rem(270)};
 
-/* .grid-row {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: var(--gap);
-} */
+    @include grid-auto-fit(var(--baseWidth), var(--gap));
+
+    &--items {
+        &_2 {
+            --baseWidth: #{px2rem(570)};
+        }
+
+        &_3 {
+            --baseWidth: #{px2rem(370)};
+        }
+
+        &_6 {
+            --baseWidth: #{px2rem(170)};
+        }
+    }
+
+    &--full {
+        grid-template-columns: unset;
+    }
+}
 
 .grid-col {
     $this: &;
@@ -53,22 +69,6 @@
         @include media('1100', max) {
             grid-column: 1 / -1;
         }
-
-        /* & + #{$this}-5 {
-            grid-column: 7 / -2;
-
-            @include media('1100', max) {
-                grid-column: 1 / -1;
-            }
-        }
-
-        & + #{$this}-6 {
-            grid-column: 7 / -1;
-
-            @include media('1100', max) {
-                grid-column: 1 / -1;
-            }
-        } */
     }
 
     &-6 {
@@ -77,14 +77,6 @@
         @include media('1100', max) {
             grid-column: 1 / -1;
         }
-
-        /* & + #{$this}-5 {
-            grid-column: 8 / -1;
-
-            @include media('1100', max) {
-                grid-column: 1 / -1;
-            }
-        } */
     }
 
     &-7 {
@@ -114,30 +106,4 @@
     &-12 {
         grid-column: 1 / -1;
     }
-
-    /* &-lg {
-        &-4 {
-            @include media('1100', max) {
-                grid-column: span 4;
-            }
-        }
-
-        &-7 {
-            @include media('1100', max) {
-                grid-column: span 7;
-            }
-
-            @include media('767', max) {
-                grid-column: span 4;
-            }
-        }
-    }
-
-    &-sm {
-        &-2 {
-            @include media('767', max) {
-                grid-column: span 2;
-            }
-        }
-    } */
 }

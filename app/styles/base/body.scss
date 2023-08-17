@@ -2,7 +2,7 @@ body {
     min-width: 320px;
     font-style: normal;
     font-family: var(--main-font);
-    line-height: 1.5;
+    line-height: 1.2;
     font-weight: 400;
     color: var(--color-default);
     -webkit-text-size-adjust: none;
@@ -20,4 +20,29 @@ body {
 a {
     text-decoration: none;
     color: currentColor;
+}
+
+.text-content {
+    p {
+        &:not(:last-child) {
+            margin-bottom: var(--offset-m);
+        }
+
+        b {
+            font-weight: 500;
+        }
+    }
+}
+
+.icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+
+.price {
+    padding: px2rem(9) var(--offset-s);
+    background-color: var(--black);
+    color: var(--white);
+    font-size: px2rem(14);
+    font-weight: 600;
 }

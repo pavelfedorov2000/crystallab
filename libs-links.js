@@ -1,7 +1,7 @@
 export const libsJsLink = [
     'node_modules/svg4everybody/dist/svg4everybody.min.js',
     'node_modules/swiper/swiper-bundle.min.js',
-    //'node_modules/pristinejs/dist/pristine.min.js',
+    'node_modules/pristinejs/dist/pristine.min.js',
     //'node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js',
     //'node_modules/nouislider/dist/nouislider.min.js',
     //'node_modules/@popperjs/core/dist/umd/popper.js',

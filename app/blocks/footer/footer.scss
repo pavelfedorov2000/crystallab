@@ -1,1 +1,66 @@
+.footer {
+    @include padding-y(var(--section-padding_xs));
+
+	// .footer__inner
+	&__inner {
+        display: grid;
+        font-size: px2rem(14);
+        
+        @include media('768', min) {
+            align-items: center;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--gap) var(--offset-s);
+        }
+	}
+
+	// .footer__text
+	&__text {
+	}
+
+	// .footer__ratings
+	&__ratings {
+        display: flex;
+        gap: var(--offset-xxxl);
+	}
+
+	// .footer__rating
+	&__rating {
+        
+	}
+
+	// .footer__copyright
+	&__copyright {
+        b {
+            font-weight: 500;
+        }
+	}
+
+	// .footer__developer
+	&__developer {
+        @include media('1101', min) {
+            justify-self: end;
+        }
+	}
+
+    &__developer-logo {
+        flex: 0 0 px2rem(20);
+        margin-right: var(--offset-x);
+        width: px2rem(20);
+        height: px2rem(20);
+    }
+
+	// .footer__developer-descr
+	&__developer-descr {
+        a {
+            font-weight: 500;
+            transition: var(--transition) color;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: var(--accent);
+                }
+            }
+        }
+	}
+}
 

@@ -1,50 +1,28 @@
 .pagination {
+    padding-top: var(--offset-xxxl);
 	display: flex;
-    justify-content: center;
-
-	// .pagination__list
-
-	&__list {
-		display: flex;
-	}
-
-	// .pagination__item
-
-	&__item {
-		
-	}
+    gap: var(--offset-x);
 
 	// .pagination__link
 
 	&__link {
+        @include flex-center;
+        min-width: px2rem(50);
+        height: px2rem(60);
+        background-color: var(--gray-fa);
+        font-weight: 600;
+        transition: var(--transition) background-color, var(--transition) color;
 
 		&.active {
-			
+			background: var(--button-bg);
+            color: var(--white);
 		}
 
 		@media (any-hover: hover) {
 			&:hover {
-				
+				background-color: var(--accent);
+                color: var(--white);
 			}
 		}
-	}
-
-	&__prev,
-	&__next {
-		@media (any-hover: hover) {
-			&:hover {
-				
-			}
-		}
-	}
-
-	&__prev {
-		
-	}
-
-	// .pagination__next
-
-	&__next {
-		
 	}
 }

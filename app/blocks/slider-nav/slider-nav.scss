@@ -1,0 +1,36 @@
+.slider-nav {
+    &__list {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            position: relative;
+
+            &::after {
+                content: '';
+                @include position-center-y;
+                right: 0;
+                width: 1px;
+                height: px2rem(20);
+                background-color: var(--gray-dc);
+            }
+        }
+    }
+
+    &__btn {
+        padding: var(--offset-x) var(--offset-xl);
+        color: var(--gray-82);
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: var(--black);
+            }
+        }
+
+        &.active {
+            color: var(--black);
+        }
+    }
+}

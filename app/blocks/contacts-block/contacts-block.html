@@ -1,0 +1,12 @@
+<div class="contacts-block@@if(context.class){ @@class}@@if(context.style){ contacts-block--style_@@style}">
+    <div class="contacts-block__phone phone-block">
+        <div class="phone-block__title">
+            Контактный телефон
+        </div>
+        <a href="tel:+375298425000" class="phone-block__phone">+375 29 842-50-00</a>
+    </div>
+    @@include('blocks/socials/socials.html', {
+        "instagram": true,
+        "vk": true
+    })
+</div>

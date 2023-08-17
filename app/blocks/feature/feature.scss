@@ -1,3 +1,9 @@
 .feature {
-  // your code
+    @include flex-column-center;
+    gap: var(--offset-s);
+    text-align: center;
+
+    &__text {
+        font-weight: 500;
+    }
 }

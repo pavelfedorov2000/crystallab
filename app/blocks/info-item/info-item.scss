@@ -1,0 +1,33 @@
+.info-item {
+    $this: &;
+
+    @include flex-center-y;
+    gap: var(--offset-s);
+
+    &__icon {
+        @include flex-center;
+        flex-shrink: 0;
+        width: var(--icon-size);
+        height: var(--icon-size);
+        border-radius: 50%;
+        background-color: var(--black);
+    }
+
+    &__text {
+        b {
+            font-weight: 500;
+        }
+    }
+
+    &--link {
+        #{$this}__text {
+            color: var(--accent);
+
+            @media (any-hover: hover) {
+                &:hover {
+                        text-decoration: underline;
+                }
+            }
+        }
+    }
+}

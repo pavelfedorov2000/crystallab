@@ -1,0 +1,20 @@
+<article class="service-card">
+    @@include("blocks/img/img.html", {
+        "class": "service-card__picture",
+        "cover": true,
+        "src": "assets/images/content/",
+        "width": "270",
+        "height": "370",
+    })
+    <div class="service-card__content">
+        <div class="price">@@price</div>
+        @@include("blocks/button/button.html", {
+            "data": {
+                "attr": "popup",
+                "value": "#callback"
+            },
+            "primary": true,
+            "text": "Оставить заявку",
+        })
+    </div>
+</article>

@@ -1,0 +1,19 @@
+.rating {
+    @include flex-center-y;
+    gap: var(--offset-xxs) var(--offset-m);
+
+    &__stars {
+        @include flex-center-y;
+    }
+
+    &__star {
+        flex: 0 0 px2rem(14);
+        margin-right: var(--offset-x);
+        width: px2rem(14);
+        height: px2rem(14);
+    }
+
+    &__value {
+        font-weight: 600;
+    }
+}

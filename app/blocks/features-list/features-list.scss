@@ -1,0 +1,10 @@
+.features-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--gap);
+
+    >* {
+        width: px2rem(170);
+    }
+}

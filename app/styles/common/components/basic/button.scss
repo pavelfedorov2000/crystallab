@@ -3,8 +3,11 @@
 
 	padding: 0;
 	cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    border: none;
 	font-family: var(--main-font);
-	transition: color var(--transition), background-color var(--transition);
+	transition: color var(--transition);
 	color: currentColor;
 
 	@media (any-hover: hover) {
@@ -33,24 +36,89 @@
 		flex-shrink: 0;
 	}
 
-	&__text {}
+	&__text {
+        position: relative;
+        z-index: 3;
+    }
 
 	&--primary {
-		background-color: var(--accent);
+        position: relative;
+        padding: px2rem(9) var(--offset-s);
+		background: var(--button-bg);
 		color: var(--white);
+        font-size: px2rem(14);
+        font-weight: 600;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            @include hide();
+            transition: var(--transition) all;
+        }
+
+        &::before {
+            background: var(--button-bg-hover);
+        }
+
+        &::after {
+            background: var(--button-bg-pressed);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    @include show();
+                }
+            }
+        }
+
+        &:focus,
+        &:active {
+            &::before {
+                @include hide();
+            }
+
+            &::after {
+                @include show();
+            }
+        }
 	}
 
 	&--style {
-		&_bg {
-			&-white {}
-		}
-
 		&_tab {}
 
 		&_more {}
 
-		&_link {}
+		&_link {
+            font-size: px2rem(14);
+            font-weight: 600;
+            color: var(--accent);
+
+            @media (any-hover: hover) {
+                &:hover {
+                    #{$this}__text {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        &_link-2 {
+
+        }
 	}
+
+    &--size {
+        &_l {
+            padding: var(--offset-s) var(--offset-l);
+        }
+    }
 
 	&--transparent {
 		background-color: transparent;
@@ -61,4 +129,10 @@
 			}
 		}
 	}
+}
+
+.btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--offset-s) var(--offset-l);
 }

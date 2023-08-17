@@ -1,3 +1,4 @@
 .features-block {
-  // your code
+    @include padding-y(var(--offset-xl));
+    background-color: var(--beige);
 }

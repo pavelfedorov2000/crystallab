@@ -1,0 +1,73 @@
+[{
+    "toggle": {
+        "id": "faq_accordion_heading_1",
+        "controls": "faq_collapse_1",
+        "text": "Что такое перманентный макияж?"
+    },
+    "dropdown": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia inventore laudantium atque delectus cum corrupti omnis deleniti sapiente! Vitae, a quisquam consequuntur nemo labore delectus? Molestiae nihil libero ratione suscipit?"
+    }
+}, {
+    "toggle": {
+        "id": "faq_accordion_heading_2",
+        "controls": "faq_collapse_2",
+        "text": "Больно ли делать перманент?"
+    },
+    "dropdown": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia inventore laudantium atque delectus cum corrupti omnis deleniti sapiente! Vitae, a quisquam consequuntur nemo labore delectus? Molestiae nihil libero ratione suscipit?"
+    }
+}, {
+    "toggle": {
+        "id": "faq_accordion_heading_3",
+        "controls": "faq_collapse_3",
+        "text": "Сколько времени занимает процедура?"
+    },
+    "dropdown": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia inventore laudantium atque delectus cum corrupti omnis deleniti sapiente! Vitae, a quisquam consequuntur nemo labore delectus? Molestiae nihil libero ratione suscipit?"
+    }
+}, {
+    "toggle": {
+        "id": "faq_accordion_heading_4",
+        "controls": "faq_collapse_4",
+        "text": "А как вы подбираете цвет?"
+    },
+    "dropdown": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia inventore laudantium atque delectus cum corrupti omnis deleniti sapiente! Vitae, a quisquam consequuntur nemo labore delectus? Molestiae nihil libero ratione suscipit?"
+    }
+}, {
+    "toggle": {
+        "id": "faq_accordion_heading_5",
+        "controls": "faq_collapse_5",
+        "text": "А как вы подбираете форму?"
+    },
+    "dropdown": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia inventore laudantium atque delectus cum corrupti omnis deleniti sapiente! Vitae, a quisquam consequuntur nemo labore delectus? Molestiae nihil libero ratione suscipit?"
+    }
+}, {
+    "toggle": {
+        "id": "faq_accordion_heading_6",
+        "controls": "faq_collapse_6",
+        "text": "Сколько держится перманент и как он выходит?"
+    },
+    "dropdown": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia inventore laudantium atque delectus cum corrupti omnis deleniti sapiente! Vitae, a quisquam consequuntur nemo labore delectus? Molestiae nihil libero ratione suscipit?"
+    }
+}, {
+    "toggle": {
+        "id": "faq_accordion_heading_7",
+        "controls": "faq_collapse_7",
+        "text": "У меня аллергия на косметику, можно ли мне делать перманент?"
+    },
+    "dropdown": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia inventore laudantium atque delectus cum corrupti omnis deleniti sapiente! Vitae, a quisquam consequuntur nemo labore delectus? Molestiae nihil libero ratione suscipit?"
+    }
+}, {
+    "toggle": {
+        "id": "faq_accordion_heading_8",
+        "controls": "faq_collapse_8",
+        "text": "Как я буду выглядеть сразу после процедуры?"
+    },
+    "dropdown": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia inventore laudantium atque delectus cum corrupti omnis deleniti sapiente! Vitae, a quisquam consequuntur nemo labore delectus? Molestiae nihil libero ratione suscipit?"
+    }
+}]

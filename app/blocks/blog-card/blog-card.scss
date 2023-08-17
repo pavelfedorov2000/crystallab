@@ -1,0 +1,36 @@
+.blog-card {
+    position: relative;
+
+    &__picture {
+        display: block;
+        aspect-ratio: 135 / 90;
+    }
+
+    &__content {
+        @include flex-column-start;
+        row-gap: var(--offset-xxs);
+        padding-top: var(--offset-m);
+    }
+
+    &__title {
+        transition: var(--transition) color;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: var(--accent);
+            }
+        }
+    }
+
+    &__date {
+        font-size: px2rem(12);
+
+        &:not(:last-child) {
+            margin-bottom: var(--offset-xxs);
+        }
+    }
+
+    &__text {
+        font-size: px2rem(14);
+    }
+}

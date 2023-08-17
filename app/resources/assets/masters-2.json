@@ -1,0 +1,73 @@
+[{
+    "picture": "assets/images/content/masters/11",
+    "name": "Ващилко",
+    "surname": "Вероника",
+    "rating": {
+        "stars": 5,
+        "reviewsCount": 3
+    }
+}, {
+    "picture": "assets/images/content/masters/12",
+    "name": "Валерия",
+    "surname": "Лазовская",
+    "rating": {
+        "stars": 5,
+        "reviewsCount": 13
+    }
+}, {
+    "picture": "assets/images/content/masters/13",
+    "name": "Вероника",
+    "surname": "Криводубская",
+    "rating": {
+        "stars": 5,
+        "reviewsCount": 22
+    }
+}, {
+    "picture": "assets/images/content/masters/14",
+    "name": "Анастасия",
+    "surname": "Тюльпа",
+    "rating": {
+        "stars": 5,
+        "reviewsCount": 2
+    }
+}, {
+    "picture": "assets/images/content/masters/15",
+    "name": "Маргарита",
+    "surname": "Милявичене",
+    "rating": {
+        "stars": 5,
+        "reviewsCount": 16
+    }
+}, {
+    "picture": "assets/images/content/masters/16",
+    "name": "Валерия",
+    "surname": "Лазовская",
+    "rating": {
+        "stars": 5,
+        "reviewsCount": 11
+    }
+}, {
+    "picture": "assets/images/content/masters/17",
+    "name": "Ирина",
+    "surname": "Гаркун",
+    "rating": {
+        "stars": 5,
+        "reviewsCount": 3
+    }
+}, {
+    "picture": "assets/images/content/masters/18",
+    "name": "Александра",
+    "surname": "Миловацкая",
+    "rating": {
+        "stars": 5,
+        "reviewsCount": 13
+    }
+}, {
+    "picture": "assets/images/content/masters/19",
+    "name": "Элеонора",
+    "surname": "Халатова",
+    "rating": {
+        "stars": 5,
+        "reviewsCount": 22
+    }
+}]

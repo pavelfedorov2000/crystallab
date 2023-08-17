@@ -1,0 +1,18 @@
+.master-card {
+    &__picture {
+        display: block;
+        aspect-ratio: 85 / 115;
+    }
+
+    &__content {
+        @include flex-column-start;
+        row-gap: var(--offset-xxs);
+        padding-top: var(--offset-m);
+    }
+
+    &__rating {
+        &:not(:last-child) {
+            margin-bottom: var(--offset-xxs);
+        }
+    }
+}

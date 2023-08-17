@@ -1,0 +1,12 @@
+<div class="swiper-slide">
+    @@if(context.pictureSlide){
+        @@include("blocks/img/img.html", {
+            "src": "@@src",
+            "width": "270",
+            "height": "270",
+        })
+    }
+    <!-- @@if(!context.pictureSlide) {
+
+    } -->
+</div>

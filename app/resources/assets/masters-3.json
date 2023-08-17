@@ -1,0 +1,33 @@
+[{
+    "picture": "assets/images/content/masters/01",
+    "name": "Оксана",
+    "surname": "Тихалова",
+    "rating": {
+        "stars": 5,
+        "reviewsCount": 3
+    }
+}, {
+    "picture": "assets/images/content/masters/02",
+    "name": "Алсу",
+    "surname": "Намазова",
+    "rating": {
+        "stars": 5,
+        "reviewsCount": 13
+    }
+}, {
+    "picture": "assets/images/content/masters/03",
+    "name": "Анна",
+    "surname": "Короткова",
+    "rating": {
+        "stars": 5,
+        "reviewsCount": 22
+    }
+}, {
+    "picture": "assets/images/content/masters/04",
+    "name": "Кункевич",
+    "surname": "Екатерина",
+    "rating": {
+        "stars": 5,
+        "reviewsCount": 2
+    }
+}]

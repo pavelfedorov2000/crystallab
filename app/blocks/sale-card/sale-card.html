@@ -1,0 +1,41 @@
+<li>
+    <article class="sale-card">
+        <div class="sale-card__body">
+            @@include("blocks/img/img.html", {
+                "class": "sale-card__picture",
+                "cover": true,
+                "src": "assets/images/content/@@picture",
+                "format": "png",
+                "width": "353",
+                "height": "260",
+            })
+            <div class="sale-card__body-content">
+                @@include("blocks/title/title.html", {
+                    "class": "sale-card__title _h3",
+                    "level": "3",
+                    "text": "@@title",
+                })
+                <div class="sale-card__subtitle">@@subtitle</div>
+                <span class="price">@@price</span>
+                @@include("blocks/button/button.html", {
+                    "data": {
+                        "attr": "popup",
+                        "value": "#callback"
+                    },
+                    "primary": true,
+                    "class": "sale-card__btn",
+                    "text": "Оставить заявку",
+                })
+            </div>
+        </div>
+        <div class="sale-card__content">
+            <p>@@text</p>
+            @@include("blocks/button/button.html", {
+                "href": "#",
+                "style": "link",
+                "class": "sale-card__link",
+                "text": "Подробнее про процедуру",
+            })
+        </div>
+    </article>
+</li>

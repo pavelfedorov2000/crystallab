@@ -1,0 +1,35 @@
+.benefit-item {
+    @include row-grid(var(--offset-x));
+    max-width: px2rem(533);
+
+    @include media('767', max) {
+        justify-items: center;
+    }
+    
+    @include media('768', min) {
+        grid-template-columns: 1fr var(--icon-size);
+        grid-template-areas:
+        'title icon'
+        'text icon'
+        ;
+        column-gap: px2rem(25);
+    }
+
+    &__title {
+        @include media('768', min) {
+            grid-area: title;
+        }
+    }
+
+    &__text {
+        @include media('768', min) {
+            grid-area: text;
+        }
+    }
+
+    &__icon {
+        @include media('768', min) {
+            grid-area: icon;
+        }
+    }
+}

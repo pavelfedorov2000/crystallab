@@ -1,13 +1,13 @@
 <nav class="breadcrumbs" aria-label="Хлебные крошки">
     <ol class="breadcrumbs__list">
         <li class="breadcrumbs__item">
-            <a href="#">
+            <a class="breadcrumbs__link" href="#">
                 Главная
             </a>
         </li>
         @@if(context.prevPage){
             <li class="breadcrumbs__item">
-                <a href="#">@@prevPage</a>
+                <a class="breadcrumbs__link" href="#">@@prevPage</a>
             </li>
         }
         <li class="breadcrumbs__item">

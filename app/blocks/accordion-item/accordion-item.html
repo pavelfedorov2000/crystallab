@@ -1,16 +1,30 @@
 <section class="accordion-item">
-    <h3 class="accordion-item__heading">
-        <button class="accordion-item__toggle"
-                type="button"
-                id="@@id"
-                aria-controls="@@controls"
-                aria-expanded="@@if(context.isExpanded){true}@@if(!context.isExpanded){false}">
-            @@title
-        </button>
-    </h3>
-    <div class="accordion-item__content"
-         id="@@controls"
-         aria-labelledby="@@id">
-        <p>@@text</p>
-    </div>
+    @@if(context.toggle){
+        <h3 class="accordion-item__heading">
+            <button class="accordion-item__toggle"
+                    type="button"
+                    id="@@toggle.id"
+                    aria-controls="@@toggle.controls"
+                    aria-expanded="@@if(context.isExpanded){true}@@if(!context.isExpanded){false}">
+                <span class="accordion-item__toggle-text">@@toggle.text</span>
+                <svg class="accordion-item__toggle-icon" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 25V1M1 13H25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 25V1M1 13H25" stroke="url(#paint0_linear_31_325)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_31_325" x1="1" y1="1" x2="25" y2="25" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#C10046"/>
+                    <stop offset="1" stop-color="#D752B3"/>
+                    </linearGradient>
+                    </defs>
+                </svg>
+            </button>
+        </h3>
+    }
+    @@if(context.dropdown){
+        <div class="accordion-item__content"
+            id="@@toggle.controls"
+            aria-labelledby="@@toggle.id">
+            <p>@@dropdown.text</p>
+        </div>
+    }
 </section>

@@ -1,0 +1,25 @@
+<li>
+    <article class="blog-card@@if(context.class){ @@class}@@if(context.style){ blog-card--style_@@style}">
+        @@include("blocks/img/img.html", {
+            "class": "blog-card__picture",
+            "cover": true,
+            "src": "@@picture",
+            "width": "270",
+            "height": "180",
+        })
+        <div class="blog-card__content">
+            @@include("blocks/title/title.html", {
+                "fullLink": true,
+                "class": "_h6 blog-card__title",
+                "level": "2",
+                "text": "@@title",
+            })
+            @@include('blocks/datetime/datetime.html', {
+                "class": "blog-card__date",
+                "formattedDate": "@@formattedDate",
+                "date": "@@date"
+            })
+            <p class="blog-card__text">@@text</p>
+        </div>
+    </article>
+</li>

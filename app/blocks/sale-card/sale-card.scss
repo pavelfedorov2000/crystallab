@@ -1,0 +1,43 @@
+.sale-card {
+	// .sale-card__body
+	&__body {
+        position: relative;
+        display: flex;
+        min-height: px2rem(260);
+        background-color: var(--beige);
+	}
+
+    &__picture {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+	// .sale-card__body-content
+	&__body-content {
+        @include flex-column-start;
+        flex-grow: 1;
+        padding: var(--offset-l);
+	}
+
+    &__title {
+        margin-bottom: var(--offset-x);
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        margin-bottom: auto;
+    }
+
+	// .sale-card__content
+	&__content {
+        @include row-grid(var(--offset-x));
+        padding-top: var(--offset-m);
+	}
+
+    &__text {
+        font-size: px2rem(14);
+    }
+}
+

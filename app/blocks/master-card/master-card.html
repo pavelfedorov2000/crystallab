@@ -1,0 +1,27 @@
+<li>
+    <article class="master-card@@if(context.class){ @@class}@@if(context.style){ master-card--style_@@style}">
+        @@include("blocks/img/img.html", {
+            "class": "master-card__picture",
+            "cover": true,
+            "src": "@@picture",
+            "width": "186",
+            "height": "230",
+        })
+        <div class="master-card__content">
+            @@include("blocks/title/title.html", {
+            "class": "_h5 master-card__title",
+            "level": "3",
+            "text": "@@name<br>@@surname",
+            })
+            @@include('blocks/rating/rating.html', {
+                "class": "master-card__rating",
+                "value": "@@rating.stars",
+                "reviews": "@@rating.reviewsCount"
+            })
+            @@include("blocks/button/button.html", {
+                "primary": true,
+                "text": "Записаться",
+            })
+        </div>
+    </article>
+</li>

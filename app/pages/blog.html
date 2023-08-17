@@ -3,8 +3,19 @@
     @@include("blocks/layout/layout.html")
     <main class="page">
         @@include("blocks/page-top/page-top.html", {
-            "currentPage": "Блог"
+            "page": "blog",
+            "currentPage": "Наш блог",
         })
+        <div class="section">
+            <div class="container">
+                @@include('blocks/grid-row/grid-row.html', {
+                    "items": "4",
+                    "loopItem": "blog-card",
+                    "loopArray": "blog"
+                })
+                @@include('blocks/pagination/pagination.html')
+            </div>
+        </div>
     </main>
     @@include("blocks/footer/footer.html")
 </div>

@@ -1,1 +1,25 @@
+.header {
+    &__inner {
+        @include flex-center-between;
+        height: var(--header-height);
+    }
 
+    &__info-items {
+        @include row-grid(var(--offset-x));
+    }
+
+    &__call {
+        @include flex-column-end;
+        gap: var(--offset-s);
+    }
+
+    &__call-row {
+        @include flex-center-y;
+        gap: var(--offset-m);
+    }
+
+    &__socials {
+        display: flex;
+        gap: var(--offset-x);
+    }
+}

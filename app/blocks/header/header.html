@@ -1,10 +1,48 @@
 <header class="header">
     <div class="container">
         <div class="header__inner">
+            <div class="header__info-items">
+                @@loop('blocks/info-item/info-item.html', [{
+                    "href": "#",
+                    "icon": "pin",
+                    "text": "Адреса студий на карте"
+                }, {
+                    "icon": "clock",
+                    "text": "Работаем ежедневно <b>с 10 до 22</b>"
+                }])
+            </div>
             @@include("blocks/logo/logo.html", {
                 "class": "header__logo",
-                "src": "assets/images/logo/logo.svg"
+                "src": "assets/images/logo/logo"
             })
+            <div class="header__call">
+                <div class="header__call-row">
+                    <a href="tel:+375298425000" class="header__phone">+375 29 842-50-00</a>
+                    <ul class="header__socials">
+                        @@loop('blocks/info-item/info-item.html', [{
+                            "listItem": true,
+                            "href": "#",
+                            "icon": "tg",
+                        }, {
+                            "listItem": true,
+                            "href": "#",
+                            "icon": "whatsapp",
+                        }, {
+                            "listItem": true,
+                            "href": "#",
+                            "icon": "insta",
+                        }])
+                    </ul>
+                </div>
+                @@include('blocks/button/button.html', {
+                    "primary": true,
+                    "text": "Заказать звонок",
+                    "data": {
+                        "attr": "popup",
+                        "value": "#callback"
+                    }
+                })
+            </div>
             <!-- @@include('blocks/burger-btn/burger-btn.html') -->
         </div>
     </div>
