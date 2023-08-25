@@ -1,3 +1,11 @@
-<div class="services-section@@if(context.class){ @@class}@@if(context.style){ services-section--style_@@style}">
-  <!--your code-->
-</div>
+@@include('blocks/section/section.html', {
+    "bgImage": "assets/images/content/gradient-bg.jpg",
+    "title": {
+        "text": "Наши услуги"
+    },
+    "links": true,
+    "slider": {
+        "array": "services-slider",
+        "withoutPagination": "true"
+    }
+})

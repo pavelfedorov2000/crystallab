@@ -1,14 +1,53 @@
-@@include("blocks/head/head.html", {"title": "Оформить заказ"})
+@@include("blocks/head/head.html", {"title": "Перманентный макияж — межресничка"})
 <div class="wrapper">
     @@include("blocks/layout/layout.html")
     <main class="page">
-        <div class="container">
-            @@include("blocks/breadcrumbs/breadcrumbs.html", {
-                "currentPage": "Оформление заказ"
-            })
-        </div>
+        @@include("blocks/page-top/page-top.html", {
+            "page": "service",
+            "prevPage": "Наши услуги",
+            "currentPage": "Перманентный макияж — межресничка"
+        })
+
+        @@include('blocks/service-block/service-block.html', {
+            "picture": {
+                "src": "assets/images/content/service"
+            },
+            "text": "<b>Напыление в ресничном ряду с эффектом «густые ресницы» на 3 года! Цвет напыления подбирается всегда индивидуально: черный, коричневый или микс. цветов, все зависит от вашего пожелания.</b>",
+            "list": {
+                "title": "Этапы процедуры"
+            },
+            "price": {
+                "title": "Стоимость процедуры",
+                "value": "160"
+            },
+            "asideImages": {
+                "1": "assets/images/content/service-eye-01",
+                "2": "assets/images/content/service-eye-02"
+            },
+            "action": {
+                "text": "Записывайтесь ко мне на любую зону — я сделаю так, как вы хотите и вы будете любоваться своим макияжем долгие годы!",
+                "btn": "Записаться"
+            }
+        })
+
+        <!-- master works section START -->
+        @@include('blocks/works-section/works-section.html', {
+            "title": "Примеры работ"
+        })
+        <!-- master works section END -->
+
+        <!-- master reviews section START -->
+        @@include('blocks/reviews-section/reviews-section.html', {
+            "title": "Отзывы наших клиентов",
+            "items": "master-reviews"
+        })
+        <!-- master reviews section END -->
+        
+        <!-- instgram section START -->
+        @@include('blocks/instagram-section/instagram-section.html')
+        <!-- instgram section END -->
     </main>
-    @@include("blocks/footer/footer.html")
+    @@include('blocks/footer/footer.html')
 </div>
 @@include("blocks/link/link.html")
 </body>

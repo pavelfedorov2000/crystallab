@@ -1,3 +1,16 @@
-<div class="top-products@@if(context.class){ @@class}@@if(context.style){ top-products--style_@@style}">
-  <!--your code-->
-</div>
+@@include('blocks/section/section.html', {
+    "inner": true,
+    "title": {
+        "text": "Наши топ-продукты со&nbsp;скидкой"
+    },
+    "decorIcon": "discount",
+    "text": {
+        "first": "<b>Мы не ставим себе цель оказания потоковых услуг, для нас важен каждый гость, каждые брови, губы и веки. От вашего первого звонка или сообщения до вашей улыбки после процедуры - мы с радостью проведем вас по этому пути. </b>",
+        "second": "Студия приглашает вас в захватывающее путешествие в красоту, а этот пьянящий воздух перемен, вот-вот ворвется в вашу жизнь!"
+    },
+    "grid": {
+        "items": "2",
+        "loopItem": "sale-card",
+        "loopArray": "sale-items"
+    }
+})

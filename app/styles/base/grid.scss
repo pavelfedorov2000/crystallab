@@ -32,6 +32,10 @@
 
         &_3 {
             --baseWidth: #{px2rem(370)};
+
+            @include media('500', max) {
+                --baseWidth: #{px2rem(290)};
+            }
         }
 
         &_6 {

@@ -1,3 +1,111 @@
-<div class="service-block@@if(context.class){ @@class}@@if(context.style){ service-block--style_@@style}">
-  <!--your code-->
-</div>
+<section class="section">
+    <div class="container">
+        <div class="service-block">
+            @@if(context.picture){
+                @@include("blocks/img/img.html", {
+                    "class": "service-block__picture",
+                    "cover": true,
+                    "src": "@@picture.src",
+                    "width": "400",
+                    "height": "548",
+                })
+            }
+            <div class="service-block__content text-content">
+                @@if(context.title){
+                    @@include("blocks/title/title.html", {
+                        "class": "_h2 service-block__title",
+                        "level": "2",
+                        "text": "@@title",
+                    })
+                }
+                @@if(context.accentText){
+                    <p class="service-block__text service-block__text--pink">
+                        @@accentText
+                    </p>
+                }
+                @@if(context.textBlock){
+                    <div class="service-block__text-block">
+                        <p>
+                            @@textBlock.textOne
+                        </p>
+                        @@if(context.textTwo){
+                            <p>
+                                @@textBlock.textTwo
+                            </p>
+                        }
+                        @@if(context.textThree){
+                            <p>
+                                @@textBlock.textThree
+                            </p>
+                        }
+                        @@if(context.textFour){
+                            <p>
+                                @@textBlock.textFour
+                            </p>    
+                        }
+                    </div>
+                }
+                @@if(context.text){
+                    <p>@@text</p>
+                }
+                @@if(context.list){
+                    @@if(context.list.title){
+                        @@include("blocks/title/title.html", {
+                            "class": "_h2 service-block__title",
+                            "tag": "div",
+                            "text": "@@list.title",
+                        })
+                    }
+                    <ul>
+                        <li>Консультация</li>
+                        <li>Подбор формы и цвета</li>
+                        <li>Процедура занимает 2 часа</li>
+                        <li>Памятка по заживлению в подарок</li>
+                        <li>Заживление 5 дней БЕЗ корочек</li>
+                    </ul>
+                }
+                @@if(context.price){
+                    <div class="price-block service-block__price">
+                        <span class="price-block__title">@@price.title</span>
+                        <div class="price-block__value">@@price.value руб.</div>
+                    </div>
+                }
+            </div>
+            <div class="service-block__aside">
+                @@include("blocks/img/img.html", {
+                    "picture": "false",
+                    "class": "service-block__decor-icon",
+                    "src": "assets/images/icons/diamond",
+                    "width": "46",
+                    "height": "40",
+                })
+                <div class="service-block__images">
+                    @@loop("blocks/img/img.html", [{
+                        "class": "service-block__img",
+                        "cover": true,
+                        "src": "@@asideImages.1",
+                        "width": "170",
+                        "height": "170",
+                    }, {
+                        "class": "service-block__img",
+                        "cover": true,
+                        "src": "@@asideImages.2",
+                        "width": "170",
+                        "height": "170",
+                    }])
+                </div>
+            </div>
+            @@if(context.action){
+                <div class="service-block__action">
+                    <div class="service-block__action-text">@@action.text</div>
+                    @@include("blocks/button/button.html", {
+                        "primary": true,
+                        "size": "xl",
+                        "class": "service-block__action-btn",
+                        "text": "@@action.btn",
+                    })
+                </div>
+            }
+        </div>
+    </div>
+</section>

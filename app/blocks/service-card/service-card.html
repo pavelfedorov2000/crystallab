@@ -1,11 +1,20 @@
 <article class="service-card">
-    @@include("blocks/img/img.html", {
-        "class": "service-card__picture",
-        "cover": true,
-        "src": "assets/images/content/",
-        "width": "270",
-        "height": "370",
-    })
+    <div class="service-card__body">
+        @@include("blocks/img/img.html", {
+            "class": "service-card__img",
+            "cover": true,
+            "src": "@@src",
+            "width": "270",
+            "height": "370",
+        })
+        <div class="service-card__body-content">
+            @@include("blocks/title/title.html", {
+                "class": "_h4 service-card__title",
+                "level": "3",
+                "text": "@@title",
+            })
+        </div>
+    </div>
     <div class="service-card__content">
         <div class="price">@@price</div>
         @@include("blocks/button/button.html", {

@@ -1,6 +1,7 @@
 <div class="page-top" style="background-image: url(assets/images/content/page-top/@@page.png);">
     <div class="container page-top__inner">
         @@include("blocks/breadcrumbs/breadcrumbs.html", {
+            @@if(context.prevPage){"prevPage": "@@prevPage",}
             "currentPage": "@@currentPage"
         })
 
@@ -9,5 +10,11 @@
             "level": "1",
             "text": "@@if(context.title){@@title}@@if(!context.title){@@currentPage}",
         })
+
+        @@if(context.rating){
+            @@include('blocks/rating/rating.html', {
+                "value": "@@rating.value"
+            })
+        }
     </div>
 </div>

@@ -1,3 +1,11 @@
-<div class="instagram-section@@if(context.class){ @@class}@@if(context.style){ instagram-section--style_@@style}">
-  <!--your code-->
-</div>
+@@include('blocks/section/section.html', {
+    "withoutGrid": true,
+    "inner": true,
+    "title": {
+        "text": "Приходите к нам в <span>Instagram</span>"
+    },
+    "slider": {
+        "array": "instagram-slider",
+        "slides": "6"
+    }
+})

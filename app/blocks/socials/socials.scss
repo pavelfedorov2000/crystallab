@@ -2,4 +2,20 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--offset-s);
+
+    &--share {
+        gap: var(--offset-x);
+
+        .social {
+            &__link,
+            &__icon {
+                border-radius: px2rem(5);
+            }
+
+            &__icon {
+                width: var(--icon-size);
+                height: var(--icon-size);
+            }
+        }
+    }
 }

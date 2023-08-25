@@ -4,6 +4,9 @@
         role="tab"
         aria-selected="@@if(context.isActive){true}@@if(!context.isActive){false}"
         aria-controls="@@controls">
+    @@if(context.icon){
+        @@include('blocks/icons/@@icon.html')
+    }
     <span class="tab__text">
         @@text
     </span>

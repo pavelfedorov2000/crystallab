@@ -20,12 +20,26 @@
     }
 
     &--link {
-        #{$this}__text {
-            color: var(--accent);
+        #{$this} {
+            &__text {
+                color: var(--accent);
 
-            @media (any-hover: hover) {
-                &:hover {
+                @media (any-hover: hover) {
+                    &:hover {
                         text-decoration: underline;
+                    }
+                }
+            }
+
+            &__icon {
+                transition: var(--transition) transform;
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                #{$this}__icon {
+                    transform: rotate(360deg);
                 }
             }
         }

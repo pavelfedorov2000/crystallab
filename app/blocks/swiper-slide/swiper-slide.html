@@ -6,7 +6,37 @@
             "height": "270",
         })
     }
-    <!-- @@if(!context.pictureSlide) {
-
-    } -->
+    @@if(!context.pictureSlide) {
+        @@if(context.slide){
+            @@include('blocks/@@slide/@@slide.html', {
+                @@if(context.src){"src": "@@src",}
+                @@if(context.bgColor){"bgColor": "@@bgColor",}
+                @@if(context.preview){
+                    "preview": {
+                        "avatar": {
+                            "src": "@@preview.avatar.src",
+                            @@if(context.preview.avatar.format){"format": "@@preview.avatar.format",}
+                        },
+                        "suptitle": "@@preview.suptitle",
+                        "title": "@@preview.title",
+                        "rating": {
+                            "value": "@@preview.rating.value",
+                            "reviews": "@@preview.rating.reviews"
+                        }
+                    },
+                }
+                "title": "@@title",
+                "text": "@@text",
+                @@if(context.price){"price": "@@price",}
+                @@if(context.text2){"text2": "@@text2",}
+                "footer": {
+                    "date": {
+                        "formatted": "@@footer.date.formatted",
+                        "text": "@@footer.date.text"
+                    },
+                    "author": "@@footer.author"
+                }
+            })
+        }
+    }
 </div>

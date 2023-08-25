@@ -3,7 +3,7 @@
     @include padding-y(var(--section-padding_xs));
     background-color: var(--black);
     color: var(--white);
-    background-size: cover;
+    background-size: contain;
     background-position: 100% 50%;
     background-repeat: no-repeat;
 
@@ -21,5 +21,6 @@
         position: relative;
         z-index: 1;
         @include row-grid(var(--offset-x));
+        justify-items: start;
     }
 }

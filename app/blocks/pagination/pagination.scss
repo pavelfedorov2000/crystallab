@@ -1,4 +1,6 @@
 .pagination {
+    $this: &;
+
     padding-top: var(--offset-xxxl);
 	display: flex;
     gap: var(--offset-x);
@@ -25,4 +27,14 @@
 			}
 		}
 	}
+
+    &--white {
+        #{$this}__link {
+            background-color: var(--white);
+        }
+    }
+
+    & + .socials {
+        padding-top: var(--offset-xxxl);
+    }
 }

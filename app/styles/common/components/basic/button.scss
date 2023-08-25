@@ -91,9 +91,20 @@
 	}
 
 	&--style {
-		&_tab {}
+		&_tab {
+            color: var(--white);
+            font-weight: 600;
 
-		&_more {}
+            &.active {
+                color: var(--pink);
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: var(--pink);
+                }
+            }
+        }
 
 		&_link {
             font-size: px2rem(14);
@@ -108,15 +119,17 @@
                 }
             }
         }
-
-        &_link-2 {
-
-        }
 	}
 
     &--size {
         &_l {
             padding: var(--offset-s) var(--offset-l);
+        }
+
+        &_xl {
+            padding: px2rem(43) px2rem(100);
+            border-radius: px2rem(200);
+            font-size: px2rem(28);
         }
     }
 
@@ -135,4 +148,18 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--offset-s) var(--offset-l);
+
+    &--links {
+        gap: var(--offset-xxs) var(--offset-m);
+    }
+}
+
+.filter-btns {
+    padding-bottom: px2rem(35);
+
+    &__item {
+        &.active {
+            color: var(--black);
+        }
+    }
 }

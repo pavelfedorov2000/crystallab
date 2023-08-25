@@ -7,6 +7,7 @@
             "currentPage": "Мастера",
             "title": "Наши мастера"
         })
+        
         @@loop('blocks/section/section.html', [{
             "title": {
                 "text": "Салон на Петра Мстиславца 3"
@@ -36,6 +37,10 @@
                 "loopArray": "masters-3"
             }
         }])
+
+        <!-- instgram section START -->
+        @@include('blocks/instagram-section/instagram-section.html')
+        <!-- instgram section END -->
     </main>
     @@include("blocks/footer/footer.html")
 </div>

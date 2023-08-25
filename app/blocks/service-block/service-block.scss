@@ -1,3 +1,113 @@
 .service-block {
-  // your code
+    display: grid;
+    grid-template-columns: px2rem(400) 1fr;
+    gap: var(--offset-l);
+
+    @include media('768', min) {
+        gap: var(--gap-xl);
+    }
+
+    @include media('1101', min) {
+        grid-template-columns: px2rem(400) 1fr var(--offset-x) px2rem(170);
+    }
+
+    &__picture {
+        display: block;
+        aspect-ratio: 200 / 274;
+    }
+
+	// .service-block__content
+	&__content {
+        @include row-grid(var(--offset-m));
+        align-content: start;
+        padding-left: var(--offset-x);
+	}
+
+    /* &__title {
+        margin-bottom: var(--offset-m);
+    } */
+
+	// .service-block__text
+	&__text {
+        font-size: px2rem(20);
+        font-weight: 500;
+        &:not(:last-child) {
+            margin-bottom: var(--offset-m);
+        }
+	}
+
+	// .service-block__text--pink
+	&__text--pink {
+        color: var(--pink);
+	}
+
+	// .service-block__text-block
+	&__text-block {
+        @include row-grid(var(--offset-m));
+
+        p {
+            &:first-child {
+                font-size: px2rem(20);
+            }
+        }
+	}
+
+    &__price {
+        @include media('768', min) {
+            margin-top: var(--offset-m);
+        }
+    }
+
+	// .service-block__aside
+	&__aside {
+        display: none;
+
+        @include media('1101', min) {
+            @include flex-column-end;
+            gap: var(--offset-xxl);
+            grid-column: -2 / -1;
+        }
+	}
+
+	// .service-block__images
+	&__images {
+        @include row-grid(var(--offset-l));
+	}
+
+    &__img {
+        display: block;
+        aspect-ratio: 1 / 1;
+        width: px2rem(170);
+    }
+
+	// .service-block__action
+	&__action {
+        @include row-grid(var(--offset-xl));
+        justify-items: center;
+        justify-self: center;
+        text-align: center;
+        max-width: px2rem(958);
+        grid-column: 1 / -1;
+	}
+
+	// .service-block__action-text
+	&__action-text {
+        font-size: px2rem(24);
+        font-weight: 500;
+	}
 }
+
+.price-block {
+    @include flex-column;
+    gap: var(--offset-xxs);
+
+    &__title {
+        font-size: px2rem(14);
+    }
+
+    &__value {
+        font-size: px2rem(32);
+        font-weight: 500;
+    }
+}
+

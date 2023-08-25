@@ -1,0 +1,31 @@
+@@include("blocks/head/head.html", {"title": "Наши услуги"})
+<div class="wrapper">
+    @@include("blocks/layout/layout.html")
+    <main class="page">
+        @@include("blocks/page-top/page-top.html", {
+            "page": "services",
+            "currentPage": "Наши услуги",
+        })
+
+        <!-- top-products section START -->
+        @@include('blocks/top-products/top-products.html')
+        <!-- top-products section END -->
+
+        <!-- reviews section START -->
+        @@include('blocks/reviews-section/reviews-section.html', {
+            "bg": "gray",
+            "title": "Отзывы наших клиентов",
+            "items": "services-reviews"
+        })
+        <!-- reviews section END -->
+        
+        <!-- instgram section START -->
+        @@include('blocks/instagram-section/instagram-section.html')
+        <!-- instgram section END -->
+    </main>
+    @@include('blocks/footer/footer.html')
+</div>
+@@include("blocks/link/link.html")
+</body>
+
+</html>

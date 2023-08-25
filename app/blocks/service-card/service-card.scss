@@ -1,3 +1,36 @@
 .service-card {
-  // your code
+    &__body {
+        position: relative;
+        display: grid;
+
+        &::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: calc(160 / 370 * 100%);
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(214, 78, 173, 0.00) 0%, #764831 100%);
+        }
+    }
+
+    &__img,
+    &__body-content {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    &__body-content {
+        position: relative;
+        z-index: 2;
+        @include flex-column;
+        justify-content: flex-end;
+        padding: var(--offset-l);
+    }
+
+    &__content {
+        @include flex-column-start;
+        padding-top: var(--offset-m);
+    }
 }

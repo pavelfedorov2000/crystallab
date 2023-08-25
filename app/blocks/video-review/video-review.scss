@@ -1,0 +1,22 @@
+.video-review {
+    display: grid;
+
+    &__picture,
+    &__link {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    &__picture {
+        display: block;
+        aspect-ratio: 135 / 90;
+    }
+
+    &__link {
+        @include flex-center;
+    }
+
+    &__player {
+        @include round(px2rem(60));
+    }
+}

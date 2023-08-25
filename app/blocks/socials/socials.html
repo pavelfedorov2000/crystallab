@@ -1,4 +1,4 @@
-<ul class="socials@@if(context.class){ @@class}">
+<ul class="socials@@if(context.class){ @@class}@@if(context.share){ socials--share}">
     @@if(!context.share){
         <li class="social">
             <a class="social__link" href="#">
@@ -89,7 +89,7 @@
                 @@include("blocks/img/img.html", {
                     "picture": "false",
                     "class": "social__icon",
-                    "src": "assets/images/icons/socials/instagram",
+                    "src": "assets/images/icons/socials/instagram-share",
                     "width": "32",
                     "height": "32",
                 })
@@ -100,7 +100,7 @@
                 @@include("blocks/img/img.html", {
                     "picture": "false",
                     "class": "social__icon",
-                    "src": "assets/images/icons/socials/vk",
+                    "src": "assets/images/icons/socials/vk-share",
                     "width": "32",
                     "height": "32",
                 })

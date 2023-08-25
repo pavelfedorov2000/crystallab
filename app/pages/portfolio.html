@@ -1,0 +1,27 @@
+@@include("blocks/head/head.html", {"title": "Наши работы"})
+<div class="wrapper">
+    @@include("blocks/layout/layout.html")
+    <main class="page">
+        @@include("blocks/page-top/page-top.html", {
+            "page": "portfolio",
+            "currentPage": "Наши работы",
+        })
+        
+        @@include('blocks/layout/catalog.html', {
+            "filters": true,
+            "loop": {
+                "item": "portfolio-item",
+                "array": "portfolio"
+            }
+        })
+
+        <!-- instgram section START -->
+        @@include('blocks/instagram-section/instagram-section.html')
+        <!-- instgram section END -->
+    </main>
+    @@include("blocks/footer/footer.html")
+</div>
+@@include("blocks/link/link.html")
+</body>
+
+</html>

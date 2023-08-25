@@ -1,17 +1,59 @@
 .swiper-button {
 	&-prev,
 	&-next {
-        position: static;
+        position: relative;
         @include flex-center;
         width: px2rem(60);
         height: px2rem(60);
         border-radius: 50%;
         background-color: var(--dark);
 
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 50%;
+            background-color: var(--accent);
+            opacity: 0;
+            transition: var(--transition) opacity;
+        }
+
 		&:after {
 			content: '';
 		}
+
+        svg {
+            position: relative;
+            z-index: 1;
+
+            path {
+                transition: var(--transition) fill;
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
+
+                svg path {
+                    fill: var(--white);
+                }
+            }
+        }
 	}
+
+    &-prev {
+        left: 0;
+    }
+
+    &-next {
+        right: 0;
+    }
 }
 
 .swiper-horizontal>.swiper-pagination-bullets,

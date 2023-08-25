@@ -1,0 +1,117 @@
+.review-card {
+    @include flex-column;
+    padding: var(--offset-l);
+    height: 100%;
+    background-color: var(--white);
+
+    &--bg {
+        &_gray {
+            background-color: var(--gray-fa);
+        }
+    }
+
+	// .review-card__body
+	&__body {
+        @include row-grid(var(--offset-m));
+        align-content: start;
+        @include padding-y(var(--offset-l));
+        flex-grow: 1;
+	}
+
+	// .review-card__title
+	&__title {
+        font-weight: 500;
+	}
+
+	// .review-card__text
+	&__text {
+        p {
+            &:not(:last-child) {
+                margin-bottom: var(--offset-m);
+            }
+        }
+	}
+    
+	// .review-card__footer
+	&__footer {
+        padding-top: var(--offset-m);
+        border-top: 1px solid var(--gray-e1);
+        display: flex;
+        align-items: flex-start;
+	}
+
+    &__footer-wrap {
+        padding-right: var(--offset-s);
+        flex-grow: 1;
+    }
+
+	// .review-card__date
+	&__date {
+        font-size: px2rem(14);
+	}
+
+	// .review-card__author
+	&__author {
+        font-weight: 500;
+	}
+}
+
+/* .swiper-slide .review-card {
+    min-height: px2rem(567);
+} */
+
+.review-preview {
+    $this: &;
+
+    @include flex-center-y;
+    column-gap: var(--offset-s);
+
+	// .review-preview__avatar
+	&__avatar,
+    &__logo {
+        @include round(px2rem(60));
+	}
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    &__logo {
+        @include flex-center;
+        border: 1px solid var(--gray-e1);
+
+        #{$this}__img {
+            width: px2rem(42);
+            height: px2rem(34);
+            
+            img {
+                border-radius: 0;
+            }
+        }
+    }
+
+    &__wrap {
+        @include flex-column;
+    }
+
+	// .review-preview__suptitle
+	&__suptitle {
+        font-size: px2rem(14);
+	}
+
+	// .review-preview__title
+	&__title {
+        font-weight: 500;
+	}
+
+    &__rating {
+        column-gap: var(--offset-x);
+    }
+}
+

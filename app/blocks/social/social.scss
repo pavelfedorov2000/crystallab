@@ -3,7 +3,18 @@
 
 	display: flex;
 	
-    &__link {}
+    &__link {
+        transition: var(--transition) transform;
 
-    &__icon {}
+        @media (any-hover: hover) {
+            &:hover {
+                transform: translateY(calc(var(--offset-xxs) * (-1)));
+            }
+        }
+    }
+
+    &__icon {
+        width: var(--icon-size_xl);
+        height: var(--icon-size_xl);
+    }
 }

@@ -6,16 +6,18 @@
             "page": "blog",
             "currentPage": "Наш блог",
         })
-        <div class="section">
-            <div class="container">
-                @@include('blocks/grid-row/grid-row.html', {
-                    "items": "4",
-                    "loopItem": "blog-card",
-                    "loopArray": "blog"
-                })
-                @@include('blocks/pagination/pagination.html')
-            </div>
-        </div>
+
+        @@include('blocks/layout/catalog.html', {
+            "loop": {
+                "item": "blog-card",
+                "array": "blog"
+            },
+            "withoutShare": true
+        })
+
+        <!-- instgram section START -->
+        @@include('blocks/instagram-section/instagram-section.html')
+        <!-- instgram section END -->
     </main>
     @@include("blocks/footer/footer.html")
 </div>

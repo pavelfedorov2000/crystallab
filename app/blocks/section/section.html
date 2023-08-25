@@ -10,6 +10,28 @@
                 }
             })
 
+            @@if(context.links){
+                <div class="tabs">
+                    @@loop("blocks/button/button.html", [{
+                        "href": "#",
+                        "class": "active",
+                        "style": "tab",
+                        "icon": "eye",
+                        "text": "Перманентный макияж",
+                    }, {
+                        "href": "#",
+                        "style": "tab",
+                        "icon": "lips",
+                        "text": "Коррекция перманентного макияжа",   
+                    }, {
+                        "href": "#",
+                        "style": "tab",
+                        "icon": "bottle",
+                        "text": "Удаление перманентного макияжа",   
+                    }])
+                </div>
+            }
+
             @@if(context.grid){
                 @@include('blocks/grid-row/grid-row.html', {
                     "items": "@@grid.items",
@@ -17,15 +39,31 @@
                     "loopArray": "@@grid.loopArray"
                 })
             }
+
+            @@if(context.slider){
+                <div class="section__slider-wrap slider-wrapper">
+                    @@include('blocks/swiper-btns/swiper-btns.html')
+                    <div class="swiper section__slider" data-slides="@@if(context.slider.slides){@@slider.slides}@@if(!context.slider.slides){4}">
+                        <div class="swiper-wrapper">
+                            @@loop('blocks/swiper-slide/swiper-slide.html', "../resources/assets/@@slider.array.json")
+                        </div>
+                        @@if(!context.slider.withoutPagination){
+                            <div class="swiper-pagination"></div>
+                        }
+                    </div>
+                </div>
+            }
         }
         @@if(context.inner){
             <div class="section__inner@@if(context.withoutGrid){ section__inner--col}">
                 @@if(context.withoutGrid){
-                    @@include("blocks/title/title.html", {
-                        "class": "_h1 section__title",
-                        "level": "2",
-                        "text": "@@title.text",
-                    })
+                    @@if(context.title){
+                        @@include("blocks/title/title.html", {
+                            "class": "_h1 section__title",
+                            "level": "2",
+                            "text": "@@title.text",
+                        })
+                    }
 
                     @@if(context.features){
                         @@include('blocks/features-list/features-list.html', {
@@ -121,7 +159,7 @@
                             @@include('blocks/swiper-btns/swiper-btns.html')
                             <div class="swiper section__slider" data-slides="@@if(context.slider.slides){@@slider.slides}@@if(!context.slider.slides){4}">
                                 <div class="swiper-wrapper">
-                                    @@loop('blocks/swiper-slide/swiper-slide.html', "../resources/assets/@@slider.array-slider.json")
+                                    @@loop('blocks/swiper-slide/swiper-slide.html', "../resources/assets/@@slider.array.json")
                                 </div>
                                 <div class="swiper-pagination"></div>
                             </div>

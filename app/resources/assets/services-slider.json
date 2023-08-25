@@ -1,0 +1,31 @@
+[{
+    "slide": "service-card",
+    "src": "assets/images/content/services/01",
+    "title": "Брови",
+    "price": "160 руб."
+}, {
+    "slide": "service-card",
+    "src": "assets/images/content/services/02",
+    "title": "Губы",
+    "price": "160 руб."
+}, {
+    "slide": "service-card",
+    "src": "assets/images/content/services/03",
+    "title": "Межресничка",
+    "price": "160 руб."
+}, {
+    "slide": "service-card",
+    "src": "assets/images/content/services/04",
+    "title": "Стрелка классическая",
+    "price": "160 руб."
+}, {
+    "slide": "service-card",
+    "src": "assets/images/content/services/05",
+    "title": "Брови",
+    "price": "160 руб."
+}, {
+    "slide": "service-card",
+    "src": "assets/images/content/services/06",
+    "title": "Губы",
+    "price": "160 руб."
+}]

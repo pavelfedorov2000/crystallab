@@ -27,23 +27,12 @@
         })
         <!-- about section END -->
 
+        <!-- services section START -->
+        @@include('blocks/services-section/services-section.html')
+        <!-- services section END -->
+
         <!-- top-products section START -->
-        @@include('blocks/section/section.html', {
-            "inner": true,
-            "title": {
-                "text": "Наши топ-продукты со&nbsp;скидкой"
-            },
-            "decorIcon": "discount",
-            "text": {
-                "first": "<b>Мы не ставим себе цель оказания потоковых услуг, для нас важен каждый гость, каждые брови, губы и веки. От вашего первого звонка или сообщения до вашей улыбки после процедуры - мы с радостью проведем вас по этому пути. </b>",
-                "second": "Студия приглашает вас в захватывающее путешествие в красоту, а этот пьянящий воздух перемен, вот-вот ворвется в вашу жизнь!"
-            },
-            "grid": {
-                "items": "2",
-                "loopItem": "sale-card",
-                "loopArray": "sale-items"
-            }
-        })
+        @@include('blocks/top-products/top-products.html')
         <!-- top-products section END -->
 
         <!-- why choose us START -->
@@ -83,7 +72,7 @@
                 "first": "Перманентный макияж можно сделать во многих салонах красоты или даже парикмахерских, <b>но зачастую там работают непрофильные мастера и вряд ли у них есть лицензия на этот вид деятельности.</b> Мечтаете о качественном и естественном перманентном макияже с гарантией?",
             },
             "slider": {
-                "array": "works"
+                "array": "works-slider"
             }
         })
         <!-- portfolio section END -->
@@ -106,17 +95,7 @@
         <!-- faq section END -->
 
         <!-- instgram section START -->
-        @@include('blocks/section/section.html', {
-            "withoutGrid": true,
-            "inner": true,
-            "title": {
-                "text": "Приходите к нам в <span>Instagram</span>"
-            },
-            "slider": {
-                "array": "instagram",
-                "slides": "6"
-            }
-        })
+        @@include('blocks/instagram-section/instagram-section.html')
         <!-- instgram section END -->
 
         <!-- contacts section START -->

@@ -1,0 +1,11 @@
+@@include('blocks/section/section.html', {
+    @@if(context.bg){"bgColor": "@@bg",}
+    "withoutGrid": true,
+    "title": {
+        "text": "@@title"
+    },
+    "slider": {
+        "array": "@@items",
+        "slides": "3"
+    }
+})

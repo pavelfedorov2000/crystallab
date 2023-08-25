@@ -3,9 +3,37 @@
     @@include('blocks/layout/layout.html')
     <main class="page">
         @@include("blocks/page-top/page-top.html", {
-            "currentPage": "Отзывы"
+            "page": "reviews",
+            "currentPage": "Отзывы",
+            "title": "Отзывы наших клиентов"
         })
+        
+        <!-- reviews slider START -->
+        @@include('blocks/section/section.html', {
+            "withoutGrid": true,
+            "inner": true,
+            "slider": {
+                "array": "reviews-slider",
+                "slides": "4",
+                "slide": "video-review"
+            }
+        })
+
+        <!-- reviews slider END -->
+        @@include('blocks/layout/catalog.html', {
+            "bg": "gray",
+            "loop": {
+                "items": "3",
+                "item": "review-card",
+                "array": "reviews"
+            },
+        })
+
+        <!-- instgram section START -->
+        @@include('blocks/instagram-section/instagram-section.html')
+        <!-- instgram section END -->
     </main>
+    @@include('blocks/footer/footer.html')
 </div>
 @@include("blocks/link/link.html")
 </body>

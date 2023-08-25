@@ -22,14 +22,35 @@ a {
     color: currentColor;
 }
 
+b {
+    font-weight: 500;
+}
+
 .text-content {
     p {
         &:not(:last-child) {
             margin-bottom: var(--offset-m);
         }
+    }
 
-        b {
-            font-weight: 500;
+    ul {
+        li {
+            position: relative;
+            padding-left: var(--offset-l);
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: px2rem(10);
+                left: 0;
+                width: px2rem(15);
+                height: 1px;
+                background-color: var(--pink);
+            }
+
+            &:not(:last-child) {
+                margin-bottom: var(--offset-x);
+            }
         }
     }
 }

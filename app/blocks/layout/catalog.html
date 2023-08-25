@@ -1,0 +1,57 @@
+<div class="section@@if(context.bg){ section--bg_@@bg}" style="border-bottom: 1px solid #E1E1E1;">
+    <div class="container">
+        @@if(context.share){
+            <div class="btns filter-btns btns--links">
+                @@loop("blocks/button/button.html", [{
+                    "href": "#",
+                    "style": "link",
+                    "class": "filter-btns__item active",
+                    "text": "Все работы",
+                }, {
+                    "href": "#",
+                    "style": "link",
+                    "class": "filter-btns__item",
+                    "text": "Перманентный макияж губ",
+                }, {
+                    "href": "#",
+                    "style": "link",
+                    "class": "filter-btns__item",
+                    "text": "Перманентный макияж бровей",
+                }, {
+                    "href": "#",
+                    "style": "link",
+                    "class": "filter-btns__item",
+                    "text": "Перманентный макияж - межресничка",
+                }, {
+                    "href": "#",
+                    "style": "link",
+                    "class": "filter-btns__item",
+                    "text": "Перманентный макияж — стрелка",
+                }, {
+                    "href": "#",
+                    "style": "link",
+                    "class": "filter-btns__item",
+                    "text": "Комбо 2 зоны в один день",
+                }, {
+                    "href": "#",
+                    "style": "link",
+                    "class": "filter-btns__item",
+                    "text": "Супер-комбо",
+                }])
+            </div>
+        }
+        @@include('blocks/grid-row/grid-row.html', {
+            "items": "@@if(context.loop.items){@@loop.items}@@if(!context.loop.items){4}",
+            "loopItem": "@@loop.item",
+            "loopArray": "@@loop.array"
+        })
+        @@include('blocks/pagination/pagination.html', {
+            @@if(context.bg){"bg": "white"}
+        })
+        @@if(!context.withoutShare){
+            @@include('blocks/socials/socials.html', {
+                "share": true
+            })
+        }
+    </div>
+</div>

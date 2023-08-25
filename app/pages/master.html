@@ -1,13 +1,56 @@
-@@include("blocks/head/head.html", {"title": "Мастер"})
+@@include("blocks/head/head.html", {"title": "Мастер Оксана Тихалова"})
 <div class="wrapper">
     @@include("blocks/layout/layout.html")
-    <main class="page catalog">
-        <div class="container">
-            @@include("blocks/breadcrumbs/breadcrumbs.html", {
-                "currentPage": "Каталог"
-            })
-        </div>
+    <main class="page">
+        @@include("blocks/page-top/page-top.html", {
+            "page": "masters",
+            "prevPage": "Мастера",
+            "currentPage": "Мастер Оксана Тихалова",
+            "rating": {
+                "value": "5"
+            }
+        })
+
+        @@include('blocks/service-block/service-block.html', {
+            "picture": {
+                "src": "assets/images/content/master"
+            },
+            "title": "Всем доброго время суток!",
+            "accentText": "Меня зовут Оксана. Я — ведущий мастер и преподаватель студии. Мой позитив и влюбленность в свою профессию никого не оставляет равнодушным.",
+            "textBlock": {
+                "textOne": "<b>Заводной механизм студии — это про нее!</b>",
+                "textTwo": "Анастасия, ведущий мастер - преподаватель студии. Ее позитив и влюбленность в свою профессию никого не оставляет равнодушным. Заводной механизм студии — это про нее!",
+                "textThree": "<b>Начинала Оксана</b> свой путь в перманентом макияже более 6 лет назад, а знакомство с Ольгой Логиновой во многом определило ее дальнейший вектор развития.",
+                "textFour": "Главная цель Насти, чтобы клиент был не только доволен, но и у него было максимально хорошее настроение!"
+            },
+            "asideImages": {
+                "1": "assets/images/content/master-aside-01",
+                "2": "assets/images/content/master-aside-02"
+            },
+            "action": {
+                "text": "Записывайтесь ко мне на любую зону — я сделаю так, как вы хотите и вы будете любоваться своим макияжем долгие годы!",
+                "btn": "Записаться к Оксане!"
+            }
+        })
+
+        <!-- master works section START -->
+        @@include('blocks/works-section/works-section.html', {
+            "title": "Работы Оксаны"
+        })
+        <!-- master works section END -->
+
+        <!-- master reviews section START -->
+        @@include('blocks/reviews-section/reviews-section.html', {
+            "title": "Отзывы Оксаны",
+            "items": "master-reviews"
+        })
+        <!-- master reviews section END -->
+        
+        <!-- instgram section START -->
+        @@include('blocks/instagram-section/instagram-section.html')
+        <!-- instgram section END -->
     </main>
+    @@include('blocks/footer/footer.html')
 </div>
 @@include("blocks/link/link.html")
 </body>
