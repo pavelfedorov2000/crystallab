@@ -12,4 +12,14 @@
     &-contain {
         object-fit: contain;
     }
+
+    &-scale {
+        transition: var(--transition-long) transform;
+
+        @media (any-hover: hover) {
+            &:hover {
+                transform: scale(1.075);
+            }
+        }
+    }
 }

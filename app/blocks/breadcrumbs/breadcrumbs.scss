@@ -1,7 +1,8 @@
 .breadcrumbs {
     &__list {
         display: flex;
-        gap: var(--offset-m);
+        flex-wrap: wrap;
+        gap: var(--offset-x) var(--offset-m);
     }
 
 	&__item {

@@ -1,6 +1,5 @@
 .container {
-    width: calc(var(--container-width) + var(--container-padding) * 2);
-    max-width: 100%;
+    max-width: calc(var(--container-width) + var(--container-padding) * 2);
     @include padding-x(var(--container-padding));
     margin: 0 auto;
 }
@@ -9,10 +8,7 @@
     position: relative;
     @include flex-column;
     min-height: 100vh;
-
-    @include media('1100', max) {
-        overflow-x: hidden;
-    }
+    overflow-x: hidden;
 }
 
 .page {
@@ -28,6 +24,10 @@
     &--items {
         &_2 {
             --baseWidth: #{px2rem(570)};
+
+            @include media('767', max) {
+                --baseWidth: #{px2rem(290)};
+            }
         }
 
         &_3 {
@@ -44,70 +44,6 @@
     }
 
     &--full {
-        grid-template-columns: unset;
-    }
-}
-
-.grid-col {
-    $this: &;
-
-    &-2 {
-        grid-column: span 2;
-    }
-
-    &-3 {
-        grid-column: span 3;
-    }
-
-    &-4 {
-        grid-column: span 4;
-
-        @include media('1100', max) {
-            grid-column: 1 / -1;
-        }
-    }
-
-    &-5 {
-        grid-column: span 5;
-
-        @include media('1100', max) {
-            grid-column: 1 / -1;
-        }
-    }
-
-    &-6 {
-        grid-column: span 6;
-
-        @include media('1100', max) {
-            grid-column: 1 / -1;
-        }
-    }
-
-    &-7 {
-        grid-column: span 7;
-    }
-
-    &-8 {
-        grid-column: span 8;
-
-        @include media('1100', max) {
-            grid-column: 1 / -1;
-        }
-    }
-
-    &-9 {
-        grid-column: span 9;
-
-        @include media('1100', max) {
-            grid-column: 1 / -1;
-        }
-    }
-
-    &-10 {
-        grid-column: span 10;
-    }
-
-    &-12 {
-        grid-column: 1 / -1;
+        @include flex-column;
     }
 }

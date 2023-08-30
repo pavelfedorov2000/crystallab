@@ -1,9 +1,10 @@
 @@if(context.items){
-    <div class="gallery@@if(context.items){ gallery--items_@@items}">
+    <div class="gallery@@if(context.class){ @@class__gallery}@@if(context.items){ gallery--items_@@items}">
         <div class="gallery__item gallery__item--1">
             @@include("blocks/img/img.html", {
                 "class": "gallery__img",
                 "cover": true,
+                "scale": true,
                 "src": "assets/images/content/@@if(context.items == '4'){about-grid}@@if(context.items == '2'){why-choose-us}/01",
                 "width": "570",
                 "height": "560",
@@ -13,6 +14,7 @@
             @@include("blocks/img/img.html", {
                 "class": "gallery__img",
                 "cover": true,
+                "scale": true,
                 "src": "assets/images/content/@@if(context.items == '4'){about-grid}@@if(context.items == '2'){why-choose-us}/02",
                 "width": "@@if(context.items == '4'){570}@@if(context.items == '2'){270}",
                 "height": "@@if(context.items == '4'){560}@@if(context.items == '2'){265}",
@@ -22,6 +24,7 @@
             @@include("blocks/img/img.html", {
                 "class": "gallery__img",
                 "cover": true,
+                "scale": true,
                 "src": "assets/images/content/@@if(context.items == '4'){about-grid}@@if(context.items == '2'){why-choose-us}/03",
                 "width": "270",
                 "height": "@@if(context.items == '4'){560}@@if(context.items == '2'){265}",
@@ -32,6 +35,7 @@
                 @@include("blocks/img/img.html", {
                     "class": "gallery__img",
                     "cover": true,
+                    "scale": true,
                     "src": "assets/images/content/about-grid/04",
                     "width": "270",
                     "height": "265",

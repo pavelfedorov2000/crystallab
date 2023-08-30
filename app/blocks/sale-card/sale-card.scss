@@ -5,6 +5,14 @@
         display: flex;
         min-height: px2rem(260);
         background-color: var(--beige);
+
+        &-content {
+            position: relative;
+            z-index: 1;
+            @include flex-column-start;
+            flex-grow: 1;
+            padding: var(--offset-l);
+        }
 	}
 
     &__picture {
@@ -13,13 +21,6 @@
         right: 0;
         bottom: 0;
     }
-
-	// .sale-card__body-content
-	&__body-content {
-        @include flex-column-start;
-        flex-grow: 1;
-        padding: var(--offset-l);
-	}
 
     &__title {
         margin-bottom: var(--offset-x);

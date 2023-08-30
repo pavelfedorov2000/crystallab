@@ -1,11 +1,21 @@
 @@include('blocks/section/section.html', {
     "bgImage": "assets/images/content/gradient-bg.jpg",
-    "title": {
-        "text": "Наши услуги"
-    },
+    @@if(context.title){
+        "title": {
+            "text": "Наши услуги"
+        },
+    }
     "links": true,
-    "slider": {
-        "array": "services-slider",
-        "withoutPagination": "true"
+    @@if(context.slider){
+        "slider": {
+            "array": "services-slider",
+            "withoutPagination": "true"
+        }
+    }
+    @@if(context.grid){
+        "grid": {
+            "loopItem": "service-card",
+            "loopArray": "services"
+        }
     }
 })

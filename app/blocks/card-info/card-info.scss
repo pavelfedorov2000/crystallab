@@ -1,0 +1,24 @@
+.card-info {
+    border: var(--border);
+
+    @include media('768', min) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__content {
+        @include flex-column-start;
+        gap: var(--offset-m);
+        padding: var(--offset-xl);
+
+        @include media('767', max) {
+            padding: var(--offset-s);
+        }
+    }
+
+    &__map {
+        @include media('767', max) {
+            height: px2rem(200);
+        }
+    }
+}

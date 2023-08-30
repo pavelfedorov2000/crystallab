@@ -55,6 +55,9 @@
         @@if(context.text){
             <span class="btn__text">@@text</span>
         }
+        @@if(context.size == 'xl'){
+            <span class="btn__shadow"></span>
+        }
         @@if(context.icon_position_right){
             @@if(context.icon){
                 @@include('blocks/icons/@@icon.html')

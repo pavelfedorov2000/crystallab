@@ -12,6 +12,15 @@
             height: calc(160 / 370 * 100%);
             z-index: 1;
             background: linear-gradient(180deg, rgba(214, 78, 173, 0.00) 0%, #764831 100%);
+            transition: var(--transition) opacity;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    opacity: 0;
+                }
+            }
         }
     }
 

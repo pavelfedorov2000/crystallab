@@ -1,7 +1,19 @@
 .slider-nav {
     &__list {
         display: flex;
-        justify-content: center;
+        
+        @include media('768', min) {
+            justify-content: center;
+        }
+
+        @include media('767', max) {
+            overflow-x: auto;
+        }
+
+        /* @include media('767', max) {
+            flex-direction: column;
+            align-items: center;
+        } */
     }
 
     &__item {
@@ -16,6 +28,10 @@
                 height: px2rem(20);
                 background-color: var(--gray-dc);
             }
+        }
+
+        @include media('767', max) {
+            white-space: nowrap;
         }
     }
 

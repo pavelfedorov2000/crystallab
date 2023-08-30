@@ -1,0 +1,98 @@
+@@include("blocks/head/head.html", {"title": "Контакты"})
+<div class="wrapper">
+    @@include("blocks/layout/layout.html")
+    <main class="page">
+        @@include("blocks/page-top/page-top.html", {
+            "page": "contacts",
+            "currentPage": "Наши контакты",
+        })
+
+        <section class="section">
+            <div class="container">
+                @@include("blocks/title_container/title_container.html", {
+                    "class": "section__top",
+                    "title": {
+                        "class": "_h2",
+                        "level": "2",
+                        "text": "Будем рады видеть Вас!",
+                    }
+                })
+    
+                @@include('blocks/info-block/info-block.html', {
+                    "class": "section__contacts",
+                    "property": "Единый номер для записи",
+                    "phone": true,
+                    "instagram": true,
+                    "vk": true,
+                    "btn": {
+                        "text": "Перезвоните мне!"
+                    }
+                })
+
+                <div class="grid-row grid-row--full">
+                    @@include('blocks/card-info/card-info.html', {
+                        "id": "1",
+                        "title": "Студия на Петра Мстиславца 3",
+                        "address": "Минск, ул. Петра Мстиславца, 3"
+                    })
+                    @@include('blocks/card-info/card-info.html', {
+                        "id": "2",
+                        "title": "Студия на Брилевской 3",
+                        "address": "Минск, Брилевская ул., 3"
+                    })
+                    @@include('blocks/card-info/card-info.html', {
+                        "id": "3",
+                        "title": "Студия на проспекте Независимости 58В",
+                        "address": "Минск, просп. Независимости, 58В"
+                    })
+                </div>
+            </div>
+        </section>
+
+        @@include('blocks/section/section.html', {
+            "bgColor": "gray",
+            "title": {
+                "text": "Форма обратной связи"
+            },
+            "form": "feedback-form"
+        })
+
+        <!-- instgram section START -->
+        @@include('blocks/instagram-section/instagram-section.html')
+        <!-- instgram section END -->
+    </main>
+    @@include("blocks/footer/footer.html")
+</div>
+@@include("blocks/link/link.html")
+<script>
+    ymaps.ready(init);
+
+    function init() {
+        fetch("assets/shops.json")
+            .then((response) => {
+                return response.json();
+        })
+        .then((data) => {
+            data.features.map((item) => {
+                    return {
+                        ...item,
+                        properties: ''
+                    }
+                }).forEach((item) => {
+                const map = new ymaps.Map(`map-${item.id}`, {
+                    center: item.geometry.coordinates,
+                    zoom: 12,
+                    controls: []
+                }, {
+                    searchControlProvider: 'yandex#search'
+                }),
+                objectManager = new ymaps.ObjectManager({});
+                map.geoObjects.add(objectManager);
+                objectManager.add(item);
+            });
+        });
+    }
+</script>
+</body>
+
+</html>

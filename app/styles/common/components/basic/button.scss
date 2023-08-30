@@ -10,16 +10,8 @@
 	transition: color var(--transition);
 	color: currentColor;
 
-	@media (any-hover: hover) {
-		&:hover {
-			//background-color: var(--accent-hover);
-			//color: var(--white);
-		}
-	}
-
 	&.disabled,
 	&[disabled] {
-		//background-color: var(--disabled);
 		border: none;
 		cursor: not-allowed;
 
@@ -39,6 +31,25 @@
 	&__text {
         position: relative;
         z-index: 3;
+    }
+
+    &__shadow {
+        --shadow-offset: var(--offset-m);
+
+        position: absolute;
+        z-index: -1;
+        top: var(--shadow-offset);
+        right: calc(var(--shadow-offset) * (-1));
+        bottom: calc(var(--shadow-offset) * (-1));
+        left: var(--shadow-offset);
+        border-radius: px2rem(100);
+        opacity: var(--opacity-60);
+        background: linear-gradient(90deg, var(--pink) 0%, #73BCFF 100%);
+        filter: blur(px2rem(30));
+
+        @include media('767', max) {
+            --shadow-offset: var(--offset-s);
+        }
     }
 
 	&--primary {
@@ -92,16 +103,27 @@
 
 	&--style {
 		&_tab {
+            padding-bottom: var(--offset-xl);
+            border-bottom: var(--border-width) var(--border-style) var(--white);
             color: var(--white);
             font-weight: 600;
+            transition: var(--transition) color, var(--transition) border-bottom-color;
+
+            #{$this} {
+                &__icon {
+                    margin-right: var(--offset-l);
+                }
+            }
 
             &.active {
                 color: var(--pink);
+                border-bottom-color: var(--pink);
             }
 
             @media (any-hover: hover) {
                 &:hover {
                     color: var(--pink);
+                    border-bottom-color: var(--pink);
                 }
             }
         }
@@ -130,6 +152,21 @@
             padding: px2rem(43) px2rem(100);
             border-radius: px2rem(200);
             font-size: px2rem(28);
+
+            @include media('767', max) {
+                padding: var(--offset-l);
+                font-size: px2rem(24);
+            }
+
+            @include media('500', max) {
+                width: 100%;
+                justify-content: center;
+            }
+
+            &::before,
+            &::after {
+                border-radius: px2rem(200);
+            }
         }
     }
 
@@ -151,6 +188,19 @@
 
     &--links {
         gap: var(--offset-xxs) var(--offset-m);
+    }
+
+    &--tabs {
+        display: grid;
+        gap: var(--gap);
+
+        @include media('768', min) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include media('1101', min) {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 }
 

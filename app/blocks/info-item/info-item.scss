@@ -4,6 +4,10 @@
     @include flex-center-y;
     gap: var(--offset-s);
 
+    @include media('500', max) {
+        gap: var(--offset-x);
+    }
+
     &__icon {
         @include flex-center;
         flex-shrink: 0;
@@ -14,8 +18,19 @@
     }
 
     &__text {
+        @include media('500', max) {
+            font-size: px2rem(12);
+        }
+
         b {
             font-weight: 500;
+        }
+
+        &.mob-hidden,
+        .mob-hidden {
+            @include media('1100', max) {
+                display: none;
+            }
         }
     }
 

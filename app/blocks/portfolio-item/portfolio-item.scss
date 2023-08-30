@@ -5,17 +5,5 @@
 
     &__picture {
         display: block;
-
-        img {
-            transition: var(--transition-long) transform;
-        }
-    }
-
-    @media (any-hover: hover) {
-        &:hover {
-            #{$this}__picture img {
-                transform: scale(1.075);
-            }
-        }
     }
 }

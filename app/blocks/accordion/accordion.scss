@@ -6,14 +6,13 @@
     --content-padding-left: calc(var(--offset-xl) + var(--before-line-width) + var(--before-line-right-offset));
 
     background-color: rgba(40, 40, 40, 0.80);
-    // .accordion-item__toggle
 
     &__toggle {
         @include flex-center-y;
         position: relative;
         padding: px2rem(28) var(--offset-l) px2rem(28) var(--offset-xl);
         width: 100%;
-        border: 1px solid #3C3C3C;
+        border: var(--border-width) var(--border-style) #3C3C3C;
         text-align: left;
         color: var(--white);
         font-size: px2rem(20);

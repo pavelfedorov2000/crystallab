@@ -1,6 +1,5 @@
 <@@if(!context.tag){h@@level}@@if(context.tag){@@tag} @@if(context.tag=='a'){href="#"} @@if(context.class){class="@@class"}>
-    @@if(!context.fullLink){@@text}
-    @@if(context.fullLink){
-        <a href="#" class="full-link">@@text</a>
-    }
+    @@if(!context.fullLink){@@if(!context.instagram){@@text}}
+    @@if(context.instagram){Приходите к нам в <a href="#" target="_blank">Instagram <img class="section__title-icon" src="assets/images/icons/socials/instagram.svg" alt="instagram"></a>}
+    @@if(context.fullLink){<a href="#" class="full-link">@@text</a>}
 </@@if(!context.tag){h@@level}@@if(context.tag){@@tag}>

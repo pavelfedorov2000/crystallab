@@ -1,15 +1,6 @@
 <section class="section">
     <div class="container">
         <div class="service-block">
-            @@if(context.picture){
-                @@include("blocks/img/img.html", {
-                    "class": "service-block__picture",
-                    "cover": true,
-                    "src": "@@picture.src",
-                    "width": "400",
-                    "height": "548",
-                })
-            }
             <div class="service-block__content text-content">
                 @@if(context.title){
                     @@include("blocks/title/title.html", {
@@ -28,17 +19,17 @@
                         <p>
                             @@textBlock.textOne
                         </p>
-                        @@if(context.textTwo){
+                        @@if(context.textBlock.textTwo){
                             <p>
                                 @@textBlock.textTwo
                             </p>
                         }
-                        @@if(context.textThree){
+                        @@if(context.textBlock.textThree){
                             <p>
                                 @@textBlock.textThree
                             </p>
                         }
-                        @@if(context.textFour){
+                        @@if(context.textBlock.textFour){
                             <p>
                                 @@textBlock.textFour
                             </p>    
@@ -52,7 +43,7 @@
                     @@if(context.list.title){
                         @@include("blocks/title/title.html", {
                             "class": "_h2 service-block__title",
-                            "tag": "div",
+                            "level": "2",
                             "text": "@@list.title",
                         })
                     }
@@ -71,6 +62,16 @@
                     </div>
                 }
             </div>
+            @@if(context.picture){
+                @@include("blocks/img/img.html", {
+                    "class": "service-block__picture",
+                    "cover": true,
+                    "scale": true,
+                    "src": "@@picture.src",
+                    "width": "400",
+                    "height": "548",
+                })
+            }
             <div class="service-block__aside">
                 @@include("blocks/img/img.html", {
                     "picture": "false",
@@ -83,12 +84,14 @@
                     @@loop("blocks/img/img.html", [{
                         "class": "service-block__img",
                         "cover": true,
+                        "scale": true,
                         "src": "@@asideImages.1",
                         "width": "170",
                         "height": "170",
                     }, {
                         "class": "service-block__img",
                         "cover": true,
+                        "scale": true,
                         "src": "@@asideImages.2",
                         "width": "170",
                         "height": "170",
@@ -99,6 +102,10 @@
                 <div class="service-block__action">
                     <div class="service-block__action-text">@@action.text</div>
                     @@include("blocks/button/button.html", {
+                        "data": {
+                            "attr": "popup",
+                            "value": "callback"
+                        },
                         "primary": true,
                         "size": "xl",
                         "class": "service-block__action-btn",

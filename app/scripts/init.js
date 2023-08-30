@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    //app.burger.init();
+    app.burger.init();
     app.accordion.init();
-    //app.select.init();
-    //app.tabs.init();
-    //app.catalogFilters.init();
-    //app.popup.init();
-    //app.validation.init();
+    app.popup.init();
+    app.promoSlider.init();
+    app.validation.init();
 
     const sliderSections = document.querySelectorAll('.section');
 
@@ -21,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         new Swiper(`#${sliderId} .section__slider`, {
             loop: true,
-            slidesPerView: 2,
+            slidesPerView: sliderSlides < 4 ? 1 : 2,
             spaceBetween: 30,
             //autoplay: true,
             navigation: {
@@ -35,9 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             breakpoints: {
                 576: {
-                    spaceBetween: 30,
+                    slidesPerView: sliderSlides < 4 ? 1 : 2,
                 },
                 768: {
+                    slidesPerView: sliderSlides < 4 ? 2 : sliderSlides,
+                },
+                1101: {
                     slidesPerView: sliderSlides,
                 }
             },
@@ -60,22 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     scrollToSection(); */
-
-    /* const fileUpload = () => {
-        const fileInputs = document.querySelectorAll('input[type="file"]');
-
-        if (!fileInputs.length) return;
-
-        fileInputs.forEach((input) => {
-            input.addEventListener('change', function () {
-                const label = input.closest('label').querySelector('.btn__text');
-                const fileName = this.files[0].name;
-                label.textContent = fileName;
-            });
-        });
-    }
-
-    fileUpload(); */
 
     /* const animatedItems = document.querySelectorAll('.animated');
 
@@ -101,24 +86,4 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver(callback, options);
 
     animatedItems.forEach((item) => observer.observe(item)); */
-
-    /*  const rangeSlider = document.getElementById('range-slider');
- 
-     if (!rangeSlider) return;
- 
-     noUiSlider.create(rangeSlider, {
-         start: [75],
-         range: {
-             'min': [0],
-             'max': [100]
-         }
-     });
- 
-     rangeSlider.noUiSlider.on('update', function (values, handle) {
-         const rangeValue = rangeSlider.closest('.range').querySelector('.range__value');
- 
-         if (!rangeValue) return;
- 
-         rangeValue.innerHTML = `${Math.floor(values[handle])}%`;
-     }); */
 });

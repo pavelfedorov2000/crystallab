@@ -3,9 +3,6 @@
     @include padding-y(var(--section-padding_xs));
     background-color: var(--black);
     color: var(--white);
-    background-size: contain;
-    background-position: 100% 50%;
-    background-repeat: no-repeat;
 
     &::before {
         content: '';
@@ -14,7 +11,20 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: rgba(var(--color-black-rgb), 0.3); 
+        background-color: var(--black-opacity-30); 
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        @include media('767', max) {
+            img {
+                object-position: 40%;
+            }
+        }
     }
 
     &__inner {

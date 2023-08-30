@@ -4,28 +4,19 @@
 	// .footer__inner
 	&__inner {
         display: grid;
+        gap: var(--gap) var(--offset-s);
         font-size: px2rem(14);
         
         @include media('768', min) {
             align-items: center;
             grid-template-columns: repeat(2, 1fr);
-            gap: var(--gap) var(--offset-s);
         }
-	}
-
-	// .footer__text
-	&__text {
 	}
 
 	// .footer__ratings
 	&__ratings {
         display: flex;
         gap: var(--offset-xxxl);
-	}
-
-	// .footer__rating
-	&__rating {
-        
 	}
 
 	// .footer__copyright

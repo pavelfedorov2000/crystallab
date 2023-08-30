@@ -1,4 +1,4 @@
-<label class="checkbox@@if(context.class){ @@class}@@if(context.style){ checkbox--style_@@style}@@if(context.size){ checkbox--size_@@size}">
+<label class="form-item checkbox@@if(context.class){ @@class__checkbox}@@if(context.style){ checkbox--style_@@style}@@if(context.size){ checkbox--size_@@size}">
     <input class="checkbox__input" type="checkbox"@@if(context.isChecked){ checked}@@if(context.required){ required data-pristine-required-message="@@requiredMessage"} @@if(context.name){name="@@name"}>
     <span class="checkbox__style"></span>
     @@if(context.text){

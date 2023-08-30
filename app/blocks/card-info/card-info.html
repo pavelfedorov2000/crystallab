@@ -1,0 +1,18 @@
+<div class="card-info@@if(context.class){ @@class}@@if(context.style){ card-info--style_@@style}">
+    <div class="card-info__content">
+        @@include("blocks/title/title.html", {
+            "class": "_h3 card-info__title",
+            "level": "3",
+            "text": "@@title",
+        })
+        @@include('blocks/contacts-block/contacts-block.html', {
+            "property": "Адрес салона",
+            "value": "@@address"
+        })
+        @@include('blocks/contacts-block/contacts-block.html', {
+            "property": "Контактный телефон",
+            "phone": true
+        })
+    </div>
+    <div id="map-@@id" class="map card-info__map"></div>
+</div>

@@ -1,3 +1,22 @@
 .not-found-block {
-  // your code
+    padding: px2rem(130) 0 px2rem(150);
+    @include flex-column-center;
+    text-align: center;
+
+    @include media('1100', max) {
+        padding: px2rem(50) 0;
+    }
+
+    &__title {
+        font-size: px2rem(128);
+    }
+
+    &__text {
+        margin-bottom: var(--offset-xl);
+        font-size: px2rem(18);
+
+        @include media('500', max) {
+            margin-bottom: var(--offset-l);
+        }
+    }
 }

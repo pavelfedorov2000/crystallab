@@ -1,1 +1,26 @@
-.close-btn {}
+.close-btn {
+    $this: &;
+
+    @include flex-center;
+    position: absolute;
+    top: var(--offset-x);
+    right: var(--offset-x);
+    padding: var(--offset-x);
+    background-color: transparent;
+    border: none;
+
+    &__icon {
+        width: px2rem(11);
+        height: px2rem(11);
+        fill: var(--black);
+        transition: var(--transition) fill;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            #{$this}__icon {
+                fill: var(--accent);
+            }   
+        }
+    }
+}

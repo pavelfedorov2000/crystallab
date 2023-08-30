@@ -3,20 +3,33 @@
     align-items: center;
     flex-wrap: wrap;
     gap: var(--offset-m) var(--offset-xl);
+
+    @include media('500', max) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
 }
 
-.phone-block {
+.contact-item {
     @include row-grid(var(--offset-xxs));
-    color: var(--gray-28);
 
-    &__title {
+    &__property {
         font-size: px2rem(14);
+    }
+
+    &__property {
+        font-weight: 500;
     }
 
     &__phone {
         font-size: px2rem(24);
         font-weight: 500;
         transition: var(--transition) color;
+
+        @include media('500', max) {
+            font-size: px2rem(20);
+        }
 
         @media (any-hover: hover) {
             &:hover {

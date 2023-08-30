@@ -1,8 +1,34 @@
-<div style="display: none;"
-     id="@@id"
-     role="dialog"
-     class="popup@@if(context.size){ popup--size_@@size}">
-    <div class="popup__top">
-        <div class="popup__title">@@title</div>
+<div class="overlay">
+    <div id="callback" role="dialog" class="popup">
+        @@include("blocks/title/title.html", {
+            "class": "_h3 popup__title",
+            "tag": "div",
+            "text": "Заказать обратный звонок",
+        })
+        @@include('blocks/close-btn/close-btn.html', {
+            "class": "popup"
+        })
+        <form action="#" class="popup__form js-form">
+            <div class="popup__fields">
+                @@loop('blocks/field/field.html', [{
+                    "label": "Как вас зовут?",
+                    "inputBg": "gray"
+                }, {
+                    "label": "Ваш телефон",
+                    "inputType": "tel",
+                    "inputBg": "gray"
+                }, {
+                    "label": "Комментарий",
+                    "textarea": true,
+                    "inputBg": "gray"
+                }])
+            </div>
+            @@include("blocks/button/button.html", {
+                "type": "submit",
+                "size": "l",
+                "primary": true,
+                "text": "Перезвоните мне!",
+            })
+        </form>
     </div>
 </div>

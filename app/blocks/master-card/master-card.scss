@@ -1,7 +1,17 @@
 .master-card {
+    $this: &;
+
+    position: relative;
+    overflow: hidden;
+
     &__picture {
         display: block;
         aspect-ratio: 85 / 115;
+        overflow: hidden;
+
+        img {
+            transition: var(--transition-long) transform;
+        }
     }
 
     &__content {
@@ -13,6 +23,14 @@
     &__rating {
         &:not(:last-child) {
             margin-bottom: var(--offset-xxs);
+        }
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            #{$this}__picture img {
+                transform: scale(1.075);
+            }
         }
     }
 }

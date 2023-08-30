@@ -1,36 +1,38 @@
 .service-block {
     display: grid;
-    grid-template-columns: px2rem(400) 1fr;
     gap: var(--offset-l);
 
     @include media('768', min) {
-        gap: var(--gap-xl);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     @include media('1101', min) {
+        gap: var(--gap-xl);
         grid-template-columns: px2rem(400) 1fr var(--offset-x) px2rem(170);
     }
 
     &__picture {
         display: block;
-        aspect-ratio: 200 / 274;
+        //aspect-ratio: 200 / 274;
+        overflow: hidden;
+
+        @include media('768', min) {
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+        }
     }
 
 	// .service-block__content
 	&__content {
-        @include row-grid(var(--offset-m));
-        align-content: start;
+        @include flex-column;
         padding-left: var(--offset-x);
 	}
-
-    /* &__title {
-        margin-bottom: var(--offset-m);
-    } */
 
 	// .service-block__text
 	&__text {
         font-size: px2rem(20);
         font-weight: 500;
+
         &:not(:last-child) {
             margin-bottom: var(--offset-m);
         }
@@ -43,7 +45,7 @@
 
 	// .service-block__text-block
 	&__text-block {
-        @include row-grid(var(--offset-m));
+        margin-top: var(--offset-m);
 
         p {
             &:first-child {
@@ -53,9 +55,7 @@
 	}
 
     &__price {
-        @include media('768', min) {
-            margin-top: var(--offset-m);
-        }
+        margin-top: var(--offset-m);
     }
 
 	// .service-block__aside
@@ -78,6 +78,7 @@
         display: block;
         aspect-ratio: 1 / 1;
         width: px2rem(170);
+        overflow: hidden;
     }
 
 	// .service-block__action
@@ -94,6 +95,10 @@
 	&__action-text {
         font-size: px2rem(24);
         font-weight: 500;
+
+        @include media('500', max) {
+            font-size: px2rem(20);
+        }
 	}
 }
 

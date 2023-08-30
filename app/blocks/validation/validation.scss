@@ -1,7 +1,4 @@
-label.error {
-    color: red;
-}
-
-.input.error {
-    border-color: red;
+.error-text {
+    font-size: px2rem(14);
+    color: var(--pink);
 }

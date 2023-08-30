@@ -1,6 +1,6 @@
-<div class="section@@if(context.bg){ section--bg_@@bg}" style="border-bottom: 1px solid #E1E1E1;">
+<div class="section@@if(context.bg){ section--bg_@@bg}@@if(context.borderBottom){ section--with_border-bottom}">
     <div class="container">
-        @@if(context.share){
+        @@if(context.filter){
             <div class="btns filter-btns btns--links">
                 @@loop("blocks/button/button.html", [{
                     "href": "#",
@@ -41,7 +41,7 @@
             </div>
         }
         @@include('blocks/grid-row/grid-row.html', {
-            "items": "@@if(context.loop.items){@@loop.items}@@if(!context.loop.items){4}",
+            @@if(context.loop.items){"items": "@@loop.items",}
             "loopItem": "@@loop.item",
             "loopArray": "@@loop.array"
         })

@@ -1,11 +1,11 @@
-<label class="field@@if(context.class){ @@class}">
+<label class="form-item field@@if(context.class){ @@class__field@@if(context.span){ @@class__field--span-@@span}}">
     @@if(context.label) {
         <span class="field__label">@@label</span>
     }
     @@if(context.textarea){
-        <textarea class="input" @@if(context.name){name="@@name"} @@if(context.placeholder){placeholder="@@placeholder"}></textarea>
+        <textarea class="input textarea@@if(context.inputBg){ input--bg_@@inputBg}" @@if(context.name){name="@@name"} @@if(context.placeholder){placeholder="@@placeholder"}></textarea>
     }
     @@if(!context.textarea){
-        <input class="input" @@if(context.inputType){type="@@inputType"} @@if(context.name){name="@@name"} @@if(context.placeholder){placeholder="@@placeholder"} @@if(context.required){required data-pristine-required-message="@@if(context.requiredMessage){@@requiredMessage}@@if(!context.requiredMessage){Обязательное поле}"} @@if(context.inputType == 'email'){data-pristine-email-message="Введите корректный email"} @@if(context.min){min="@@min" data-pristine-min-message="@@label должно быть не меньше @@min"} @@if(context.max){max="@@max" data-pristine-max-message="@@label должно быть не больше @@max"}>
+        <input class="input@@if(context.inputBg){ input--bg_@@inputBg}" @@if(context.inputType){type="@@inputType"} @@if(context.name){name="@@name"} @@if(context.placeholder){placeholder="@@placeholder"} @@if(context.required){required data-pristine-required-message="@@if(context.requiredMessage){@@requiredMessage}@@if(!context.requiredMessage){Обязательное поле}"} @@if(context.inputType == 'email'){data-pristine-email-message="Неверно указан электронный адрес"} @@if(context.min){min="@@min" data-pristine-min-message="@@label должно быть не меньше @@min"} @@if(context.max){max="@@max" data-pristine-max-message="@@label должно быть не больше @@max"}>
     }
 </label>

@@ -1,3 +1,14 @@
-<div class="faq@@if(context.class){ @@class}@@if(context.style){ faq--style_@@style}">
-  <!--your code-->
-</div>
+@@include('blocks/section/section.html', {
+    "bgImage": "assets/images/content/faq-bg.jpg",
+    "withoutGrid": true,
+    "inner": true,
+    "title": {
+        "text": "Часто задаваемые вопросы"
+    },
+    "features": {
+        "loopArray": "faq-features"
+    },
+    "accordion": {
+        "items": "faq"
+    }
+})

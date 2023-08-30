@@ -1,127 +1,60 @@
-@@if(!context.listItem){
-    <article class="review-card@@if(context.class){ @@class}@@if(context.bgColor){ review-card--bg_@@bgColor}">
-        @@if(context.preview){
-            <header class="review-card__top review-preview">
-                @@if(context.preview.avatar){
-                    <div class="review-preview__@@if(context.preview.avatar.format){logo}@@if(!context.preview.avatar.format){avatar}">
-                        @@include("blocks/img/img.html", {
-                            "class": "review-preview__img",
-                            @@if(!context.preview.avatar.format){"cover": true,}
-                            @@if(context.preview.avatar.format){"contain": true,}
-                            "src": "@@preview.avatar.src",
-                            @@if(context.preview.avatar.format){"format": "@@preview.avatar.format",}
-                            "width": "@@if(!context.preview.avatar.format){60}@@if(context.preview.avatar.format){42}",
-                            "height": "@@if(!context.preview.avatar.format){60}@@if(context.preview.avatar.format){34}",
+<article class="review-card@@if(context.class){ @@class}@@if(context.bgColor){ review-card--bg_@@bgColor}">
+    @@if(context.preview){
+        <header class="review-card__top review-preview">
+            @@if(context.preview.avatar){
+                <div class="review-preview__@@if(context.preview.avatar.format){logo}@@if(!context.preview.avatar.format){avatar}">
+                    @@include("blocks/img/img.html", {
+                        "class": "review-preview__img",
+                        @@if(!context.preview.avatar.format){"cover": true,}
+                        @@if(context.preview.avatar.format){"contain": true,}
+                        "src": "@@preview.avatar.src",
+                        @@if(context.preview.avatar.format){"format": "@@preview.avatar.format",}
+                        "width": "@@if(!context.preview.avatar.format){60}@@if(context.preview.avatar.format){42}",
+                        "height": "@@if(!context.preview.avatar.format){60}@@if(context.preview.avatar.format){34}",
+                    })
+                </div>
+                <div class="review-preview__wrap">
+                    <div class="review-preview__suptitle">@@preview.suptitle</div>
+                    <div class="review-preview__title">@@preview.title</div>
+                    @@if(context.preview.rating){
+                        @@include('blocks/rating/rating.html', {
+                            "class": "review-preview__rating",
+                            "value": "@@preview.rating.value",
+                            "reviews": "@@preview.rating.reviews"
+                        })
+                    }
+                </div>
+            }
+        </header>
+    }
+    <div class="review-card__body">
+        <div class="review-card__title">@@title</div>
+        <div class="review-card__text">
+            <p>@@text</p>
+            @@if(context.text2){
+                <p>@@text2</p>
+            }
+        </div>
+    </div>
+    @@if(context.footer){
+        <footer class="review-card__footer">
+            <div class="review-card__footer-wrap">
+                @@if(context.footer.date){
+                    <div class="review-card__date">
+                        Отзыв оставлен
+                        @@include('blocks/datetime/datetime.html', {
+                            "datetime": "@@footer.date.formatted",
+                            "date": "@@footer.date.text"
                         })
                     </div>
-                    <div class="review-preview__wrap">
-                        <div class="review-preview__suptitle">@@preview.suptitle</div>
-                        <div class="review-preview__title">@@preview.title</div>
-                        @@if(context.preview.rating){
-                            @@include('blocks/rating/rating.html', {
-                                "class": "review-preview__rating",
-                                "value": "@@preview.rating.value",
-                                "reviews": "@@preview.rating.reviews"
-                            })
-                        }
-                    </div>
                 }
-            </header>
-        }
-        <div class="review-card__body">
-            <div class="review-card__title">@@title</div>
-            <div class="review-card__text">
-                <p>@@text</p>
-                @@if(context.text2){
-                    <p>@@text2</p>
+                @@if(context.footer.author){
+                    <div class="review-card__author">@@footer.author</div>
                 }
             </div>
-        </div>
-        @@if(context.footer){
-            <footer class="review-card__footer">
-                <div class="review-card__footer-wrap">
-                    @@if(context.footer.date){
-                        <div class="review-card__date">
-                            Отзыв оставлен
-                            @@include('blocks/datetime/datetime.html', {
-                                "datetime": "@@footer.date.formatted",
-                                "date": "@@footer.date.text"
-                            })
-                        </div>
-                    }
-                    @@if(context.footer.author){
-                        <div class="review-card__author">@@footer.author</div>
-                    }
-                </div>
-                @@include('blocks/rating/rating.html', {
-                    "starsOnly": true,
-                })
-            </footer>
-        }
-    </article>
-}
-
-@@if(context.listItem){
-    <li>
-        <article class="review-card@@if(context.class){ @@class}@@if(context.style){ review-card--style_@@style}">
-            @@if(context.preview){
-                <header class="review-card__top review-preview">
-                    @@if(context.preview.avatar){
-                        <div class="review-preview__@@if(context.preview.avatar.format){logo}@@if(!context.preview.avatar.format){avatar}">
-                            @@include("blocks/img/img.html", {
-                                "class": "review-preview__img",
-                                @@if(!context.preview.avatar.format){"cover": true,}
-                                @@if(context.preview.avatar.format){"contain": true,}
-                                "src": "@@preview.avatar.src",
-                                @@if(context.preview.avatar.format){"format": "@@preview.avatar.format",}
-                                "width": "@@if(!context.preview.avatar.format){60}@@if(context.preview.avatar.format){42}",
-                                "height": "@@if(!context.preview.avatar.format){60}@@if(context.preview.avatar.format){34}",
-                            })
-                        </div>
-                        <div class="review-preview__wrap">
-                            <div class="review-preview__suptitle">@@preview.suptitle</div>
-                            <div class="review-preview__title">@@preview.title</div>
-                            @@if(context.preview.rating){
-                                @@include('blocks/rating/rating.html', {
-                                    "class": "review-preview__rating",
-                                    "value": "@@preview.rating.value",
-                                    "reviews": "@@preview.rating.reviews"
-                                })
-                            }
-                        </div>
-                    }
-                </header>
-            }
-            <div class="review-card__body">
-                <div class="review-card__title">@@title</div>
-                <div class="review-card__text">
-                    <p>@@text</p>
-                    @@if(context.text2){
-                        <p>@@text2</p>
-                    }
-                </div>
-            </div>
-            @@if(context.footer){
-                <footer class="review-card__footer">
-                    <div class="review-card__footer-wrap">
-                        @@if(context.footer.date){
-                            <div class="review-card__date">
-                                Отзыв оставлен
-                                @@include('blocks/datetime/datetime.html', {
-                                    "datetime": "@@footer.date.formatted",
-                                    "date": "@@footer.date.text"
-                                })
-                            </div>
-                        }
-                        @@if(context.footer.author){
-                            <div class="review-card__author">@@footer.author</div>
-                        }
-                    </div>
-                    @@include('blocks/rating/rating.html', {
-                        "starsOnly": true,
-                    })
-                </footer>
-            }
-        </article>
-    </li>
-}
+            @@include('blocks/rating/rating.html', {
+                "starsOnly": true,
+            })
+        </footer>
+    }
+</article>

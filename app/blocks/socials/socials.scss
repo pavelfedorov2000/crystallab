@@ -9,7 +9,7 @@
         .social {
             &__link,
             &__icon {
-                border-radius: px2rem(5);
+                border-radius: var(--radius);
             }
 
             &__icon {

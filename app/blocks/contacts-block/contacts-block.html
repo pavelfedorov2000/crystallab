@@ -1,12 +1,19 @@
-<div class="contacts-block@@if(context.class){ @@class}@@if(context.style){ contacts-block--style_@@style}">
-    <div class="contacts-block__phone phone-block">
-        <div class="phone-block__title">
-            Контактный телефон
+<div class="contacts-block@@if(context.class){ @@class}">
+    <div class="contacts-block__item contact-item">
+        <div class="contact-item__property">
+            @@property
         </div>
-        <a href="tel:+375298425000" class="phone-block__phone">+375 29 842-50-00</a>
+        @@if(context.phone){
+            <a href="tel:+375298425000" class="contact-item__phone">+375 29 842-50-00</a>
+        }
+        @@if(context.value){
+            <div class="contact-item__value">@@value</div>
+        }
     </div>
-    @@include('blocks/socials/socials.html', {
-        "instagram": true,
-        "vk": true
-    })
+    @@if(context.phone){
+        @@include('blocks/socials/socials.html', {
+            @@if(context.instagram){"instagram": "@@instagram",}
+            @@if(context.vk){"vk": "@@vk"}
+        })
+    }
 </div>

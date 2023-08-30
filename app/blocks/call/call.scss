@@ -1,0 +1,35 @@
+.call {
+    @include flex-column-end;
+    gap: var(--offset-s);
+
+    @include media('1100', max) {
+        align-items: center;
+    }
+
+    &__row {
+        @include flex-center-y;
+        gap: var(--offset-s) var(--offset-m);
+
+        @include media('1100', max) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        gap: var(--offset-x);
+    }
+    
+    &__phone {
+        font-size: px2rem(18);
+        font-weight: 600;
+        transition: var(--transition) color;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: var(--accent);
+            }
+        }
+    }
+}

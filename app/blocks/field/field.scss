@@ -1,1 +1,25 @@
-.field {}
+.field {
+    @include row-grid(var(--offset-x));
+}
+
+.input {
+    width: 100%;
+    padding: var(--offset-s) px2rem(25);
+    background-color: var(--white);
+    border: none;
+    border-top: var(--border);
+
+    &--bg {
+        &_gray {
+            background-color: var(--gray-fa);
+        }
+    }
+
+    &[aria-invalid="true"] {
+        border-top-color: var(--pink);
+    }
+}
+
+.textarea {
+    min-height: px2rem(100);
+}

@@ -1,0 +1,25 @@
+.feedback-form {
+  max-width: px2rem(570);
+
+  &__fields {
+    margin-bottom: var(--offset-m);
+    display: grid;
+    gap: var(--offset-s) var(--gap);
+    
+    @include media('501', min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__field {
+    &--span-2 {
+      @include media('501', min) {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  &__checkbox {
+    margin-bottom: var(--offset-l);
+  }
+}

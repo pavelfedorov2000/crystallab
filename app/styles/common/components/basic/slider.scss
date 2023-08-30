@@ -67,7 +67,14 @@
     .swiper-pagination-bullet {
         @include margin-x(px2rem(5));
         @include round(px2rem(15));
-        background: var(--gray-dc);
+        background-color: var(--gray-dc);
+        transition: var(--transition) background-color;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: var(--accent);
+            }
+        }
 
         &-active {
             background: linear-gradient(134deg, #C10046 0%, #D752B3 100%), #D54AA9;

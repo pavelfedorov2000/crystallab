@@ -4,6 +4,7 @@
 
     @include media('767', max) {
         justify-items: center;
+        text-align: center;
     }
     
     @include media('768', min) {

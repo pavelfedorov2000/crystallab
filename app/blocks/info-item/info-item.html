@@ -1,6 +1,6 @@
 @@if(context.listItem){
     <li>
-        <@@if(context.href){a}@@if(!context.href){div} href="@@href" class="info-item@@if(context.class){ @@class}@@if(context.style){ info-item--style_@@style}@@if(context.href){ info-item--link}">
+        <@@if(context.href){a href="@@href" target="_blank"}@@if(!context.href){div} class="info-item@@if(context.class){ @@class}@@if(context.style){ info-item--style_@@style}@@if(context.href){ info-item--link}">
             <span class="info-item__icon">
                 @@include("blocks/img/img.html", {
                     "picture": "false",
@@ -18,7 +18,7 @@
 }
 
 @@if(!context.listItem){
-    <@@if(context.href){a}@@if(!context.href){div} href="@@href" class="info-item@@if(context.class){ @@class}@@if(context.style){ info-item--style_@@style}@@if(context.href){ info-item--link}">
+    <@@if(context.href){a href="@@href" target="_blank"}@@if(!context.href){div} class="info-item@@if(context.class){ @@class}@@if(context.style){ info-item--style_@@style}@@if(context.href){ info-item--link}">
         <span class="info-item__icon">
             @@include("blocks/img/img.html", {
                 "picture": "false",
@@ -29,7 +29,7 @@
             })
         </span>
         @@if(context.text){
-            <span class="info-item__text">@@text</span>
+            <span class="info-item__text@@if(context.mobHidden){ mob-hidden}">@@text</span>
         }
     </@@if(context.href){a}@@if(!context.href){div}>
 }

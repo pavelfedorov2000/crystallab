@@ -3,10 +3,14 @@
 }
 
 .swiper-btns {
-    @include flex-center-between;
-    @include position-center-x;
-    top: calc(50% - var(--slider-padding-bottom) / 2);
-    z-index: 50;
-    width: px2rem(1700);
-    max-width: 100vw;
+    display: none;
+
+    @include media('768', min) {
+        @include flex-center-between;
+        @include position-center-x;
+        top: calc(50% - var(--slider-padding-bottom) / 2);
+        z-index: 50;
+        width: px2rem(1700);
+        max-width: 100vw;
+    }
 }

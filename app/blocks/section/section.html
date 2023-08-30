@@ -1,40 +1,46 @@
-<section class="section@@if(context.padding){ @@if(context.paddingTop){padding-top_@@padding.top}}@@if(context.bgColor){ section--bg_@@bgColor}@@if(context.bgImage){ section--dark}" @@if(context.bgImage){style="background-image: url(@@bgImage)"}>
+<section class="section@@if(context.class){ @@class}@@if(context.padding){ @@if(context.paddingTop){padding-top_@@padding.top}}@@if(context.bgColor){ section--bg_@@bgColor}@@if(context.bgImage){ section--dark}" @@if(context.bgImage){style="background-image: url(@@bgImage)"}>
     <div class="container">
         @@if(!context.inner){
-            @@include("blocks/title_container/title_container.html", {
-                "class": "section__top",
-                "title": {
-                    "class": "_h2",
-                    "level": "2",
-                    "text": "@@title.text",
-                }
-            })
+            @@if(context.title){
+                @@include("blocks/title_container/title_container.html", {
+                    "class": "section__top",
+                    "title": {
+                        "class": "_h2",
+                        "level": "2",
+                        "text": "@@title.text",
+                    }
+                })
+            }
 
             @@if(context.links){
-                <div class="tabs">
+                <div class="btns section__tabs btns--tabs">
                     @@loop("blocks/button/button.html", [{
                         "href": "#",
                         "class": "active",
                         "style": "tab",
                         "icon": "eye",
-                        "text": "Перманентный макияж",
+                        "text": "Перманентный<br> макияж",
                     }, {
                         "href": "#",
                         "style": "tab",
                         "icon": "lips",
-                        "text": "Коррекция перманентного макияжа",   
+                        "text": "Коррекция<br> перманентного макияжа",   
                     }, {
                         "href": "#",
                         "style": "tab",
                         "icon": "bottle",
-                        "text": "Удаление перманентного макияжа",   
+                        "text": "Удаление<br> перманентного макияжа",   
                     }])
                 </div>
             }
 
+            @@if(context.form){
+                @@include('blocks/@@form/@@form.html')
+            }
+
             @@if(context.grid){
                 @@include('blocks/grid-row/grid-row.html', {
-                    "items": "@@grid.items",
+                    @@if(context.grid.items){"items": "@@grid.items",}
                     "loopItem": "@@grid.loopItem",
                     "loopArray": "@@grid.loopArray"
                 })
@@ -43,13 +49,11 @@
             @@if(context.slider){
                 <div class="section__slider-wrap slider-wrapper">
                     @@include('blocks/swiper-btns/swiper-btns.html')
-                    <div class="swiper section__slider" data-slides="@@if(context.slider.slides){@@slider.slides}@@if(!context.slider.slides){4}">
+                    <div class="swiper section__slider@@if(context.slider.withoutPagination){ section__slider--without_pagination}" data-slides="@@if(context.slider.slides){@@slider.slides}@@if(!context.slider.slides){4}">
                         <div class="swiper-wrapper">
                             @@loop('blocks/swiper-slide/swiper-slide.html', "../resources/assets/@@slider.array.json")
                         </div>
-                        @@if(!context.slider.withoutPagination){
-                            <div class="swiper-pagination"></div>
-                        }
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             }
@@ -61,7 +65,8 @@
                         @@include("blocks/title/title.html", {
                             "class": "_h1 section__title",
                             "level": "2",
-                            "text": "@@title.text",
+                            @@if(context.title.text){"text": "@@title.text",}
+                            @@if(context.title.instagram){"instagram": @@title.instagram}
                         })
                     }
 
@@ -101,15 +106,28 @@
                             })
                         }
                         @@if(context.contacts){
-                            @@include('blocks/contacts-block/contacts-block.html')
+                            @@include('blocks/contacts-block/contacts-block.html', {
+                                "property": "Контактный телефон",
+                                "phone": true,
+                                "instagram": true,
+                                "vk": true
+                            })
                         }
                         @@if(context.btns){
-                            <div class="btns">
+                            <div class="btns section__btns">
                                 @@loop("blocks/button/button.html", [{
+                                    "data": {
+                                        "attr": "popup",
+                                        "value": "callback"
+                                    },
                                     "primary": true,
                                     "size": "l",
                                     "text": "@@btns.first.text",
                                 }, {
+                                    "data": {
+                                        "attr": "popup",
+                                        "value": "callback"
+                                    },
                                     "primary": true,
                                     "size": "l",
                                     "text": "@@btns.second.text",
@@ -129,9 +147,14 @@
                         @@if(context.gallery){
                             @@if(context.gallery.items == '2'){
                                 @@include('blocks/gallery/gallery.html', {
+                                    "class": "section",
                                     "items": "@@gallery.items"
                                 })
                             }
+                        }
+
+                        @@if(context.map){
+                            <div id="map" class="map section__map"></div>
                         }
                     </div>
                 }

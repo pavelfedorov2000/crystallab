@@ -28,7 +28,9 @@
         <!-- about section END -->
 
         <!-- services section START -->
-        @@include('blocks/services-section/services-section.html')
+        @@include('blocks/services-section/services-section.html', {
+            "slider": true
+        })
         <!-- services section END -->
 
         <!-- top-products section START -->
@@ -63,6 +65,7 @@
 
         <!-- portfolio section START -->
         @@include('blocks/section/section.html', {
+            "class": "our-works",
             "inner": true,
             "title": {
                 "text": "Наши работы говорят за&nbsp;нас"
@@ -78,20 +81,7 @@
         <!-- portfolio section END -->
 
         <!-- faq section START -->
-        @@include('blocks/section/section.html', {
-            "bgImage": "assets/images/content/faq-bg.jpg",
-            "withoutGrid": true,
-            "inner": true,
-            "title": {
-                "text": "Часто задаваемые вопросы"
-            },
-            "features": {
-                "loopArray": "faq-features"
-            },
-            "accordion": {
-                "items": "faq"
-            }
-        })
+        @@include('blocks/faq/faq.html')
         <!-- faq section END -->
 
         <!-- instgram section START -->
@@ -107,6 +97,7 @@
             },
             "decorIcon": "heart",
             "contacts": true,
+            "map": true,
             "btns": {
                 "first": {
                     "text": "Записаться"
@@ -121,6 +112,38 @@
     @@include("blocks/footer/footer.html")
 </div>
 @@include("blocks/link/link.html")
+<script>
+    ymaps.ready(init);
+
+    function init() {
+        const myMap = new ymaps.Map('map', {
+                center: [53.917225, 27.590236],
+                zoom: 11,
+                controls: []
+            }, {
+                searchControlProvider: 'yandex#search'
+            }),
+            objectManager = new ymaps.ObjectManager({
+                clusterize: true,
+                gridSize: 64,
+                clusterize: true
+            });
+        myMap.geoObjects.add(objectManager);
+
+        fetch("assets/shops.json")
+            .then((response) => {
+                return response.json();
+        })
+        .then((data) => {
+            objectManager.add(data);
+            const objectState = objectManager.getObjectState(1);
+            if (objectState.isClustered) {
+                objectManager.clusters.state.set('activeObject', objectManager.objects.getById(1));
+                objectManager.clusters.balloon.open(objectState.cluster.id);
+            }
+        });
+    }
+</script>
 </body>
 
 </html>

@@ -1,4 +1,12 @@
-<div class="page-top" style="background-image: url(assets/images/content/page-top/@@page.png);">
+<div class="page-top">
+    @@include("blocks/img/img.html", {
+        "class": "page-top__bg",
+        "cover": true,
+        "src": "assets/images/content/page-top/@@page",
+        "format": "png",
+        "width": "1345",
+        "height": "190",
+    })
     <div class="container page-top__inner">
         @@include("blocks/breadcrumbs/breadcrumbs.html", {
             @@if(context.prevPage){"prevPage": "@@prevPage",}
@@ -6,7 +14,7 @@
         })
 
         @@include("blocks/title/title.html", {
-            "class": "title page-top__title",
+            "class": "_h1 page-top__title",
             "level": "1",
             "text": "@@if(context.title){@@title}@@if(!context.title){@@currentPage}",
         })

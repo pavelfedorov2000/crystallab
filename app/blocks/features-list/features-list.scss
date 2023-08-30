@@ -6,5 +6,9 @@
 
     >* {
         width: px2rem(170);
+
+        @include media('767', max) {
+            width: calc(50% - var(--gap) / 2);
+        }
     }
 }

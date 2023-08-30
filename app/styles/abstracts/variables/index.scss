@@ -2,7 +2,11 @@
 	--color-white-rgb: 255, 255, 255;
 	--white: rgb(var(--color-white-rgb));
     --color-black-rgb: 40, 40, 40;
+    --opacity-30: 0.3;
+    --opacity-60: 0.6;
 	--black: rgb(var(--color-black-rgb));
+    --black-opacity-30: rgba(var(--color-black-rgb), var(--opacity-30));
+    --black-opacity-60: rgba(var(--color-black-rgb), var(--opacity-60));
     --accent: #C10046;
     --pink: #D752B3;
     --dark: #15171A;
@@ -15,6 +19,7 @@
     --gray-64: #646464;
     --gray-e6: #E6E6E6;
     --gray-78: #787878;
+    --line-color: var(--gray-e1);
     --disabled-bg: var(--gray-e6);
     --button-bg-gradient-degree: 134deg;
     --button-bg: linear-gradient(var(--button-bg-gradient-degree), var(--accent) 0%, var(--pink) 100%);
@@ -37,24 +42,29 @@
     --container-width: #{px2rem(1170)};
 	--container-padding: #{px2rem(15)};
 
-    //--icon-size_s: #{px2rem(16)};
-    //--icon-size_sm: #{px2rem(20)};
+    --text-content-max-width: #{px2rem(870)};
+
     --icon-size: #{px2rem(32)};
-    //--icon-size_l: #{px2rem(32)};
     --icon-size_xl: #{px2rem(40)};
-    //--icon-size_xls: #{px2rem(48)};
 
     --header-height: #{px2rem(180)};
     --nav-height: #{px2rem(70)};
     --header-full-height: calc(var(--header-height) + var(--nav-height));
 
-    --section-padding_xxs: #{px2rem(40)};
 	--section-padding_xs: #{px2rem(60)};
 	--section-padding: #{px2rem(80)};
-	--section-padding_xl: #{px2rem(100)};
-    --section-padding_xxl: #{px2rem(120)};
 
     --slider-padding-bottom: #{px2rem(75)};
+
+    @include media('767', max) {
+        --slider-padding-bottom: #{px2rem(60)};
+        --section-padding_xs: #{px2rem(40)};
+	    --section-padding: #{px2rem(40)};
+    }
+
+    @include media('500', max) {
+        --icon-size_xl: var(--icon-size);
+    }
 
     // --space-paragraph: var(--offset-xxs);
 
@@ -70,10 +80,9 @@
 	--transition: var(--duration300ms) var(--transition-timing);
 	--transition-long: var(--duration1s) var(--transition-timing);
 
-    //--border-width: 1px;
-    //--border-style: solid;
-	//--border: var(--border-width) var--border-style) var(--line-color);
-	//--shadow: ;
-	//--radius: 8px;
-	//--radius-card: 12px;
+    --border-width: 1px;
+    --border-style: solid;
+	--border: var(--border-width) var(--border-style) var(--line-color);
+
+    --radius: #{px2rem(5)};
 }

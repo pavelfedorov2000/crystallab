@@ -1,12 +1,22 @@
 <div class="info-block@@if(context.class){ @@class}@@if(context.style){ info-block--style_@@style}">
-    @@include('blocks/contacts-block/contacts-block.html')
+    @@include('blocks/contacts-block/contacts-block.html', {
+        "property": "@@property",
+        @@if(context.phone){"phone": "@@phone",}
+        @@if(context.value){"value": "@@value"}
+    })
     @@include('blocks/info-item/info-item.html', {
+        "class": "info-block__item",
         "icon": "clock",
         "text": "Работаем ежедневно <b>с 10 до 22</b>"
     })
     @@if(context.btn){
         @@include("blocks/button/button.html", {
+            "data": {
+                "attr": "popup",
+                "value": "callback"
+            },
             "primary": true,
+            "size": "l",
             "text": "@@btn.text",
         })
     }

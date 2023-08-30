@@ -1,4 +1,5 @@
 <nav class="menu@@if(context.class){ @@class}">
+    @@include('blocks/close-btn/close-btn.html', {"class": "menu"})
     <ul class="menu__list">
         @@loop("blocks/button/button.html", [{
             "href": "#",
@@ -44,4 +45,7 @@
             "text": "Контакты"
         }])
     </ul>
+    @@include('blocks/call/call.html', {
+        "class": "menu"
+    })
 </nav>

@@ -1,7 +1,9 @@
 .checkbox {
-    $this: &; // .checkbox
+    $this: &;
 
     @include flex-center-y;
+    flex-wrap: wrap;
+    cursor: pointer;
 
     &__input {
         width: 1px;
@@ -12,12 +14,11 @@
 
         &:checked ~ #{$this} {
             &__style {
+                background-color: var(--accent);
+                border-color: var(--accent);
+
                 &:before {
-                    content: '';
-                    position: absolute;
-                    @include position-center-y;
-                    //background-image: url(../images/check.svg);
-                    //@include bg(contain);
+                    opacity: 1;
                 }
             }
         }
@@ -26,10 +27,45 @@
     &__style {
         position: relative;
         flex-shrink: 0;
-        transition: var(--transition) border-color, var(--transition) background-color;
+        margin-right: var(--offset-m);
+        width: var(--icon-size);
+        height: var(--icon-size);
+        background-color: var(--gray-fa);
+        border-radius: var(--radius);
+        border: var(--border);
+        transition: var(--transition) background-color, var(--transition) border-color;
+
+        &:before {
+            content: '';
+            @include position-center-xy;
+            width: px2rem(12);
+            height: px2rem(9);
+            background-image: url(../images/icons/check.svg);
+            @include bg(contain);
+            opacity: 0;
+            transition: var(--transition) opacity;
+        }
     }
 
-    &__text {
-        transition: var(--transition) color;
+    &__text {   
+        @include media('500', max) {
+            font-size: px2rem(14);
+        }
+
+        a {
+            color: var(--accent);
+            transition: var(--transition) color;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: var(--pink);
+                }
+            }
+        }
+    }
+
+    .error-text {
+        margin-top: var(--offset-x);
+        width: 100%;
     }
 }

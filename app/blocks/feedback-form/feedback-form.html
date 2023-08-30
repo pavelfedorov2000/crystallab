@@ -1,0 +1,39 @@
+<form class="feedback-form@@if(context.class){ @@class}@@if(context.style){ feedback-form--style_@@style} js-form">
+    <div class="feedback-form__fields">
+        @@loop('blocks/field/field.html', [{
+            "class": "feedback-form",
+            "span": "2",
+            "label": "Как вас зовут?",
+            "required": true
+        }, {
+            "class": "feedback-form",
+            "label": "Ваш телефон",
+            "inputType": "tel",
+            "required": true
+        }, {
+            "class": "feedback-form",
+            "label": "Ваш email",
+            "inputType": "email",
+            "required": true
+        }, {
+            "class": "feedback-form",
+            "span": "2",
+            "label": "Сообщение",
+            "textarea": true
+        }])
+    </div>
+    @@include('blocks/checkbox/checkbox.html', {
+        "class": "feedback-form",
+        "name": "agree",
+        "text": 'Я согласен на обработку персональных данных.<br><a href="#">Политика конфиденциальности</a>',
+        "isChecked": true,
+        "required": true,
+        "requiredMessage": "Необходимо принять условия"
+    })
+    @@include("blocks/button/button.html", {
+        "type": "submit",
+        "size": "l",
+        "primary": true,
+        "text": "Отправить",
+    })
+</form>

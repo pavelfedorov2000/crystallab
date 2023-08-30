@@ -1,3 +1,40 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 101;
+    background-color: var(--black-opacity-60);
+    @include hide();
+    transition: var(--transition) all;
+
+    &.active {
+        @include show();
+    }
+}
+
 .popup {
-    position: absolute;
+    $this: &;
+
+    padding: var(--offset-xl);
+    @include position-center-xy;
+    width: px2rem(530);
+    max-width: calc(100vw - var(--container-padding) * 2);
+    background-color: var(--white);
+    @include hide();
+    transition: var(--transition) all;
+
+    &.active {
+        @include show();
+    }
+
+    &__title {
+        margin-bottom: var(--offset-m);
+    }
+
+    &__fields {
+        margin-bottom: var(--offset-l);
+        @include row-grid(var(--offset-s));
+    }
 }

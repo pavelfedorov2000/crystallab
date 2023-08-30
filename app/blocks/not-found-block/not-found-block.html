@@ -1,18 +1,15 @@
 <div class="not-found-block">
-    @@include('blocks/img/img.html', {
-        "class": "not-found-block__img",
-        "src": "assets/images/404",
-        "format": "svg"
-    })
     @@include('blocks/title/title.html', {
-        "tag": "div",
+        "level": "1",
         "class": "not-found-block__title",
-        "text": ""
+        "text": "404"
     })
-    <div class="not-found-block__text"></div>
+    <p class="not-found-block__text">
+        Нам очень жаль, но такой страницы не существует или она была удалена
+    </p>
     @@include('blocks/button/button.html', {
         "href": "#",
-        "class": "not-found-block__btn",
-        "text": ""
+        "primary": true,
+        "text": "На главную"
     })
 </div>

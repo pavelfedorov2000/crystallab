@@ -28,46 +28,28 @@ app.validation = {
             });
         });
 
-        //const phoneInput = document.querySelector('input[type=tel]');
-
-        /* pristine.addValidator(phoneInput, function (value) {
-            if (value.replace(/\D+/g, '').length > 0) {
-                return true;
-            }
-            return false;
-        }, "Некорректный номер", 2, false); */
-
         // input mask
-        /* const phoneInput = document.querySelector('#phone');
+        const phoneInputs = document.querySelectorAll('input[type=tel]');
+
+        if (!phoneInputs.length) return;
+
         const maskOptions = {
-            mask: '+{7}(000)000-00-00',
+            mask: '+{375}(00)000-00-00',
             lazy: false
         }
     
         let mask;
     
-        phoneInput.addEventListener('focus', function () {
-            mask = new IMask(phoneInput, maskOptions);
-        });
-    
-        phoneInput.addEventListener('blur', function () {
-            if (this.value.match('_')) {
-                mask.masked.reset();
-            }
-        }); */
-
-        /* $('form').on('sumbit', function (e) {
-            e.preventDefault();
-
-            $.ajax({
-                type: "POST",
-                url: "send.php",
-                data: $(this).serialize(),
+        phoneInputs.forEach((input) => {
+            input.addEventListener('focus', function () {
+                mask = new IMask(input, maskOptions);
             });
-            $('.form__input').removeClass('valid');
-            $(this).find("input").val("");
-            $('form').trigger('reset');
-            return false;
-        }); */
+        
+            input.addEventListener('blur', function () {
+                if (this.value.match('_')) {
+                    mask.masked.reset();
+                }
+            });
+        });
     },
 };

@@ -2,6 +2,7 @@
     @include flex-column;
     padding: var(--offset-l);
     height: 100%;
+    min-height: px2rem(530);
     background-color: var(--white);
 
     &--bg {
@@ -84,7 +85,7 @@
 
     &__logo {
         @include flex-center;
-        border: 1px solid var(--gray-e1);
+        border: var(--border);
 
         #{$this}__img {
             width: px2rem(42);

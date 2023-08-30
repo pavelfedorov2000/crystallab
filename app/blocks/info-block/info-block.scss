@@ -1,3 +1,10 @@
 .info-block {
-  // your code
+    @include row-grid(var(--offset-m));
+    justify-items: start;
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: var(--offset-x);
+        }
+    }
 }
